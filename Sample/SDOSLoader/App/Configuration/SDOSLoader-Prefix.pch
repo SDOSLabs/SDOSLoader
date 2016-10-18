@@ -1,0 +1,42 @@
+//
+// Prefix header for all source files of the 'BaseProject' target in the 'BaseProject' project
+//
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+
+//Import de las dependencias
+#import <Extensions/Extensions.h>
+#import <SDOS/SDOS.h>
+#define LOG_LEVEL_DEF ddLogLevel
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import "UIViewController+Analytics.h"
+
+//Dependiendo del esquema que se ejecuta modificamos el log level
+#if DEBUG
+static const NSUInteger ddLogLevel = DDLogLevelVerbose;
+#elif PREPRODUCTION
+static const NSUInteger ddLogLevel = DDLogLevelWarning;
+#else
+static const NSUInteger ddLogLevel = DDLogLevelWarning;
+#endif
+
+//Imports del proyecto
+#import "LoaderManager+BaseiOS.h"
+#import "BaseRequestSerializer.h"
+#import "BaseResponseSerializer.h"
+#import "BaseDAOProtocol.h"
+#import "BaseViewController.h"
+#import "Util.h"
+#import "Constants.h"
+#import "Design+Extensions.h"
+
+//AutoGenerate
+#import "KZBootstrapConstants.h"
+#import "ImagesConstants.h"
+#import "StoryboardConstants.h"
+
+#endif

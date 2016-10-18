@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KZBEnvironments</key>
+	<array>
+		<string>Debug</string>
+		<string>Preproduction</string>
+		<string>Production</string>
+	</array>
+	<key>wsBaseUrl</key>
+	<dict>
+		<key>Debug</key>
+		<string>http://debug.es</string>
+		<key>Preproduction</key>
+		<string>http://preproduction.es</string>
+		<key>Production</key>
+		<string>http://production.es</string>
+	</dict>
+	<key>octopushMode</key>
+	<dict>
+		<key>Debug</key>
+		<string>0</string>
+		<key>Preproduction</key>
+		<string>1</string>
+		<key>Production</key>
+		<string>2</string>
+	</dict>
+	<key>googleAnalyticsKey</key>
+	<dict>
+		<key>Debug</key>
+		<string>UA-39510175-2</string>
+		<key>Preproduction</key>
+		<string>UA-39510175-2</string>
+		<key>Production</key>
+		<string>2</string>
+	</dict>
+	<key>showSelectedEnvironmentsOnLoad</key>
+	<dict>
+		<key>Debug</key>
+		<true/>
+		<key>Preproduction</key>
+		<true/>
+		<key>Production</key>
+		<false/>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,4 @@
+Coloca aquí todas las clases con métodos y variables estaticas de toda la aplicación. ¡¡¡Estas clases deben ser siempre de instanciación única!!!.
+
+Normalmente son clases usadas para tener centralizada toda la lógica que se debe implementar respecto al manejo de ciertos datos.
+Por ejemplo, una clase que maneje todo lo relacionado con la gestión del usuario.
