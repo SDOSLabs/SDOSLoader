@@ -17,7 +17,7 @@ use_frameworks!
 #=====================Core=====================
 pod 'SDOS', :podspec => 'SDOS.podspec'
 pod 'SDOSCore', :podspec => 'SDOSCore.podspec'
-pod 'SDOSLoader', :path => '/Users/rafael.fernandez/Documents/GIT/SDOSLoader'
+pod 'SDOSLoader', :path => '../../'
 
 #=====================JSON y WS=====================
 #Librería para el modelado de datos de servicios web
