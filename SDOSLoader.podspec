@@ -24,9 +24,9 @@ Pod::Spec.new do |spec|
     end
   end
 
-  spec.dependency 'CocoaLumberjack'
   spec.dependency 'MBProgressHUD'
   spec.dependency 'M13ProgressSuite'
   spec.dependency 'MaterialControlsCustom'
-  spec.dependency 'SDOSCore'
+  spec.dependency 'SDOSLocalizableString'
+
 end

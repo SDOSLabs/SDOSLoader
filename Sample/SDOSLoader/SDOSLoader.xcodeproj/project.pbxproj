@@ -33,11 +33,6 @@
 
 /* Begin PBXBuildFile section */
 		290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A16A41BFB3146002361EF /* AppDelegate.m */; };
-		298FD6411C0701E500BA707E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5A51C0701E500BA707E /* BaseViewController.m */; };
-		298FD6431C0701E500BA707E /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5AB1C0701E500BA707E /* LoaderManager+BaseiOS.m */; };
-		298FD6441C0701E500BA707E /* BaseDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5AF1C0701E500BA707E /* BaseDTO.m */; };
-		298FD6451C0701E500BA707E /* BaseRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5B21C0701E500BA707E /* BaseRequestSerializer.m */; };
-		298FD6461C0701E500BA707E /* BaseResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5B51C0701E500BA707E /* BaseResponseSerializer.m */; };
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
 		298FD64A1C0701E500BA707E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5BB1C0701E500BA707E /* main.m */; };
@@ -54,10 +49,7 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
-		54A21AB11C9C35350054ECFD /* BaseProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A21AB01C9C35350054ECFD /* BaseProvider.m */; };
 		9354CCEE813BB4ACE29FB959 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EFE1856AE679994C7C312D /* Pods.framework */; };
-		B1DC18F91D78625500BA1B5D /* UIViewController+Analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DC18F51D78625500BA1B5D /* UIViewController+Analytics.m */; };
-		B1DC18FA1D78625500BA1B5D /* FabricConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = B1DC18F81D78625500BA1B5D /* FabricConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,17 +57,6 @@
 		290A16A31BFB3146002361EF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		290A16A41BFB3146002361EF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		298FD5A41C0701E500BA707E /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		298FD5A51C0701E500BA707E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		298FD5A71C0701E500BA707E /* BaseDAOProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDAOProtocol.h; sourceTree = "<group>"; };
-		298FD5AA1C0701E500BA707E /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
-		298FD5AB1C0701E500BA707E /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
-		298FD5AE1C0701E500BA707E /* BaseDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDTO.h; sourceTree = "<group>"; };
-		298FD5AF1C0701E500BA707E /* BaseDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDTO.m; sourceTree = "<group>"; };
-		298FD5B11C0701E500BA707E /* BaseRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestSerializer.h; sourceTree = "<group>"; };
-		298FD5B21C0701E500BA707E /* BaseRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequestSerializer.m; sourceTree = "<group>"; };
-		298FD5B41C0701E500BA707E /* BaseResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseResponseSerializer.h; sourceTree = "<group>"; };
-		298FD5B51C0701E500BA707E /* BaseResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseResponseSerializer.m; sourceTree = "<group>"; };
 		298FD5B71C0701E500BA707E /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		298FD5B81C0701E500BA707E /* SDOSLoader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDOSLoader-Prefix.pch"; sourceTree = "<group>"; };
 		298FD5B91C0701E500BA707E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,14 +88,8 @@
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
 		536F1DE3DB46B16D79E1EBC6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		54A21AAF1C9C35350054ECFD /* BaseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseProvider.h; sourceTree = "<group>"; };
-		54A21AB01C9C35350054ECFD /* BaseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProvider.m; sourceTree = "<group>"; };
 		6CFE79CBCF6ACC061DA596A9 /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = "<group>"; };
 		9755BC217EA35AF447E089E5 /* Pods.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.preproduction.xcconfig; path = "Pods/Target Support Files/Pods/Pods.preproduction.xcconfig"; sourceTree = "<group>"; };
-		B1DC18F41D78625500BA1B5D /* UIViewController+Analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Analytics.h"; sourceTree = "<group>"; };
-		B1DC18F51D78625500BA1B5D /* UIViewController+Analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Analytics.m"; sourceTree = "<group>"; };
-		B1DC18F71D78625500BA1B5D /* FabricConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FabricConfiguration.h; sourceTree = "<group>"; };
-		B1DC18F81D78625500BA1B5D /* FabricConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FabricConfiguration.m; sourceTree = "<group>"; };
 		D93CFC804C1BCDDCEA11B061 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +118,6 @@
 			children = (
 				290A16A31BFB3146002361EF /* AppDelegate.h */,
 				290A16A41BFB3146002361EF /* AppDelegate.m */,
-				298FD5A21C0701E500BA707E /* Base */,
 				298FD5B61C0701E500BA707E /* Configuration */,
 				298FD5C61C0701E500BA707E /* Controllers */,
 				298FD6141C0701E500BA707E /* DataSource */,
@@ -168,83 +142,6 @@
 				2970AD751BFA153F007CFBD9 /* SDOSLoader.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		298FD5A21C0701E500BA707E /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				B1DC18F31D78625500BA1B5D /* Analytics */,
-				B1DC18F61D78625500BA1B5D /* Fabric */,
-				298FD5A31C0701E500BA707E /* Controller */,
-				298FD5A61C0701E500BA707E /* DAO */,
-				298FD5A91C0701E500BA707E /* Loader */,
-				298FD5AC1C0701E500BA707E /* WS */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		298FD5A31C0701E500BA707E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				298FD5A41C0701E500BA707E /* BaseViewController.h */,
-				298FD5A51C0701E500BA707E /* BaseViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		298FD5A61C0701E500BA707E /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-				298FD5A71C0701E500BA707E /* BaseDAOProtocol.h */,
-			);
-			path = DAO;
-			sourceTree = "<group>";
-		};
-		298FD5A91C0701E500BA707E /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				298FD5AA1C0701E500BA707E /* LoaderManager+BaseiOS.h */,
-				298FD5AB1C0701E500BA707E /* LoaderManager+BaseiOS.m */,
-			);
-			path = Loader;
-			sourceTree = "<group>";
-		};
-		298FD5AC1C0701E500BA707E /* WS */ = {
-			isa = PBXGroup;
-			children = (
-				54A21AAE1C9C35350054ECFD /* BaseProvider */,
-				298FD5AD1C0701E500BA707E /* DTO */,
-				298FD5B01C0701E500BA707E /* RequestSerializer */,
-				298FD5B31C0701E500BA707E /* ResponseSerializer */,
-			);
-			path = WS;
-			sourceTree = "<group>";
-		};
-		298FD5AD1C0701E500BA707E /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				298FD5AE1C0701E500BA707E /* BaseDTO.h */,
-				298FD5AF1C0701E500BA707E /* BaseDTO.m */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		298FD5B01C0701E500BA707E /* RequestSerializer */ = {
-			isa = PBXGroup;
-			children = (
-				298FD5B11C0701E500BA707E /* BaseRequestSerializer.h */,
-				298FD5B21C0701E500BA707E /* BaseRequestSerializer.m */,
-			);
-			path = RequestSerializer;
-			sourceTree = "<group>";
-		};
-		298FD5B31C0701E500BA707E /* ResponseSerializer */ = {
-			isa = PBXGroup;
-			children = (
-				298FD5B41C0701E500BA707E /* BaseResponseSerializer.h */,
-				298FD5B51C0701E500BA707E /* BaseResponseSerializer.m */,
-			);
-			path = ResponseSerializer;
 			sourceTree = "<group>";
 		};
 		298FD5B61C0701E500BA707E /* Configuration */ = {
@@ -509,15 +406,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		54A21AAE1C9C35350054ECFD /* BaseProvider */ = {
-			isa = PBXGroup;
-			children = (
-				54A21AAF1C9C35350054ECFD /* BaseProvider.h */,
-				54A21AB01C9C35350054ECFD /* BaseProvider.m */,
-			);
-			path = BaseProvider;
-			sourceTree = "<group>";
-		};
 		B130CBAF1D6D9106006FFD81 /* VO */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,24 +437,6 @@
 			path = VO;
 			sourceTree = "<group>";
 		};
-		B1DC18F31D78625500BA1B5D /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				B1DC18F41D78625500BA1B5D /* UIViewController+Analytics.h */,
-				B1DC18F51D78625500BA1B5D /* UIViewController+Analytics.m */,
-			);
-			path = Analytics;
-			sourceTree = "<group>";
-		};
-		B1DC18F61D78625500BA1B5D /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				B1DC18F71D78625500BA1B5D /* FabricConfiguration.h */,
-				B1DC18F81D78625500BA1B5D /* FabricConfiguration.m */,
-			);
-			path = Fabric;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -581,7 +451,6 @@
 				88741FCEB8C5BD325BE367FB /* Embed Pods Frameworks */,
 				88A452F02DC048CB957C4B8E /* Copy Pods Resources */,
 				29AFB21D1C04C7CB004AB1B6 /* Warnings */,
-				29B184A01C05C6A6001E9F1D /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -703,20 +572,6 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		29B184A01C05C6A6001E9F1D /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 49e7b7c76c3578ad4fa7e19c2aa1f973fffc0ab8 124e6525ddc31dda99556e49ea88009e464fa78b0f168e51acce1becbc5d3022";
-		};
 		88741FCEB8C5BD325BE367FB /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,18 +625,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
-				298FD6451C0701E500BA707E /* BaseRequestSerializer.m in Sources */,
-				298FD6441C0701E500BA707E /* BaseDTO.m in Sources */,
-				B1DC18F91D78625500BA1B5D /* UIViewController+Analytics.m in Sources */,
-				298FD6431C0701E500BA707E /* LoaderManager+BaseiOS.m in Sources */,
 				290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
-				298FD6461C0701E500BA707E /* BaseResponseSerializer.m in Sources */,
 				298FD64A1C0701E500BA707E /* main.m in Sources */,
-				B1DC18FA1D78625500BA1B5D /* FabricConfiguration.m in Sources */,
-				298FD6411C0701E500BA707E /* BaseViewController.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
-				54A21AB11C9C35350054ECFD /* BaseProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

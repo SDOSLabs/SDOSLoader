@@ -14,7 +14,7 @@
 #define SWITCH(s)                       for (NSString *__s__ = (s); ; )
 #define DEFAULT
 
-#import "ConstantsCoreiOS.h"
+#import <SDOSLocalizableString/SDOSLocalizableString.h>
 
 #define LoaderDefaultSize CGSizeMake(50, 50)
 #define LoaderDefaultLoaderText LS(@"coreiOS.cargando")
@@ -252,7 +252,7 @@
                 frame = CGRectMake(0, 0, size.width, size.height);
             }
             
-            CoreiOSLogVerbose(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             M13ProgressViewRing *ring = [[M13ProgressViewRing alloc] initWithFrame:frame];
             ring.center = CGPointMake(view.frame.size.width / 2, view.frame.size.height / 2);
@@ -310,7 +310,7 @@
                 frame = CGRectMake(0, 0, size.width, size.height);
             }
             
-            CoreiOSLogVerbose(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             MDProgress *mdProgress = [[MDProgress alloc] initWithFrame:frame type:Indeterminate];
             mdProgress.progressStyle = Circular;
@@ -357,7 +357,7 @@
             break;
         }
         DEFAULT {
-            CoreiOSLogError(@"El loader \"%@\" no ha podico inicializarse", loaderType);
+            NSLog(@"El loader \"%@\" no ha podico inicializarse", loaderType);
             loaderObject = nil;
             break;
         }
@@ -381,12 +381,12 @@
 
 - (void) _showLoader:(LoaderObject *) loaderObject {
     if (!loaderObject.showBlock) {
-        CoreiOSLogError(@"No se ha podido mostrar el loader porque el bloque \"showBlock\" no ha sido inicializado");
+        NSLog(@"No se ha podido mostrar el loader porque el bloque \"showBlock\" no ha sido inicializado");
         return;
     }
     [self.activeLoaders setObject:loaderObject forKey:loaderObject.description];
     if (loaderObject.executeActionBlock) {
-        CoreiOSLogVerbose(@"Ejecutando bloque \"executeActionBlock(LoaderActionShow)\"");
+        NSLog(@"Ejecutando bloque \"executeActionBlock(LoaderActionShow)\"");
         loaderObject.executeActionBlock(loaderObject, LoaderActionShow);
     }
     loaderObject.showBlock(loaderObject);
@@ -419,11 +419,11 @@
 
 - (void) changeProgress:(CGFloat) progress fromLoader:(LoaderObject *) loaderObject {
     if (!loaderObject.changeProgressBlock) {
-        CoreiOSLogError(@"No se ha podido actualizar el progreso del loader porque el bloque \"changeProgressBlock\" no ha sido inicializado");
+        NSLog(@"No se ha podido actualizar el progreso del loader porque el bloque \"changeProgressBlock\" no ha sido inicializado");
         return;
     }
     if (loaderObject.executeActionBlock) {
-        CoreiOSLogVerbose(@"Ejecutando bloque \"executeActionBlock(LoaderActionChangeProgress)\"");
+        NSLog(@"Ejecutando bloque \"executeActionBlock(LoaderActionChangeProgress)\"");
         loaderObject.executeActionBlock(loaderObject, LoaderActionChangeProgress);
     }
     loaderObject.changeProgressBlock(loaderObject, progress);
@@ -431,11 +431,11 @@
 
 - (void) changeText:(NSString *) loaderText fromLoader:(LoaderObject *) loaderObject {
     if (!loaderObject.changeTextBlock) {
-        CoreiOSLogError(@"No se ha podido actualizar el progreso del loader porque el bloque \"changeTextBlock\" no ha sido inicializado");
+        NSLog(@"No se ha podido actualizar el progreso del loader porque el bloque \"changeTextBlock\" no ha sido inicializado");
         return;
     }
     if (loaderObject.executeActionBlock) {
-        CoreiOSLogVerbose(@"Ejecutando bloque \"executeActionBlock(LoaderActionChangeText)\"");
+        NSLog(@"Ejecutando bloque \"executeActionBlock(LoaderActionChangeText)\"");
         loaderObject.executeActionBlock(loaderObject, LoaderActionChangeText);
     }
     loaderObject.changeTextBlock(loaderObject, loaderText);
@@ -446,13 +446,13 @@
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(_showLoader:) object: loaderObject];
     
     if (!loaderObject.hideBlock) {
-        CoreiOSLogError(@"No se ha podido ocultar el loader porque el bloque \"hideBlock\" no ha sido inicializado");
+        NSLog(@"No se ha podido ocultar el loader porque el bloque \"hideBlock\" no ha sido inicializado");
         return;
     }
     [self.activeLoaders removeObjectForKey:loaderObject.description];
     
     if (loaderObject.executeActionBlock) {
-        CoreiOSLogVerbose(@"Ejecutando bloque \"executeActionBlock(LoaderActionHide)\"");
+        NSLog(@"Ejecutando bloque \"executeActionBlock(LoaderActionHide)\"");
         loaderObject.executeActionBlock(loaderObject, LoaderActionHide);
     }
     loaderObject.hideBlock(loaderObject);

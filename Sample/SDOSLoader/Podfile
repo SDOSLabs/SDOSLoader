@@ -15,80 +15,9 @@ use_frameworks!
 #=================================================
 
 #=====================Core=====================
-pod 'SDOS', :podspec => 'SDOS.podspec'
-pod 'SDOSCore', :podspec => 'SDOSCore.podspec'
+pod 'SDOS', :podspec => '../../../SDOS/SDOS.podspec'
+pod 'SDOSLocalizableString', :podspec => '../../../SDOSLocalizableString/SDOSLocalizableString.podspec'
 pod 'SDOSLoader', :path => '../../'
-
-#=====================JSON y WS=====================
-#Librería para el modelado de datos de servicios web
-pod 'JSONModel', '~> 1.1.2'
-
-#Librería para la conexión de servicios web
-pod 'AFNetworking', '~> 2.6.2'
-
-#=====================CoreData=====================
-#Manejo de CoreData
-pod 'MagicalRecord', '= 2.3.0-cocoalumberjack'
-
-#Log para las operaciones con CoreData
-pod 'MagicalRecord/CocoaLumberjack'
-
-#=====================Interfaz y animaciones=====================
-#Conjunto de componentes visuales con estilo MaterialDesign
-pod 'MaterialControlsCustom'
-
-#=====================Log y Debugging=====================
-#Sistema de Log con diferentes niveles y colores
-pod 'CocoaLumberjack', '~> 2.2.0'
-
-#Librería para poder debuguear pantallas a nivel visual, llamadas a servicios, etc.
-pod 'FLEX', '~> 2.0'
-
-#Librería para poder parametrizar valores dependiendo del entorno en el que se este ejecutando la aplicación
-pod 'KZBootstrap'
-
-#=====================Localización=====================
-#Librería para poder recuperar la localización 
-pod 'INTULocationManager', '~> 4.1.1'
-
-#=====================Loaders=====================
-#Vista de loader simple de texto y progreso
-pod 'MBProgressHUD', '~> 0.9.1'
-pod 'M13ProgressSuite', '~> 1.2.8'
-
-#=====================Autolayout=====================
-#Librería para el manejo de autolayout por código
-pod 'PureLayout', '~> 3.0.1'
-
-#=====================Imágenes=====================
-#Librería para la carga de imágenes desde Urls
-pod 'SDWebImage', '~> 3.7.3'
-
-#=====================Teclado=====================
-#Librería para el manejo del teclado en las vistas. Hace que el teclado no pise los campos de edición
-pod 'IQKeyboardManager', '~> 3.3.4'
-
-#=====================Potenciador de código=====================
-#Librería que añade una serie de funcionalidades que potencia el código
-pod 'libextobjc', '~> 0.4.1'
-
-#Librería con extensiones de las clases nativas para añadir y potenciar la funcionalidad
-pod 'Extensions', '~> 1.0.0'
-
-#=====================Push=====================
-#Librería para el uso de notificaciones push
-pod 'Octopush', '~> 3.3.0'
-
-#=====================Otras=====================
-#Librería para contabilizar el número de veces que un dispositivo abre la aplicación
-pod 'GBVersionTracking', '~> 1.3.1'
-
-#Librería para el reporte de errores y subidas a preproducción
-pod 'Fabric', '~> 1.6.0'
-pod 'Crashlytics', '~> 3.4.1'
-
-#Librería para la gestión de analíticas con Google
-pod 'Google/Analytics', '~> 3.0.3'
 
 #=====================Script post install=====================
 post_install do |installer|
