@@ -27,10 +27,10 @@ Pod::Spec.new do |spec|
     end
   end
 
-  spec.dependency 'MBProgressHUD', '~> 1.0.0'
-  spec.dependency 'M13ProgressSuite', '~> 1.2.0'
-  spec.dependency 'MaterialControlsCustom', '~> 1.1.0'
-  spec.dependency 'PureLayout'
-  spec.dependency 'SDOSLocalizableString', '~> 1.0.0'
+  spec.dependency 'MBProgressHUD', '~> 1.0'
+  spec.dependency 'M13ProgressSuite', '~> 1.2'
+  spec.dependency 'MaterialControlsCustom', '~> 1.1'
+  spec.dependency 'PureLayout', '~> 3.0'
+  spec.dependency 'SDOSLocalizableString', '~> 1.0'
 
 end
