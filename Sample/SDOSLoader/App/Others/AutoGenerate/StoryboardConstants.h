@@ -1,8 +1,8 @@
 //  FICHERO AUTOGENERADO - NO MODIFICAR
 //  StoryboardConstants.h
 //
-//  Created by SDOS on 11/26/2015.
-//  Copyright (c) 2015 SDOS. All rights reserved.
+//  Created by SDOS on 10/22/2016.
+//  Copyright (c) 2016 SDOS. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

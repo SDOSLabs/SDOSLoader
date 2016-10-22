@@ -577,7 +577,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/CoreiOS/CoreiOS/Scripts/CoreiOS.sh\"";
+			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"";
 		};
 		29AFB21D1C04C7CB004AB1B6 /* Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
