@@ -50,6 +50,7 @@
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
 		9354CCEE813BB4ACE29FB959 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EFE1856AE679994C7C312D /* Pods.framework */; };
+		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,8 @@
 		536F1DE3DB46B16D79E1EBC6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6CFE79CBCF6ACC061DA596A9 /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = "<group>"; };
 		9755BC217EA35AF447E089E5 /* Pods.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.preproduction.xcconfig; path = "Pods/Target Support Files/Pods/Pods.preproduction.xcconfig"; sourceTree = "<group>"; };
+		B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
+		B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
 		D93CFC804C1BCDDCEA11B061 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +121,7 @@
 			children = (
 				290A16A31BFB3146002361EF /* AppDelegate.h */,
 				290A16A41BFB3146002361EF /* AppDelegate.m */,
+				B12F4C381DBB89BB0061E9F1 /* Base */,
 				298FD5B61C0701E500BA707E /* Configuration */,
 				298FD5C61C0701E500BA707E /* Controllers */,
 				298FD6141C0701E500BA707E /* DataSource */,
@@ -406,6 +410,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B12F4C381DBB89BB0061E9F1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B12F4C3A1DBB89BB0061E9F1 /* Loader */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B12F4C3A1DBB89BB0061E9F1 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */,
+				B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		B130CBAF1D6D9106006FFD81 /* VO */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +650,7 @@
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
 				298FD64A1C0701E500BA707E /* main.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
+				B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

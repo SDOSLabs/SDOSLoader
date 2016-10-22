@@ -6,8 +6,6 @@
 //  Copyright © 2015 SDOS. All rights reserved.
 //
 
-#import "UtilCoreiOS.h"
-
 @interface Util : NSObject
 
 @end

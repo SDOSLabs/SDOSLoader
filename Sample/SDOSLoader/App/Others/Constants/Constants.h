@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ConstantsCoreiOS.h"
 #import "ConstantsColor.h"
 #import "ConstantsWS.h"
 #import "ConstantsFonts.h"

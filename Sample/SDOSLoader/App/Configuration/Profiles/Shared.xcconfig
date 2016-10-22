@@ -7,5 +7,5 @@
 //  
 
 //Aplicación
-APP_NAME = BaseProject
-BASE_PRODUCT_PACKAGE_NAME = es.sdos.baseProject
+APP_NAME = Loader
+BASE_PRODUCT_PACKAGE_NAME = es.sdos.sdosloader

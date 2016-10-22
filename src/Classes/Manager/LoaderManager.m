@@ -6,13 +6,13 @@
 //  Copyright © 2015 SDOS. All rights reserved.
 //
 
-#undef CASE
-#undef SWITCH
-#undef DEFAULT
+#undef CASE_LOADER
+#undef SWITCH_LOADER
+#undef DEFAULT_LOADER
 
-#define CASE(str)                       if ([__s__ isEqualToString:(str)])
-#define SWITCH(s)                       for (NSString *__s__ = (s); ; )
-#define DEFAULT
+#define CASE_LOADER(str)                       if ([__s__ isEqualToString:(str)])
+#define SWITCH_LOADER(s)                       for (NSString *__s__ = (s); ; )
+#define DEFAULT_LOADER
 
 #import <SDOSLocalizableString/SDOSLocalizableString.h>
 
@@ -21,8 +21,6 @@
 
 #import "LoaderManager.h"
 #import "LoaderObjectPrivateInterface.h"
-#import "GenericLogFormatter.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
 
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <M13ProgressSuite/M13ProgressViewRing.h>
@@ -110,8 +108,8 @@
     [loaderObject setLoaderType:loaderType view:view size:size tag:tag];
     id<GenericLoaderCustomizationProtocol> loaderView;
     
-    SWITCH (loaderType) {
-        CASE (LoaderTypeText) {
+    SWITCH_LOADER (loaderType) {
+        CASE_LOADER (LoaderTypeText) {
             //Inicialización
             MBProgressHUD *hud = [self loadMBProgressHUD:view];
             hud.mode = MBProgressHUDModeText;
@@ -151,7 +149,7 @@
             
             break;
         }
-        CASE (LoaderTypeProgressCircular) {
+        CASE_LOADER (LoaderTypeProgressCircular) {
             //Inicialización
             MBProgressHUD *hud = [self loadMBProgressHUD:view];
             hud.mode = MBProgressHUDModeAnnularDeterminate;
@@ -197,7 +195,7 @@
             
             break;
         }
-        CASE (LoaderTypeProgressBar) {
+        CASE_LOADER (LoaderTypeProgressBar) {
             //Inicialización
             MBProgressHUD *hud = [self loadMBProgressHUD:view];
             hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
@@ -242,7 +240,7 @@
             };
             break;
         }
-        CASE (LoaderTypeProgressCircularWithProgress) {
+        CASE_LOADER (LoaderTypeProgressCircularWithProgress) {
             //Inicialización
             NSAssert((view), @"Es necesario un view para este tipo de loader");
             CGRect frame;
@@ -300,7 +298,7 @@
             
             break;
         }
-        CASE (LoaderTypeIndeterminateCircular) {
+        CASE_LOADER (LoaderTypeIndeterminateCircular) {
             NSAssert((view), @"Es necesario un view para este tipo de loader");
             
             CGRect frame;
@@ -356,7 +354,7 @@
             };
             break;
         }
-        DEFAULT {
+        DEFAULT_LOADER {
             NSLog(@"El loader \"%@\" no ha podico inicializarse", loaderType);
             loaderObject = nil;
             break;

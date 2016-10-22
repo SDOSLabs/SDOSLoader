@@ -22,11 +22,15 @@ Pod::Spec.new do |spec|
     s2.subspec 'Private' do |s3|
       s3.source_files = 'src/Classes/Private/{*.m,*.h}'
     end
+    s2.subspec 'Protocols' do |s3|
+      s3.source_files = 'src/Classes/Protocols/{*.m,*.h}'
+    end
   end
 
-  spec.dependency 'MBProgressHUD'
-  spec.dependency 'M13ProgressSuite'
-  spec.dependency 'MaterialControlsCustom'
-  spec.dependency 'SDOSLocalizableString'
+  spec.dependency 'MBProgressHUD', '~> 1.0.0'
+  spec.dependency 'M13ProgressSuite', '~> 1.2.0'
+  spec.dependency 'MaterialControlsCustom', '~> 1.1.0'
+  spec.dependency 'PureLayout'
+  spec.dependency 'SDOSLocalizableString', '~> 1.0.0'
 
 end
