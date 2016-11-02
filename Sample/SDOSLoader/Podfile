@@ -1,4 +1,4 @@
-source 'http://git.sdos.es/ios/cocoapods-specs.git'
+source 'http://git.sdos.es/ios/CocoaPods-Specs-Test.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '8.0'
@@ -15,8 +15,8 @@ use_frameworks!
 #=================================================
 
 #=====================Core=====================
-pod 'SDOS', :podspec => '../../../SDOS/SDOS.podspec'
-pod 'SDOSLocalizableString', :podspec => '../../../SDOSLocalizableString/SDOSLocalizableString.podspec'
+pod 'SDOS/Loader', '~> 1.0'
+pod 'SDOSLocalizableString'
 pod 'SDOSLoader', :path => '../../'
 
 #=====================Script post install=====================
