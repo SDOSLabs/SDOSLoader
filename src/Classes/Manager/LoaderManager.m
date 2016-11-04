@@ -115,7 +115,7 @@
             hud.mode = MBProgressHUDModeText;
             loaderView = (MBProgressHUD<GenericLoaderCustomizationProtocol> *)hud;
             
-            //Protocolo para la peronalización del estilo
+            //Protocolo para la personalización del estilo
             if ([hud conformsToProtocol:@protocol(GenericLoaderCustomizationProtocol)]) {
                 if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
                     [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType];

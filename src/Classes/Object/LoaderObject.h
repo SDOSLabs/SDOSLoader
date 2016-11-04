@@ -50,7 +50,7 @@ typedef void (^LoaderExecuteActionBlock)(LoaderObject *loaderObject, LoaderActio
 @property (nonatomic, strong, readonly) NSString *loaderType;
 
 /**
- *  Identificador del loader. Es una valor que se usa para diferenciar loaders del mismo tipo de forma única. La asignación debe ser manual
+ *  Identificador del loader. Es un valor que se usa para diferenciar loaders del mismo tipo de forma única. La asignación debe ser manual
  */
 @property (nonatomic, assign, readonly) NSInteger tag;
 
@@ -82,7 +82,7 @@ typedef void (^LoaderExecuteActionBlock)(LoaderObject *loaderObject, LoaderActio
 @property (nonatomic, strong) NSArray<UIView *> *hideViews;
 
 /**
- *  Elementos para deshabilitar la presentación del loader. enable = FALSE
+ *  Elementos para deshabilitar para la presentación del loader. enable = FALSE
  *  Cuando se oculte el loader se habilitarán
  */
 @property (nonatomic, strong) NSArray<UIControl *> *disableControls;

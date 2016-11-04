@@ -45,11 +45,11 @@ static const LoaderType LoaderTypeProgressCircularWithProgress = @"LoaderTypePro
 static const LoaderType LoaderTypeIndeterminateCircular = @"LoaderTypeIndeterminateCircular";
 
 /**
- *  Clase encargada de manejar cualquier tipo de loader de la aplicación. Proporciona funcionalidades para mostrar y ocultar los loaders de forma conrolada.
+ *  Clase encargada de manejar cualquier tipo de loader de la aplicación. Proporciona funcionalidades para mostrar y ocultar los loaders de forma controlada.
  *  Para añadir un nuevo loader es necesario sobrescribir el metodo de la inicialización para añadir el nuevo tipo (A través de categorías y sin perder la implementación original)
  *  Para el correcto funcionamiento, durante la inicialización es necesario asignar los bloques "showBlock" y "hideBlock" de forma obligatoria
- *  Opcionalmente se implementaria el bloque "progressBlock" para modificar el progreso y el bloque "changeTextBlock" para modificar el texto
- *  Los loaders se pueden personalizar con las propieades que él mismo permita. Para ello se debe crear una categoría que responda al protocolo "GenericLoaderCustomizationProtocol". Normalmente esto se hará en el fichero de diseño del proyecto.
+ *  Opcionalmente se implementaría el bloque "progressBlock" para modificar el progreso y el bloque "changeTextBlock" para modificar el texto
+ *  Los loaders se pueden personalizar con las propiedades que él mismo permita. Para ello se debe crear una categoría que responda al protocolo "GenericLoaderCustomizationProtocol". Normalmente esto se hará en el fichero de diseño del proyecto.
  */
 @interface LoaderManager : NSObject
 
