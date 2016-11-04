@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LoaderAttributeModifier <NSObject>
+
+-(void)loaderSupportsAttribute:(BOOL)supported;
+
+@end
+
 @interface ExampleLoaderViewController : UIViewController
 
 @end

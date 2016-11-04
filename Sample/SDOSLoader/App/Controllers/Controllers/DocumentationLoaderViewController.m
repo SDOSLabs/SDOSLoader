@@ -1,26 +1,22 @@
 //
-//  ExampleLoaderViewController.m
+//  DocumentationLoaderViewController.m
 //  SDOSUtil
 //
-//  Created by Antonio Jesús Pallares on 26/10/16.
+//  Created by Antonio Jesús Pallares on 03/11/16.
 //  Copyright © 2016 SDOS. All rights reserved.
 //
 
-#import "DocumentationLoaderViewController"
+#import "DocumentationLoaderViewController.h"
 #import <WebKit/WebKit.h>
 #import "ConstantsWS.h"
-#import "VersionTrackingViewController.h"
-#import "UtilSDOS.h"
 
 #define SEE_EXAMPLE_TEXT NSLocalizedString(@"Example.btnTitle", @"")
 #define VERSION_STR_FORMAT NSLocalizedString(@"Example.version", @"")
 #define GO_BACK_BUTTON_TITLE @"<"
 #define GO_FORWARD_BUTTON_TITLE @">"
 
-#define EXAMPLE_ALERT_OK_ACTION_TITLE NSLocalizedString(@"Example.alertOkActionTitle", @"")
-#define EXAMPLE_ALERT_MSG NSLocalizedString(@"Example.alertMsg", @"")
 
-@interface ExampleLoaderViewController () <WKNavigationDelegate>
+@interface DocumentationLoaderViewController () <WKNavigationDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *viewForWebView;
 @property (strong, nonatomic) WKWebView *webView;
@@ -35,7 +31,7 @@
 
 @end
 
-@implementation ExampleLoaderViewController
+@implementation DocumentationLoaderViewController
 
 #pragma mark - Properties
 
@@ -167,8 +163,8 @@
 #pragma mark - User Interaction
 
 - (IBAction)showExample {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:ExampleUtil bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:VersionTrackingNavigationController];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:ExampleLoader bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:ExampleLoaderNavigationController];
     
     [self presentViewController:vc animated:YES completion:nil];
 }
@@ -213,13 +209,5 @@
 
 #pragma mark - Alerts
 
-- (void) showSeeConsoleAlert {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:EXAMPLE_ALERT_MSG preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:EXAMPLE_ALERT_OK_ACTION_TITLE style:UIAlertActionStyleCancel handler:nil];
-    
-    [alert addAction:okAction];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-}
 
 @end

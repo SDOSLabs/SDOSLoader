@@ -6,8 +6,25 @@
 //  Copyright © 2016 SDOS. All rights reserved.
 //
 
+#define ChooseSliderCellIdentifier @"ChooseSliderCellIdentifier"
+
 #import <UIKit/UIKit.h>
 
-@interface ChooseSliderTableViewCell : UITableViewCell
+typedef enum {
+    SliderTypeSize,
+    SliderTypeLoadingTime,
+} SliderType;
+
+@protocol ChooseSliderDelegate <NSObject>
+
+- (void) sliderOfType:(SliderType)sliderType changedToValue:(CGFloat)value;
+
+@end
+
+@interface ChooseSliderTableViewCell : UITableViewCell <LoaderAttributeModifier>
+
+@property (weak, nonatomic, readonly) IBOutlet UISlider *slider;
+
+- (void)setDelegate:(id<ChooseSliderDelegate>)delegate forSliderType:(SliderType)sliderType minValue:(CGFloat)min maxValue:(CGFloat)max;
 
 @end

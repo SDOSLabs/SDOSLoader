@@ -18,7 +18,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[UIViewController alloc] init];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:ExampleLoader bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    
+    self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     
     return YES;
