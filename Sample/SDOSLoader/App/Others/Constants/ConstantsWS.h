@@ -7,3 +7,5 @@
 //
 
 #import <Foundation/Foundation.h>
+
+#define DOCUMENTATION_URL @"http://kc.sdos.es/display/mobility/SDOSLoader"

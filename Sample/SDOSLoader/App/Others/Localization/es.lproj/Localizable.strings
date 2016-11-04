@@ -1,7 +1,16 @@
-//Core iOS
+// Example - Loader
 
 "coreiOS.cargando" = "Cargando";
-"coreiOS.error.titleDefault" = "Atención";
-"coreiOS.error.closeDefault" = "Cerrar";
-"coreiOS.error.sinConexion" = "No se ha detectado ninguna conexión. Por favor conectese a una red para obtener la información.";
-"coreiOS.error.desconocido" = "Ha ocurrido un error desconocido. Contacte con el administrador de la aplicación.";
+
+"Example.btnTitle" = "Ver ejemplo";
+"Example.version" = "Versión %@";
+
+"Example.ChooseLoaderType" = "Elige el tipo de Loader";
+"Example.CustomizeLoader" = "Personaliza el Loader";
+"Example.chosenSize" = "Tamaño del loader: %1$lux%1$lu";
+"Example.chosenLoadingTime" = "Tiempo de carga: %.f segundos";
+"Example.changeTextForLoader" = "Texto para el Loader";
+
+"Example.sizeNotSupportedByLoader" = "Loader con tamaño fijo";
+"Example.textNotSupportedByLoader" = "Loader sin texto modificable";
+"Example.LoadingTimeNotSupportedByLoader" = "Loader con duración fija";

@@ -1,8 +1,7 @@
 //  FICHERO AUTOGENERADO - NO MODIFICAR
 //  ImagesConstants.h
 //
-//  Created by SDOS on 10/22/2016.
-//  Copyright (c) 2016 SDOS. All rights reserved.
+//  Created by SDOS
 //
 
 #define IMG_Default_568h [UIImage imageFromBundle:@"Default-568h.png"]
