@@ -19,6 +19,8 @@ pod 'SDOS/Loader', '~> 1.0'
 pod 'SDOSLocalizableString'
 pod 'SDOSLoader', :path => '../../'
 
+pod 'IQKeyboardManager'
+
 #=====================Script post install=====================
 post_install do |installer|
     installer.pods_project.targets.each do |target|
