@@ -11,6 +11,7 @@
 #import "ChooseLoaderTypeTableViewCell.h"
 #import "ChooseSliderTableViewCell.h"
 #import "ChooseTextForLoaderTableViewCell.h"
+#import "ChooseLoaderStyleTableViewCell.h"
 
 #define SECTION_CHOOSE_LOADER_TYPE 0
 #define SECTION_CUSTOMIZE_LOADER 1
@@ -18,7 +19,7 @@
 #define TIME_BETWEEN_UPDATES_IN_LOADERS 0.1 // seconds
 
 
-@interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, ChooseSliderDelegate, ChooseTextForLoaderDelegate, UITableViewDataSource>
+@interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, ChooseSliderDelegate, ChooseTextForLoaderDelegate, ChooseLoaderStyleDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -29,6 +30,7 @@
 @property (nonatomic) CGFloat selectedLoadingTime; // seconds
 @property (nonatomic) CGSize selectedLoaderSize;
 @property (copy, nonatomic) NSString *selectedLoaderText;
+@property (nonatomic) NSInteger selectedTagForLoaderStyle;
 
 @property (strong, nonatomic) LoaderObject *loaderShowing;
 
@@ -40,6 +42,7 @@
 @property (strong, nonatomic) ChooseSliderTableViewCell *cellLoadingTimeLoader;
 @property (strong, nonatomic) ChooseSliderTableViewCell *cellSizeLoader;
 @property (strong, nonatomic) ChooseTextForLoaderTableViewCell *cellTextLoader;
+@property (strong, nonatomic) ChooseLoaderStyleTableViewCell *cellLoaderStyle;
 
 
 @end
@@ -92,6 +95,8 @@
     [self.tableView registerNib:chooseSliderCellNib forCellReuseIdentifier:ChooseSliderCellIdentifier];
     UINib *chooseTextForLoaderCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseTextForLoaderTableViewCell class]) bundle:nil];
     [self.tableView registerNib:chooseTextForLoaderCellNib forCellReuseIdentifier:ChooseTextForLoaderCellIdentifier];
+    UINib *chooseLoaderStyleCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderStyleTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:chooseLoaderStyleCellNib forCellReuseIdentifier:ChooseLoaderStyleCellIdentifier];
 }
 
 #pragma mark - Properties
@@ -129,6 +134,17 @@
     
     if ([cell isKindOfClass:[ChooseTextForLoaderTableViewCell class]]) {
         return (ChooseTextForLoaderTableViewCell *)cell;
+    }
+    return nil;
+}
+
+-(ChooseLoaderStyleTableViewCell *)cellLoaderStyle {
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:SECTION_CUSTOMIZE_LOADER];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([cell isKindOfClass:[ChooseLoaderStyleTableViewCell class]]) {
+        return (ChooseLoaderStyleTableViewCell *)cell;
     }
     return nil;
 }
@@ -222,14 +238,26 @@
     }
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField {
-    
-}
-
 -(void)didChangeTextForLoader:(NSString *)text {
     self.selectedLoaderText = text;
 }
 
+
+#pragma mark - ChooseLoaderStyleDelegate
+
+-(void)didChangeLoaderStyle:(LoaderStyle)loaderStyle {
+    switch (loaderStyle) {
+        case LoaderStyleDefault:
+            self.selectedTagForLoaderStyle = LOADER_TAG_DEFAULT_APPEARANCE_LOADER;
+            break;
+        case LoaderStyleCustom:
+            self.selectedTagForLoaderStyle = LOADER_TAG_CUSTOMIZED_LOADER;
+            break;
+        default:
+            self.selectedTagForLoaderStyle = LOADER_TAG_DEFAULT_APPEARANCE_LOADER;
+            break;
+    }
+}
 
 #pragma mark - UITableViewDataSource
 
@@ -243,7 +271,7 @@
             return 1;
             break;
         case SECTION_CUSTOMIZE_LOADER:
-            return 3;
+            return 4;
             break;
         default:
             return 0;
@@ -311,6 +339,13 @@
                 
                 [textCell setChooseTextForLoaderDelegate:self];
             }
+        } else if (indexPath.row == 3) {
+            cell = [tableView dequeueReusableCellWithIdentifier:ChooseLoaderStyleCellIdentifier forIndexPath:indexPath];
+            if ([cell isKindOfClass:[ChooseLoaderStyleTableViewCell class]]) {
+                ChooseLoaderStyleTableViewCell *styleCell = (ChooseLoaderStyleTableViewCell *)cell;
+                
+                [styleCell setChooseLoaderStyleDelegate:self];
+            }
         }
     }
     
@@ -327,7 +362,7 @@
 
 - (LoaderObject *)configuredLoader {
     
-    LoaderObject *loader = [LoaderManager loaderWithType:self.selectedLoaderType inView:self.view size:self.selectedLoaderSize];
+    LoaderObject *loader = [LoaderManager loaderWithType:self.selectedLoaderType inView:self.view size:self.selectedLoaderSize tag:self.selectedTagForLoaderStyle];
     if (self.selectedLoaderText.length > 0) {
         [LoaderManager changeText:self.selectedLoaderText fromLoader:loader];
     }
@@ -383,6 +418,7 @@
     BOOL loaderSupportsLoadingTime = YES;
     BOOL loaderSupportsSize = YES;
     BOOL loaderSupportsText = YES;
+    BOOL loaderSupportsCustomStyle = YES;
     
     LoaderType type = self.selectedLoaderType;
     
@@ -397,6 +433,7 @@
     [self.cellLoadingTimeLoader loaderSupportsAttribute:loaderSupportsLoadingTime];
     [self.cellSizeLoader loaderSupportsAttribute:loaderSupportsSize];
     [self.cellTextLoader loaderSupportsAttribute:loaderSupportsText];
+    [self.cellLoaderStyle loaderSupportsAttribute:loaderSupportsCustomStyle];
 }
 
 @end

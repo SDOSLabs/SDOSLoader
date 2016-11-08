@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChooseLoaderStyleTableViewCell : UITableViewCell
+#define ChooseLoaderStyleCellIdentifier @"ChooseLoaderStyleCellIdentifier"
+
+
+typedef enum {
+    LoaderStyleDefault,
+    LoaderStyleCustom
+} LoaderStyle;
+
+@protocol ChooseLoaderStyleDelegate <NSObject>
+
+- (void) didChangeLoaderStyle:(LoaderStyle)loaderStyle;
+
+@end
+
+@interface ChooseLoaderStyleTableViewCell : UITableViewCell <LoaderAttributeModifier>
+
+- (void)setChooseLoaderStyleDelegate:(id<ChooseLoaderStyleDelegate>)delegate;
 
 @end

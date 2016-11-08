@@ -6,8 +6,5 @@
 //  Copyright © 2016 SDOS. All rights reserved.
 //
 
-#ifndef ConstantsLoader_h
-#define ConstantsLoader_h
-
-
-#endif /* ConstantsLoader_h */
+#define LOADER_TAG_CUSTOMIZED_LOADER 1
+#define LOADER_TAG_DEFAULT_APPEARANCE_LOADER 0
