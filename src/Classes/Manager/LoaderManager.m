@@ -115,16 +115,6 @@
             hud.mode = MBProgressHUDModeText;
             loaderView = (MBProgressHUD<GenericLoaderCustomizationProtocol> *)hud;
             
-            //Protocolo para la personalización del estilo
-            if ([hud conformsToProtocol:@protocol(GenericLoaderCustomizationProtocol)]) {
-                if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType];
-                }
-                if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:tag:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType tag:loaderObject.tag];
-                }
-            }
-            
             //Bloque para mostrar
             loaderObject.showBlock = ^(LoaderObject *loaderObject){
                 MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
@@ -154,16 +144,6 @@
             MBProgressHUD *hud = [self loadMBProgressHUD:view];
             hud.mode = MBProgressHUDModeAnnularDeterminate;
             loaderView = (MBProgressHUD<GenericLoaderCustomizationProtocol> *)hud;
-            
-            //Protocolo para la peronalización del estilo
-            if ([hud conformsToProtocol:@protocol(GenericLoaderCustomizationProtocol)]) {
-                if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType];
-                }
-                if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:tag:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType tag:loaderObject.tag];
-                }
-            }
             
             //Bloque para mostrar
             loaderObject.showBlock = ^(LoaderObject *loaderObject){
@@ -200,16 +180,6 @@
             MBProgressHUD *hud = [self loadMBProgressHUD:view];
             hud.mode = MBProgressHUDModeDeterminateHorizontalBar;
             loaderView = (MBProgressHUD<GenericLoaderCustomizationProtocol> *)hud;
-            
-            //Protocolo para la peronalización del estilo
-            if ([hud conformsToProtocol:@protocol(GenericLoaderCustomizationProtocol)]) {
-                if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType];
-                }
-                if ([hud respondsToSelector:@selector(loaderCustomizationInitWithType:tag:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)hud loaderCustomizationInitWithType:loaderObject.loaderType tag:loaderObject.tag];
-                }
-            }
             
             //Bloque para mostrar
             loaderObject.showBlock = ^(LoaderObject *loaderObject){
@@ -256,17 +226,7 @@
             ring.center = CGPointMake(view.frame.size.width / 2, view.frame.size.height / 2);
             
             loaderView = (id<GenericLoaderCustomizationProtocol>)ring;
-            
-            //Protocolo para la peronalización del estilo
-            if ([ring conformsToProtocol:@protocol(GenericLoaderCustomizationProtocol)]) {
-                if ([ring respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)ring loaderCustomizationInitWithType:loaderObject.loaderType];
-                }
-                if ([ring respondsToSelector:@selector(loaderCustomizationInitWithType:tag:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)ring loaderCustomizationInitWithType:loaderObject.loaderType tag:loaderObject.tag];
-                }
-            }
-            
+
             //Bloque para mostrar
             loaderObject.showBlock = ^(LoaderObject *loaderObject){
                 M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
@@ -318,16 +278,6 @@
             //Asignación del loader
             loaderView = (id<GenericLoaderCustomizationProtocol>) mdProgress;
             
-            //Protocolo para la peronalización del estilo
-            if ([mdProgress conformsToProtocol:@protocol(GenericLoaderCustomizationProtocol)]) {
-                if ([mdProgress respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)mdProgress loaderCustomizationInitWithType:loaderObject.loaderType];
-                }
-                if ([mdProgress respondsToSelector:@selector(loaderCustomizationInitWithType:tag:)]) {
-                    [(id<GenericLoaderCustomizationProtocol>)mdProgress loaderCustomizationInitWithType:loaderObject.loaderType tag:loaderObject.tag];
-                }
-            }
-            
             //Bloque para mostrar
             loaderObject.showBlock = ^(LoaderObject *loaderObject){
                 MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
@@ -358,6 +308,16 @@
             NSLog(@"El loader \"%@\" no ha podico inicializarse", loaderType);
             loaderObject = nil;
             break;
+        }
+    }
+    
+    if (loaderView) {
+        //Protocolo para la peronalización del estilo
+        if ([loaderView respondsToSelector:@selector(loaderCustomizationInitWithType:)]) {
+            [loaderView loaderCustomizationInitWithType:loaderObject.loaderType];
+        }
+        if ([loaderView respondsToSelector:@selector(loaderCustomizationInitWithType:tag:)]) {
+            [loaderView loaderCustomizationInitWithType:loaderObject.loaderType tag:loaderObject.tag];
         }
     }
     
