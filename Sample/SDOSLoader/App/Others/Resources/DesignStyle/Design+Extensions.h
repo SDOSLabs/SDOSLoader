@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 S·dos. All rights reserved.
 //
 
+#import "MDProgress.h"
+#import "MBProgressHUD.h"
+#import "M13ProgressViewRing.h"
+
 #pragma mark - UIButton
 
 @interface UIButton (Design)
@@ -150,3 +154,20 @@
 
 @end
 
+#pragma mark - MDProgress
+
+@interface MDProgress (Design) <GenericLoaderCustomizationProtocol>
+
+@end
+
+#pragma mark - MBProgressHUD
+
+@interface MBProgressHUD (Design) <GenericLoaderCustomizationProtocol>
+
+@end
+
+#pragma mark -  M13ProgressViewRing
+
+@interface  M13ProgressViewRing (Design) <GenericLoaderCustomizationProtocol>
+
+@end

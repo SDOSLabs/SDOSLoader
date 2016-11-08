@@ -37,18 +37,23 @@
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
 		298FD64A1C0701E500BA707E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5BB1C0701E500BA707E /* main.m */; };
 		298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
-		298FD64C1C0701E500BA707E /* App.preproduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BE1C0701E500BA707E /* App.preproduction.xcconfig */; };
-		298FD64D1C0701E500BA707E /* App.production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BF1C0701E500BA707E /* App.production.xcconfig */; };
 		298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C01C0701E500BA707E /* Shared.xcconfig */; };
-		298FD64F1C0701E500BA707E /* KZBEnvironments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C21C0701E500BA707E /* KZBEnvironments.plist */; };
-		298FD6501C0701E500BA707E /* Octopush.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C31C0701E500BA707E /* Octopush.plist */; };
-		298FD6511C0701E500BA707E /* PantallasAnalytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C41C0701E500BA707E /* PantallasAnalytics.plist */; };
-		298FD6521C0701E500BA707E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C51C0701E500BA707E /* Settings.bundle */; };
 		298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD62C1C0701E500BA707E /* StoryboardConstants.m */; };
 		298FD6711C0701E500BA707E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 298FD6341C0701E500BA707E /* Localizable.strings */; };
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		5C1BC5C51DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */; };
+		5C1BC5C81DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */; };
+		5C4AD1E21DCB228900F05FD9 /* ExampleLoader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */; };
+		5C4AD1E51DCB23A300F05FD9 /* ExampleLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E41DCB23A300F05FD9 /* ExampleLoaderViewController.m */; };
+		5C4AD1E71DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E61DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib */; };
+		5C4AD1EA1DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E91DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m */; };
+		5C4AD1ED1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1EC1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m */; };
+		5C4AD1EF1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1EE1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib */; };
+		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
+		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
+		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
 		9354CCEE813BB4ACE29FB959 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EFE1856AE679994C7C312D /* Pods.framework */; };
 		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
 /* End PBXBuildFile section */
@@ -64,13 +69,7 @@
 		298FD5BA1C0701E500BA707E /* Launcher.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launcher.xcassets; sourceTree = "<group>"; };
 		298FD5BB1C0701E500BA707E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		298FD5BD1C0701E500BA707E /* App.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = App.debug.xcconfig; sourceTree = "<group>"; };
-		298FD5BE1C0701E500BA707E /* App.preproduction.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = App.preproduction.xcconfig; sourceTree = "<group>"; };
-		298FD5BF1C0701E500BA707E /* App.production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = App.production.xcconfig; sourceTree = "<group>"; };
 		298FD5C01C0701E500BA707E /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
-		298FD5C21C0701E500BA707E /* KZBEnvironments.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KZBEnvironments.plist; sourceTree = "<group>"; };
-		298FD5C31C0701E500BA707E /* Octopush.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Octopush.plist; sourceTree = "<group>"; };
-		298FD5C41C0701E500BA707E /* PantallasAnalytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PantallasAnalytics.plist; sourceTree = "<group>"; };
-		298FD5C51C0701E500BA707E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		298FD5CA1C0701E500BA707E /* Leeme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Leeme.txt; sourceTree = "<group>"; };
 		298FD6261C0701E500BA707E /* Leeme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Leeme.txt; sourceTree = "<group>"; };
 		298FD6291C0701E500BA707E /* KZBootstrapConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZBootstrapConstants.h; sourceTree = "<group>"; };
@@ -89,6 +88,24 @@
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
 		536F1DE3DB46B16D79E1EBC6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTableViewCell.xib; sourceTree = "<group>"; };
+		5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTableViewCell.h; sourceTree = "<group>"; };
+		5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderStyleTableViewCell.m; sourceTree = "<group>"; };
+		5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleLoader.storyboard; sourceTree = "<group>"; };
+		5C4AD1E31DCB23A300F05FD9 /* ExampleLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleLoaderViewController.h; sourceTree = "<group>"; };
+		5C4AD1E41DCB23A300F05FD9 /* ExampleLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleLoaderViewController.m; sourceTree = "<group>"; };
+		5C4AD1E61DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderTypeTableViewCell.xib; sourceTree = "<group>"; };
+		5C4AD1E81DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderTypeTableViewCell.h; sourceTree = "<group>"; };
+		5C4AD1E91DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderTypeTableViewCell.m; sourceTree = "<group>"; };
+		5C4AD1EB1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSliderTableViewCell.h; sourceTree = "<group>"; };
+		5C4AD1EC1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSliderTableViewCell.m; sourceTree = "<group>"; };
+		5C4AD1EE1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseSliderTableViewCell.xib; sourceTree = "<group>"; };
+		5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTextForLoaderTableViewCell.xib; sourceTree = "<group>"; };
+		5C4AD1F21DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTextForLoaderTableViewCell.h; sourceTree = "<group>"; };
+		5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTextForLoaderTableViewCell.m; sourceTree = "<group>"; };
+		5CB30D1F1DCA26EF0055BC7F /* DocumentationLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationLoaderViewController.h; sourceTree = "<group>"; };
+		5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationLoaderViewController.m; sourceTree = "<group>"; };
+		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
 		6CFE79CBCF6ACC061DA596A9 /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = "<group>"; };
 		9755BC217EA35AF447E089E5 /* Pods.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.preproduction.xcconfig; path = "Pods/Target Support Files/Pods/Pods.preproduction.xcconfig"; sourceTree = "<group>"; };
 		B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
@@ -151,7 +168,6 @@
 		298FD5B61C0701E500BA707E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				298FD5C51C0701E500BA707E /* Settings.bundle */,
 				298FD5BB1C0701E500BA707E /* main.m */,
 				298FD5B81C0701E500BA707E /* SDOSLoader-Prefix.pch */,
 				298FD5B91C0701E500BA707E /* Info.plist */,
@@ -167,8 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				298FD5BD1C0701E500BA707E /* App.debug.xcconfig */,
-				298FD5BE1C0701E500BA707E /* App.preproduction.xcconfig */,
-				298FD5BF1C0701E500BA707E /* App.production.xcconfig */,
 				298FD5C01C0701E500BA707E /* Shared.xcconfig */,
 			);
 			path = Profiles;
@@ -177,9 +191,6 @@
 		298FD5C11C0701E500BA707E /* Properties */ = {
 			isa = PBXGroup;
 			children = (
-				298FD5C21C0701E500BA707E /* KZBEnvironments.plist */,
-				298FD5C31C0701E500BA707E /* Octopush.plist */,
-				298FD5C41C0701E500BA707E /* PantallasAnalytics.plist */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -198,6 +209,10 @@
 		298FD5C71C0701E500BA707E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5CB30D1F1DCA26EF0055BC7F /* DocumentationLoaderViewController.h */,
+				5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */,
+				5C4AD1E31DCB23A300F05FD9 /* ExampleLoaderViewController.h */,
+				5C4AD1E41DCB23A300F05FD9 /* ExampleLoaderViewController.m */,
 				298FD5CA1C0701E500BA707E /* Leeme.txt */,
 			);
 			path = Controllers;
@@ -206,6 +221,7 @@
 		298FD5CD1C0701E500BA707E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -213,6 +229,18 @@
 		298FD5CF1C0701E500BA707E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5C4AD1E61DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib */,
+				5C4AD1E81DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.h */,
+				5C4AD1E91DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m */,
+				5C4AD1EE1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib */,
+				5C4AD1EB1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.h */,
+				5C4AD1EC1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m */,
+				5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */,
+				5C4AD1F21DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.h */,
+				5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */,
+				5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */,
+				5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */,
+				5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				298FD62E1C0701E500BA707E /* Constants.h */,
+				5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */,
 				298FD62F1C0701E500BA707E /* ConstantsColor.h */,
 				298FD6301C0701E500BA707E /* ConstantsFonts.h */,
 				298FD6311C0701E500BA707E /* ConstantsWS.h */,
@@ -533,18 +562,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				298FD6511C0701E500BA707E /* PantallasAnalytics.plist in Resources */,
-				298FD64D1C0701E500BA707E /* App.production.xcconfig in Resources */,
+				5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */,
+				5C4AD1E21DCB228900F05FD9 /* ExampleLoader.storyboard in Resources */,
 				298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */,
 				298FD6731C0701E500BA707E /* default.bundle in Resources */,
 				298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */,
 				298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */,
+				5C1BC5C51DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib in Resources */,
 				298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */,
-				298FD64F1C0701E500BA707E /* KZBEnvironments.plist in Resources */,
-				298FD64C1C0701E500BA707E /* App.preproduction.xcconfig in Resources */,
+				5C4AD1E71DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib in Resources */,
 				298FD6711C0701E500BA707E /* Localizable.strings in Resources */,
-				298FD6521C0701E500BA707E /* Settings.bundle in Resources */,
-				298FD6501C0701E500BA707E /* Octopush.plist in Resources */,
+				5C4AD1EF1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,12 +673,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */,
+				5C4AD1EA1DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m in Sources */,
+				5C4AD1ED1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m in Sources */,
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
 				290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */,
+				5C4AD1E51DCB23A300F05FD9 /* ExampleLoaderViewController.m in Sources */,
+				5C1BC5C81DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
 				298FD64A1C0701E500BA707E /* main.m in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 				B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */,
+				5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,7 +751,6 @@
 		};
 		2970AD8E1BFA153F007CFBD9 /* Preproduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 298FD5BE1C0701E500BA707E /* App.preproduction.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
@@ -794,7 +827,6 @@
 		};
 		29AFB1E61C04A0F8004AB1B6 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 298FD5BF1C0701E500BA707E /* App.production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
