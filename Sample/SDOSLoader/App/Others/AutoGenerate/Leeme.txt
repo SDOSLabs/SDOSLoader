@@ -1,0 +1,1 @@
+No colocar ninguna clase nueva aquí. En esta carpeta se coloca código autogenerado.

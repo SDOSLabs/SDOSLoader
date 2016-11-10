@@ -1,0 +1,19 @@
+// Example - Loader
+
+"coreiOS.cargando" = "Cargando";
+
+"Example.btnTitle" = "Ver ejemplo";
+"Example.version" = "Versión %@";
+
+"Example.ChooseLoaderType" = "Elige el tipo de Loader";
+"Example.CustomizeLoader" = "Personaliza el Loader";
+"Example.chosenSize" = "Tamaño del loader: %1$lux%1$lu";
+"Example.chosenLoadingTime" = "Tiempo de carga: %.f segundos";
+"Example.changeTextForLoader" = "Texto para el Loader";
+
+"Example.sizeNotSupportedByLoader" = "Loader con tamaño fijo";
+"Example.textNotSupportedByLoader" = "Loader sin texto modificable";
+"Example.LoadingTimeNotSupportedByLoader" = "Loader con duración fija";
+
+"Example.defaultStyle" = "Estilo por defecto";
+"Example.customStyle" = "Estilo modificado";

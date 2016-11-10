@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChooseLoaderStyleCellIdentifier" rowHeight="59" id="93m-lw-H5b" customClass="ChooseLoaderStyleTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="93m-lw-H5b" id="h41-Ow-RnO">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="87b-P0-5p5">
+                        <rect key="frame" x="100" y="8" width="121" height="43"/>
+                        <segments>
+                            <segment title="First"/>
+                            <segment title="Second"/>
+                        </segments>
+                        <connections>
+                            <action selector="changeStyle:" destination="93m-lw-H5b" eventType="valueChanged" id="eQr-qD-EQV"/>
+                        </connections>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="87b-P0-5p5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h41-Ow-RnO" secondAttribute="leadingMargin" id="4eG-Cm-Rgx"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="87b-P0-5p5" secondAttribute="bottom" id="7oH-of-016"/>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="87b-P0-5p5" secondAttribute="trailing" id="NMU-kx-iJm"/>
+                    <constraint firstItem="87b-P0-5p5" firstAttribute="top" secondItem="h41-Ow-RnO" secondAttribute="topMargin" id="YCV-1C-3zM"/>
+                    <constraint firstItem="87b-P0-5p5" firstAttribute="centerX" secondItem="h41-Ow-RnO" secondAttribute="centerX" id="xh0-Xa-npH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="segmentedCtrStyle" destination="87b-P0-5p5" id="OT7-qL-ZfT"/>
+            </connections>
+            <point key="canvasLocation" x="553" y="244.5"/>
+        </tableViewCell>
+    </objects>
+</document>
