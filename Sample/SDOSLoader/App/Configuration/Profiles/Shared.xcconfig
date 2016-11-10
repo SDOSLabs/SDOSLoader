@@ -1,0 +1,11 @@
+//
+//  Shared.xcconfig
+//  BaseProject
+//
+//  Created by iMac2 on 07/02/14.
+//  Copyright (c) 2014 S·dos. All rights reserved.
+//  
+
+//Aplicación
+APP_NAME = Loader
+BASE_PRODUCT_PACKAGE_NAME = es.sdos.sdosloader

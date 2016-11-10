@@ -1,0 +1,15 @@
+Coloca aquí todos los controladores de pantallas de la aplicación. La nomenclatura de los controlladores siempre deberá ser <nombre_de_la_pantalla>Controller.h
+
+La organización de los directorios estará, en la medida de lo posible, ligado a la navegación en pantalla. Se creará una carpeta por cada nivel y dentro de cada carpeta se crearán los ficheros necesarios para cada pantalla (.h .m .xib).
+Ejemplo:
+
+- Pantalla principal
+    - Listado de noticias
+        - Detalle de noticia
+    - Listado de eventos
+        - Detalle de eventos
+            - Mapa del evento
+    - Configuración
+
+
+Las vistas típicas de las tablas o collectionsViews que se usen en el controllador serán creados en la carpeta resources/UI/<nombre_del_archivo>
