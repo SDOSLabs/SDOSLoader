@@ -6,8 +6,8 @@ Pod::Spec.new do |spec|
   spec.version      = @version
   spec.license      = { :type => 'SDOS License' }
   spec.homepage     = 'http://git.sdos.es/ios/SDOSLoader'
-  spec.summary      = 'Librería de conexión de los frameworks de terceros. En está librería se añaden funcionalidades para facilitar el flujo de trabajo'
-  spec.source       = { :git => "http://git.sdos.es/ios/SDOSLoader.git", :branch => "feature/core" }
+  spec.summary      = 'Librería para la creación y manejo de vistas tipo loader'
+  spec.source       = { :git => "http://git.sdos.es/ios/SDOSLoader.git", :tag => "v#{spec.version}" }
   spec.framework    = ['Foundation', 'UIKit']
   spec.requires_arc = true
 
