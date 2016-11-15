@@ -15,8 +15,15 @@ use_frameworks!
 #=================================================
 
 #=====================Core=====================
-pod 'SDOS/Loader', '~> 1.0'
-pod 'SDOSLocalizableString'
-pod 'SDOSLoader', :path => '../../'
 
-pod 'IQKeyboardManager'
+def shared_pods
+	pod 'SDOS/Loader', '~> 1.0'
+	pod 'SDOSLocalizableString'
+	pod 'SDOSLoader', :path => '../../'
+
+	pod 'IQKeyboardManager'
+end
+
+target :SDOSLoader do
+	shared_pods
+end
