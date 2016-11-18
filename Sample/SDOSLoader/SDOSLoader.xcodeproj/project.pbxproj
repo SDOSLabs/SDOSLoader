@@ -54,8 +54,8 @@
 		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
-		9354CCEE813BB4ACE29FB959 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17EFE1856AE679994C7C312D /* Pods.framework */; };
 		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
+		C0A929AF22A85AED3868C9F0 /* Pods_SDOSLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +87,6 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
-		536F1DE3DB46B16D79E1EBC6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTableViewCell.xib; sourceTree = "<group>"; };
 		5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTableViewCell.h; sourceTree = "<group>"; };
 		5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderStyleTableViewCell.m; sourceTree = "<group>"; };
@@ -106,11 +105,12 @@
 		5CB30D1F1DCA26EF0055BC7F /* DocumentationLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationLoaderViewController.h; sourceTree = "<group>"; };
 		5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationLoaderViewController.m; sourceTree = "<group>"; };
 		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
-		6CFE79CBCF6ACC061DA596A9 /* Pods.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.production.xcconfig; path = "Pods/Target Support Files/Pods/Pods.production.xcconfig"; sourceTree = "<group>"; };
-		9755BC217EA35AF447E089E5 /* Pods.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.preproduction.xcconfig; path = "Pods/Target Support Files/Pods/Pods.preproduction.xcconfig"; sourceTree = "<group>"; };
+		651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B25D55F55CFE17BCF1C4E48 /* Pods-SDOSLoader.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.preproduction.xcconfig"; sourceTree = "<group>"; };
+		7BB44135FD5E12198BAEB032 /* Pods-SDOSLoader.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.production.xcconfig"; sourceTree = "<group>"; };
+		817B256FBE5A830872089E3C /* Pods-SDOSLoader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.debug.xcconfig"; sourceTree = "<group>"; };
 		B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
 		B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
-		D93CFC804C1BCDDCEA11B061 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9354CCEE813BB4ACE29FB959 /* Pods.framework in Frameworks */,
+				C0A929AF22A85AED3868C9F0 /* Pods_SDOSLoader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
+				651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,8 +153,8 @@
 			children = (
 				290A16A21BFB3146002361EF /* App */,
 				2970AD761BFA153F007CFBD9 /* Products */,
-				4E721AA590E40B7D0F1B4804 /* Pods */,
 				1A3F2B7365F64DEDC650C528 /* Frameworks */,
+				82C140FBA03DE1842F5FD9C4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -428,13 +429,12 @@
 			path = DatabaseScheme;
 			sourceTree = "<group>";
 		};
-		4E721AA590E40B7D0F1B4804 /* Pods */ = {
+		82C140FBA03DE1842F5FD9C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D93CFC804C1BCDDCEA11B061 /* Pods.debug.xcconfig */,
-				536F1DE3DB46B16D79E1EBC6 /* Pods.release.xcconfig */,
-				9755BC217EA35AF447E089E5 /* Pods.preproduction.xcconfig */,
-				6CFE79CBCF6ACC061DA596A9 /* Pods.production.xcconfig */,
+				817B256FBE5A830872089E3C /* Pods-SDOSLoader.debug.xcconfig */,
+				6B25D55F55CFE17BCF1C4E48 /* Pods-SDOSLoader.preproduction.xcconfig */,
+				7BB44135FD5E12198BAEB032 /* Pods-SDOSLoader.production.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -494,13 +494,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2970AD8F1BFA153F007CFBD9 /* Build configuration list for PBXNativeTarget "SDOSLoader" */;
 			buildPhases = (
-				9D959745314C875ECD3D0C04 /* Check Pods Manifest.lock */,
+				D418A237E03C1348C8F8D2A1 /* [CP] Check Pods Manifest.lock */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
 				2970AD731BFA153F007CFBD9 /* Resources */,
-				88741FCEB8C5BD325BE367FB /* Embed Pods Frameworks */,
-				88A452F02DC048CB957C4B8E /* Copy Pods Resources */,
 				29AFB21D1C04C7CB004AB1B6 /* Warnings */,
+				A14EB85A6A0C4BA467E580FA /* [CP] Embed Pods Frameworks */,
+				1946192E08ECF10DA114F54E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -579,6 +579,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1946192E08ECF10DA114F54E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -621,49 +636,34 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		88741FCEB8C5BD325BE367FB /* Embed Pods Frameworks */ = {
+		A14EB85A6A0C4BA467E580FA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88A452F02DC048CB957C4B8E /* Copy Pods Resources */ = {
+		D418A237E03C1348C8F8D2A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D959745314C875ECD3D0C04 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -795,7 +795,7 @@
 		};
 		2970AD901BFA153F007CFBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D93CFC804C1BCDDCEA11B061 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 817B256FBE5A830872089E3C /* Pods-SDOSLoader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -811,7 +811,7 @@
 		};
 		2970AD911BFA153F007CFBD9 /* Preproduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9755BC217EA35AF447E089E5 /* Pods.preproduction.xcconfig */;
+			baseConfigurationReference = 6B25D55F55CFE17BCF1C4E48 /* Pods-SDOSLoader.preproduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -872,7 +872,7 @@
 		};
 		29AFB1E71C04A0F8004AB1B6 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CFE79CBCF6ACC061DA596A9 /* Pods.production.xcconfig */;
+			baseConfigurationReference = 7BB44135FD5E12198BAEB032 /* Pods-SDOSLoader.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
