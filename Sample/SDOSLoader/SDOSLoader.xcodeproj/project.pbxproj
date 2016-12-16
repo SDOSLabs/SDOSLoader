@@ -54,8 +54,22 @@
 		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
+		71780D701E03F474004A6849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71780D6F1E03F474004A6849 /* Assets.xcassets */; };
+		71780D771E0402D3004A6849 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A16A41BFB3146002361EF /* AppDelegate.m */; };
+		71780D781E0402D8004A6849 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
+		71780D791E0402DD004A6849 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5BB1C0701E500BA707E /* main.m */; };
+		71780D7A1E04030B004A6849 /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD62C1C0701E500BA707E /* StoryboardConstants.m */; };
+		71780D7B1E040311004A6849 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 298FD6341C0701E500BA707E /* Localizable.strings */; };
+		71780D7C1E040315004A6849 /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
+		71780D7D1E04031D004A6849 /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
+		71780D7E1E040320004A6849 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		71780D801E040997004A6849 /* ExampleLoaderTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71780D7F1E040997004A6849 /* ExampleLoaderTV.storyboard */; };
+		71780D831E0409AC004A6849 /* DocumentationLoaderTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71780D821E0409AC004A6849 /* DocumentationLoaderTVViewController.m */; };
+		71780D881E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71780D861E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.m */; };
+		71780D891E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71780D871E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.xib */; };
 		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
 		C0A929AF22A85AED3868C9F0 /* Pods_SDOSLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */; };
+		E9D0BFA755A6244F97A16CF5 /* Pods_SDOSLoaderTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CD45BD7EF92FCE95951D6D /* Pods_SDOSLoaderTV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +101,7 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
+		3EE8F97AE54DE0F446EEB903 /* Pods-SDOSLoaderTV.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderTV.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderTV/Pods-SDOSLoaderTV.production.xcconfig"; sourceTree = "<group>"; };
 		5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTableViewCell.xib; sourceTree = "<group>"; };
 		5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTableViewCell.h; sourceTree = "<group>"; };
 		5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderStyleTableViewCell.m; sourceTree = "<group>"; };
@@ -107,10 +122,21 @@
 		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
 		651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B25D55F55CFE17BCF1C4E48 /* Pods-SDOSLoader.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.preproduction.xcconfig"; sourceTree = "<group>"; };
+		71780D611E03F474004A6849 /* SDOSLoaderTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSLoaderTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71780D6F1E03F474004A6849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		71780D7F1E040997004A6849 /* ExampleLoaderTV.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleLoaderTV.storyboard; sourceTree = "<group>"; };
+		71780D811E0409AC004A6849 /* DocumentationLoaderTVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationLoaderTVViewController.h; sourceTree = "<group>"; };
+		71780D821E0409AC004A6849 /* DocumentationLoaderTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationLoaderTVViewController.m; sourceTree = "<group>"; };
+		71780D851E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderTypeTVTableViewCell.h; sourceTree = "<group>"; };
+		71780D861E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderTypeTVTableViewCell.m; sourceTree = "<group>"; };
+		71780D871E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderTypeTVTableViewCell.xib; sourceTree = "<group>"; };
 		7BB44135FD5E12198BAEB032 /* Pods-SDOSLoader.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.production.xcconfig"; sourceTree = "<group>"; };
 		817B256FBE5A830872089E3C /* Pods-SDOSLoader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.debug.xcconfig"; sourceTree = "<group>"; };
+		8C8A5078854F9DA29D3DB041 /* Pods-SDOSLoaderTV.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderTV.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderTV/Pods-SDOSLoaderTV.preproduction.xcconfig"; sourceTree = "<group>"; };
+		A9CD45BD7EF92FCE95951D6D /* Pods_SDOSLoaderTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoaderTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
 		B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
+		D77F77E805894772C8ACFCD2 /* Pods-SDOSLoaderTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderTV/Pods-SDOSLoaderTV.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +148,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71780D5E1E03F474004A6849 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D0BFA755A6244F97A16CF5 /* Pods_SDOSLoaderTV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -130,6 +164,7 @@
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
 				651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */,
+				A9CD45BD7EF92FCE95951D6D /* Pods_SDOSLoaderTV.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				290A16A21BFB3146002361EF /* App */,
+				71780D621E03F474004A6849 /* SDOSLoaderTV */,
 				2970AD761BFA153F007CFBD9 /* Products */,
 				1A3F2B7365F64DEDC650C528 /* Frameworks */,
 				82C140FBA03DE1842F5FD9C4 /* Pods */,
@@ -162,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				2970AD751BFA153F007CFBD9 /* SDOSLoader.app */,
+				71780D611E03F474004A6849 /* SDOSLoaderTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,6 +252,8 @@
 				5C4AD1E31DCB23A300F05FD9 /* ExampleLoaderViewController.h */,
 				5C4AD1E41DCB23A300F05FD9 /* ExampleLoaderViewController.m */,
 				298FD5CA1C0701E500BA707E /* Leeme.txt */,
+				71780D811E0409AC004A6849 /* DocumentationLoaderTVViewController.h */,
+				71780D821E0409AC004A6849 /* DocumentationLoaderTVViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -223,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */,
+				71780D7F1E040997004A6849 /* ExampleLoaderTV.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -233,6 +273,9 @@
 				5C4AD1E61DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib */,
 				5C4AD1E81DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.h */,
 				5C4AD1E91DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m */,
+				71780D851E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.h */,
+				71780D861E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.m */,
+				71780D871E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.xib */,
 				5C4AD1EE1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib */,
 				5C4AD1EB1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.h */,
 				5C4AD1EC1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m */,
@@ -429,12 +472,23 @@
 			path = DatabaseScheme;
 			sourceTree = "<group>";
 		};
+		71780D621E03F474004A6849 /* SDOSLoaderTV */ = {
+			isa = PBXGroup;
+			children = (
+				71780D6F1E03F474004A6849 /* Assets.xcassets */,
+			);
+			path = SDOSLoaderTV;
+			sourceTree = "<group>";
+		};
 		82C140FBA03DE1842F5FD9C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				817B256FBE5A830872089E3C /* Pods-SDOSLoader.debug.xcconfig */,
 				6B25D55F55CFE17BCF1C4E48 /* Pods-SDOSLoader.preproduction.xcconfig */,
 				7BB44135FD5E12198BAEB032 /* Pods-SDOSLoader.production.xcconfig */,
+				D77F77E805894772C8ACFCD2 /* Pods-SDOSLoaderTV.debug.xcconfig */,
+				8C8A5078854F9DA29D3DB041 /* Pods-SDOSLoaderTV.preproduction.xcconfig */,
+				3EE8F97AE54DE0F446EEB903 /* Pods-SDOSLoaderTV.production.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -511,6 +565,26 @@
 			productReference = 2970AD751BFA153F007CFBD9 /* SDOSLoader.app */;
 			productType = "com.apple.product-type.application";
 		};
+		71780D601E03F474004A6849 /* SDOSLoaderTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71780D751E03F474004A6849 /* Build configuration list for PBXNativeTarget "SDOSLoaderTV" */;
+			buildPhases = (
+				DE94021E5C5C5252F4B8EF77 /* [CP] Check Pods Manifest.lock */,
+				71780D5D1E03F474004A6849 /* Sources */,
+				71780D5E1E03F474004A6849 /* Frameworks */,
+				71780D5F1E03F474004A6849 /* Resources */,
+				8AC4CA88458D211308D95169 /* [CP] Embed Pods Frameworks */,
+				56DE054D7A7F0F0618AD70B0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDOSLoaderTV;
+			productName = SDOSLoaderTV;
+			productReference = 71780D611E03F474004A6849 /* SDOSLoaderTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -522,6 +596,7 @@
 				TargetAttributes = {
 					2970AD741BFA153F007CFBD9 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = FR53QH8ZBJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -533,6 +608,11 @@
 					};
 					29AFB2171C04C3C4004AB1B6 = {
 						CreatedOnToolsVersion = 7.1.1;
+					};
+					71780D601E03F474004A6849 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = FR53QH8ZBJ;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -553,6 +633,7 @@
 				2970AD741BFA153F007CFBD9 /* SDOSLoader */,
 				29AFB1FF1C04BFE7004AB1B6 /* Mogenerator */,
 				29AFB2171C04C3C4004AB1B6 /* AutoGenerate */,
+				71780D601E03F474004A6849 /* SDOSLoaderTV */,
 			);
 		};
 /* End PBXProject section */
@@ -573,6 +654,18 @@
 				5C4AD1E71DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib in Resources */,
 				298FD6711C0701E500BA707E /* Localizable.strings in Resources */,
 				5C4AD1EF1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71780D5F1E03F474004A6849 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71780D7D1E04031D004A6849 /* default.bundle in Resources */,
+				71780D891E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.xib in Resources */,
+				71780D701E03F474004A6849 /* Assets.xcassets in Resources */,
+				71780D801E040997004A6849 /* ExampleLoaderTV.storyboard in Resources */,
+				71780D7B1E040311004A6849 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +713,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"";
+			shellScript = "#\"${SRCROOT}/Pods/SDOS/src/Scripts/SDOS.sh\"\n\"${SRCROOT}/../../../SDOS/src/Scripts/SDOS.sh\"";
 		};
 		29AFB21D1C04C7CB004AB1B6 /* Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -635,6 +728,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
+		};
+		56DE054D7A7F0F0618AD70B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSLoaderTV/Pods-SDOSLoaderTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AC4CA88458D211308D95169 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSLoaderTV/Pods-SDOSLoaderTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		A14EB85A6A0C4BA467E580FA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -652,6 +775,21 @@
 			showEnvVarsInLog = 0;
 		};
 		D418A237E03C1348C8F8D2A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE94021E5C5C5252F4B8EF77 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -685,6 +823,21 @@
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 				B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */,
 				5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71780D5D1E03F474004A6849 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71780D771E0402D3004A6849 /* AppDelegate.m in Sources */,
+				71780D881E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.m in Sources */,
+				71780D831E0409AC004A6849 /* DocumentationLoaderTVViewController.m in Sources */,
+				71780D7C1E040315004A6849 /* Design+Extensions.m in Sources */,
+				71780D791E0402DD004A6849 /* main.m in Sources */,
+				71780D7A1E04030B004A6849 /* StoryboardConstants.m in Sources */,
+				71780D781E0402D8004A6849 /* LoaderManager+BaseiOS.m in Sources */,
+				71780D7E1E040320004A6849 /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +952,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
@@ -815,6 +969,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
@@ -876,6 +1031,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
@@ -928,6 +1084,129 @@
 			};
 			name = Production;
 		};
+		71780D721E03F474004A6849 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77F77E805894772C8ACFCD2 /* Pods-SDOSLoaderTV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/App/Configuration/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.sdos.SDOSLoaderTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		71780D731E03F474004A6849 /* Preproduction */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C8A5078854F9DA29D3DB041 /* Pods-SDOSLoaderTV.preproduction.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/App/Configuration/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = es.sdos.SDOSLoaderTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Preproduction;
+		};
+		71780D741E03F474004A6849 /* Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE8F97AE54DE0F446EEB903 /* Pods-SDOSLoaderTV.production.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/App/Configuration/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = es.sdos.SDOSLoaderTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Production;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -967,6 +1246,16 @@
 				29AFB2191C04C3C4004AB1B6 /* Debug */,
 				29AFB21A1C04C3C4004AB1B6 /* Preproduction */,
 				29AFB21B1C04C3C4004AB1B6 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Preproduction;
+		};
+		71780D751E03F474004A6849 /* Build configuration list for PBXNativeTarget "SDOSLoaderTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71780D721E03F474004A6849 /* Debug */,
+				71780D731E03F474004A6849 /* Preproduction */,
+				71780D741E03F474004A6849 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Preproduction;

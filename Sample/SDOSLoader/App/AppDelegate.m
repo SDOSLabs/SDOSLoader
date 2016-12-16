@@ -18,7 +18,14 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:ExampleLoader bundle:nil];
+    UIStoryboard *sb;
+    
+#if TARGET_OS_IOS
+    sb = [UIStoryboard storyboardWithName:SBNameExampleLoader bundle:nil];
+#elif TARGET_OS_TV
+    sb = [UIStoryboard storyboardWithName:SBNameExampleLoaderTV bundle:nil];
+#endif
+    
     UIViewController *vc = [sb instantiateInitialViewController];
     
     self.window.rootViewController = vc;

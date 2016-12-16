@@ -1,7 +1,6 @@
 source 'http://git.sdos.es/ios/cocoapods-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
 inhibit_all_warnings!
 use_frameworks!
 
@@ -17,13 +16,26 @@ use_frameworks!
 #=====================Core=====================
 
 def shared_pods
-	pod 'SDOS/Loader', '~> 1.0'
-	pod 'SDOSLocalizableString'
+	
+	platform :ios, '8.0'
+	pod 'SDOS', :path => '../../../SDOS'
+	pod 'SDOSLocalizableString', :path => '../../../SDOSLocalizableString'
+	pod 'SDOSLoader', :path => '../../'
+end
+
+def shared_podsTV
+	
+	platform :tvos, '9.0'
+	pod 'SDOS', :path => '../../../SDOS'
+	pod 'SDOSLocalizableString', :path => '../../../SDOSLocalizableString'
 	pod 'SDOSLoader', :path => '../../'
 
-	pod 'IQKeyboardManager'
 end
 
 target :SDOSLoader do
 	shared_pods
+end
+
+target :SDOSLoaderTV do
+	shared_podsTV
 end

@@ -31,13 +31,6 @@ static const LoaderType LoaderTypeProgressBar = @"LoaderTypeProgressBar";
 static const LoaderType LoaderTypeProgressCircular = @"LoaderTypeProgressCircular";
 
 /**
- *  Loader con anillo de progreso y texto automática del progreso
- *  Vista obligatoria
- *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
- */
-static const LoaderType LoaderTypeProgressCircularWithProgress = @"LoaderTypeProgressCircularWithProgress";
-
-/**
  *  Loader de estilo Circular de Material Design.
  *  Vista obligatoria
  *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50

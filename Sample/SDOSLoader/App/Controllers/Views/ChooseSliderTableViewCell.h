@@ -7,6 +7,7 @@
 //
 
 #define ChooseSliderCellIdentifier @"ChooseSliderCellIdentifier"
+#import "ExampleLoaderViewController.h"
 
 #import <UIKit/UIKit.h>
 

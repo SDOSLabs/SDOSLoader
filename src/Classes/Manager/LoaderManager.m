@@ -23,8 +23,8 @@
 #import "LoaderObjectPrivateInterface.h"
 
 #import <MBProgressHUD/MBProgressHUD.h>
-#import <M13ProgressSuite/M13ProgressViewRing.h>
-#import <MaterialControlsCustom/MDProgress.h>
+//#import <SDOSMaterialControlsCustom/SDOSMDProgress.h>
+#import "SDOSMDProgress.h"
 #import <PureLayout/PureLayout.h>
 
 @interface LoaderManager ()
@@ -210,54 +210,6 @@
             };
             break;
         }
-        CASE_LOADER (LoaderTypeProgressCircularWithProgress) {
-            //Inicialización
-            NSAssert((view), @"Es necesario un view para este tipo de loader");
-            CGRect frame;
-            if (CGSizeEqualToSize(size, CGSizeZero)) {
-                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
-            } else {
-                frame = CGRectMake(0, 0, size.width, size.height);
-            }
-            
-            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
-            
-            M13ProgressViewRing *ring = [[M13ProgressViewRing alloc] initWithFrame:frame];
-            ring.center = CGPointMake(view.frame.size.width / 2, view.frame.size.height / 2);
-            
-            loaderView = (id<GenericLoaderCustomizationProtocol>)ring;
-
-            //Bloque para mostrar
-            loaderObject.showBlock = ^(LoaderObject *loaderObject){
-                M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
-                loaderView.alpha = 0;
-                [loaderObject.view addSubview:loaderView];
-                [loaderView autoCenterInSuperview];
-                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
-                [UIView animateWithDuration:0.3 animations:^{
-                    loaderView.alpha = 1;
-                }];
-            };
-            
-            //Bloque para ocultar
-            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
-                M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
-                [UIView animateWithDuration:0.3 animations:^{
-                    loaderView.alpha = 0;
-                } completion:^(BOOL finished) {
-                    [loaderView removeFromSuperview];
-                }];
-            };
-            
-            //Bloque para modficar el progreso
-            loaderObject.changeProgressBlock = ^(LoaderObject *loaderObject, CGFloat progress){
-                M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
-                [loaderView setProgress:progress animated:YES];
-            };
-            
-            break;
-        }
         CASE_LOADER (LoaderTypeIndeterminateCircular) {
             NSAssert((view), @"Es necesario un view para este tipo de loader");
             
@@ -270,7 +222,7 @@
             
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
-            MDProgress *mdProgress = [[MDProgress alloc] initWithFrame:frame type:Indeterminate];
+            SDOSMDProgress *mdProgress = [[SDOSMDProgress alloc] initWithFrame:frame type:Indeterminate];
             mdProgress.progressStyle = Circular;
             mdProgress.center = CGPointMake(view.frame.size.width / 2, view.frame.size.height / 2);
             mdProgress.circularProgressDiameter = mdProgress.frame.size.width;
@@ -280,7 +232,7 @@
             
             //Bloque para mostrar
             loaderObject.showBlock = ^(LoaderObject *loaderObject){
-                MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
+                SDOSMDProgress *loaderView = (SDOSMDProgress *)loaderObject.loaderView;
                 loaderView.alpha = 0;
                 [loaderObject.view addSubview:loaderView];
                 [loaderView autoCenterInSuperview];
@@ -294,7 +246,7 @@
             
             //Bloque para ocultar
             loaderObject.hideBlock = ^(LoaderObject *loaderObject){
-                MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
+                SDOSMDProgress *loaderView = (SDOSMDProgress *)loaderObject.loaderView;
                 [UIView animateWithDuration:0.3 animations:^{
                     loaderView.alpha = 0;
                 } completion:^(BOOL finished) {

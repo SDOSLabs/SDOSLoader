@@ -7,6 +7,8 @@
 //
 
 #define ChooseTextForLoaderCellIdentifier @"ChooseTextForLoaderCellIdentifier"
+#import "ExampleLoaderViewController.h"
+
 
 #import <UIKit/UIKit.h>
 

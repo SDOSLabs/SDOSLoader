@@ -6,6 +6,18 @@
 //  Copyright (c) 2015 S·dos. All rights reserved.
 //
 
+#define SYSTEMSIZE @"[UIFont systemFontSize]"
+
+CGFloat SIZE_CONSTANT() {
+    
+#if TARGET_OS_IOS
+    return [SYSTEMSIZE floatValue];
+#elif TARGET_OS_TV
+    return 12;
+#endif
+}
+
+
 #import "Design+Extensions.h"
 
 @implementation UIButton (Design)
@@ -40,43 +52,43 @@
 }
 
 - (void) loadStyleLabelFontSizeHuge {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 5];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 5];
 }
 
 - (void) loadStyleLabelFontSizeVeryBig {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 3.5];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 3.5];
 }
 
 - (void) loadStyleLabelFontSizeBig2 {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 2.5];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 2.5];
 }
 
 - (void) loadStyleLabelFontSizeBig {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 2];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 2];
 }
 
 - (void) loadStyleLabelFontSizeMedium {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 1.8];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 1.8];
 }
 
 - (void) loadStyleLabelFontSizeNormalMedium {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 1.4];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 1.4];
 }
 
 - (void) loadStyleLabelFontSizeNormalSemiMedium {
-    self.font = [UIFont fontWithName:self.font.fontName size:([UIFont systemFontSize]) * 1.2];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 1.2];
 }
 
 - (void) loadStyleLabelFontSizeNormal {
-    self.font = [UIFont fontWithName:self.font.fontName size:[UIFont systemFontSize]];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT()];
 }
 
 - (void) loadStyleLabelFontSizeSmall {
-    self.font = [UIFont fontWithName:self.font.fontName size:[UIFont systemFontSize] * 0.9];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 0.9];
 }
 
 - (void) loadStyleLabelFontSizeVerySmall {
-    self.font = [UIFont fontWithName:self.font.fontName size:[UIFont systemFontSize] * 0.8];
+    self.font = [UIFont fontWithName:self.font.fontName size:SIZE_CONSTANT() * 0.8];
 }
 
 - (void) loadStyleLabelBold {
@@ -86,6 +98,8 @@
 - (void) loadStyleLabelRegular {
     self.font = [UIFont fontWithName:FUENTE_REGULAR size:self.font.pointSize];
 }
+
+
 
 @end
 
@@ -123,11 +137,11 @@
 @implementation UIViewController (Design)
 
 - (void) loadStyleViewControllerDefault {
-//    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-//        self.edgesForExtendedLayout = UIRectEdgeAll;
-//        self.extendedLayoutIncludesOpaqueBars=NO;
-//        [self setNeedsStatusBarAppearanceUpdate];
-//    }
+    //    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+    //        self.edgesForExtendedLayout = UIRectEdgeAll;
+    //        self.extendedLayoutIncludesOpaqueBars=NO;
+    //        [self setNeedsStatusBarAppearanceUpdate];
+    //    }
     
     if (self.navigationController) {
         [self.navigationController loadStyleNavigationControllerDefault];
@@ -144,11 +158,13 @@
     self.textColor = self.textColor;
     self.font = self.font;
     self.backgroundColor = self.backgroundColor;
-    self.editable = self.editable;
+    //self.editable = self.editable;
     self.selectable = self.selectable;
 }
 
 @end
+
+#if TARGET_OS_IOS
 
 #pragma mark - UISlider
 
@@ -169,6 +185,8 @@
 }
 
 @end
+
+#endif
 
 #pragma mark - UITableView
 
@@ -201,17 +219,18 @@
 @end
 
 /*
-#pragma mark - MKMapView
+ #pragma mark - MKMapView
+ 
+ @implementation MKMapView (Design)
+ 
+ - (void) loadStyleMapViewDefault {
+ 
+ }
+ 
+ @end
+ */
 
-@implementation MKMapView (Design)
-
-- (void) loadStyleMapViewDefault {
-    
-}
-
-@end
-*/
-
+#if TARGET_OS_IOS
 #pragma mark - UIToolbar
 
 @implementation UIToolbar (Design)
@@ -221,6 +240,7 @@
 }
 
 @end
+#endif
 
 #pragma mark - UISearchBar
 
@@ -230,11 +250,13 @@
     
 }
 
+
 @end
 
-#pragma mark - MDProgress
 
-@implementation MDProgress (Design)
+#pragma mark - SDOSMDProgress
+
+@implementation SDOSMDProgress (Design)
 
 - (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
     switch (tag) {
@@ -281,24 +303,3 @@
 
 @end
 
-#pragma mark - M13ProgressViewRing
-
-@implementation M13ProgressViewRing (Desing)
-
-- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
-    switch (tag) {
-        case LOADER_TAG_CUSTOMIZED_LOADER: {
-            if ([loaderType isEqualToString: LoaderTypeProgressCircularWithProgress]) {
-                self.backgroundRingWidth = 10;
-                self.progressRingWidth = 10;
-                self.showPercentage = NO;
-                self.primaryColor = [UIColor blackColor];
-                self.secondaryColor = [UIColor lightGrayColor];
-            }
-        } break;
-        default:
-            break;
-    }
-}
-
-@end

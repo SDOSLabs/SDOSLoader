@@ -18,9 +18,11 @@
 
 #define TIME_BETWEEN_UPDATES_IN_LOADERS 0.1 // seconds
 
-
+#if TARGET_OS_IOS
 @interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, ChooseSliderDelegate, ChooseTextForLoaderDelegate, ChooseLoaderStyleDelegate, UITableViewDataSource>
-
+#elif TARGET_OS_TV
+@interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, UITableViewDataSource>
+#endif
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray <LoaderType> *arraySupportedLoaderTypes;
@@ -102,7 +104,7 @@
 #pragma mark - Properties
 
 -(NSArray <LoaderType> *)arraySupportedLoaderTypes {
-    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular];
+    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeIndeterminateCircular];
 }
 
 -(ChooseSliderTableViewCell *)cellLoadingTimeLoader {
@@ -425,11 +427,7 @@
     if ([type isEqualToString:LoaderTypeText] || [type isEqualToString:LoaderTypeProgressBar] || [type isEqualToString:LoaderTypeProgressCircular]) {
         loaderSupportsSize = NO;
     }
-    
-    if ([type isEqualToString:LoaderTypeProgressCircularWithProgress] || [type isEqualToString:LoaderTypeIndeterminateCircular]) {
-        loaderSupportsText = NO;
-    }
-    
+
     [self.cellLoadingTimeLoader loaderSupportsAttribute:loaderSupportsLoadingTime];
     [self.cellSizeLoader loaderSupportsAttribute:loaderSupportsSize];
     [self.cellTextLoader loaderSupportsAttribute:loaderSupportsText];
