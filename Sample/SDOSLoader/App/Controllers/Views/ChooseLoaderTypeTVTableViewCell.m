@@ -34,6 +34,32 @@
 //    [self.delegate didSelectLoaderType:[supportedLoaderTypes objectAtIndex:[self.pckrLoaderType selectedRowInComponent:0]]];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.supportedLoaderTypes.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
+    LoaderType loaderType = [self.supportedLoaderTypes objectAtIndex:indexPath.row];
+    NSString *camelCaseTitle = [loaderType stringByReplacingOccurrencesOfString:@"LoaderType" withString:@""];
+    
+    NSString *title = [camelCaseTitle stringByReplacingOccurrencesOfString:@"([a-z])([A-Z])" withString:@"$1 $2" options:NSRegularExpressionSearch range:NSMakeRange(0, camelCaseTitle.length)];
+    
+    cell.textLabel.text = title;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
 //#pragma mark -
 //#pragma mark UIPickerViewDataSource
 //

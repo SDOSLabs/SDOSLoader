@@ -8,10 +8,14 @@
 
 #import "ExampleLoaderViewController.h"
 
+#if TARGET_OS_IOS
 #import "ChooseLoaderTypeTableViewCell.h"
 #import "ChooseSliderTableViewCell.h"
 #import "ChooseTextForLoaderTableViewCell.h"
 #import "ChooseLoaderStyleTableViewCell.h"
+#elif TARGET_OS_TV
+#import "ChooseLoaderTypeTVTableViewCell.h"
+#endif
 
 #define SECTION_CHOOSE_LOADER_TYPE 0
 #define SECTION_CUSTOMIZE_LOADER 1
@@ -68,8 +72,12 @@
 }
 
 - (void)configureTableView {
-    [self registerCells];
     
+#if TARGET_OS_IOS
+    [self registerCells];
+#elif TARGET_OS_TV
+    [self registerCellsTV];
+#endif
     self.tableView.dataSource = self;
     self.tableView.allowsSelection = NO;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -99,6 +107,11 @@
     [self.tableView registerNib:chooseTextForLoaderCellNib forCellReuseIdentifier:ChooseTextForLoaderCellIdentifier];
     UINib *chooseLoaderStyleCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderStyleTableViewCell class]) bundle:nil];
     [self.tableView registerNib:chooseLoaderStyleCellNib forCellReuseIdentifier:ChooseLoaderStyleCellIdentifier];
+}
+
+- (void)registerCellsTV {
+    UINib *chooseLoaderTypeCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderTypeTVTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:chooseLoaderTypeCellNib forCellReuseIdentifier:ChooseLoaderTypeTVCellIdentifier];
 }
 
 #pragma mark - Properties
