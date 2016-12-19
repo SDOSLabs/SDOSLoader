@@ -10,6 +10,8 @@
 "Example.chosenSize" = "Tamaño del loader: %1$lux%1$lu";
 "Example.chosenLoadingTime" = "Tiempo de carga: %.f segundos";
 "Example.changeTextForLoader" = "Texto para el Loader";
+"Example.second" = "%.f segundos";
+"Example.size" = "%.fx%.f";
 
 "Example.sizeNotSupportedByLoader" = "Loader con tamaño fijo";
 "Example.textNotSupportedByLoader" = "Loader sin texto modificable";

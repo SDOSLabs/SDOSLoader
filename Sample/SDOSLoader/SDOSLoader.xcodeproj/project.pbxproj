@@ -36,8 +36,6 @@
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
 		298FD64A1C0701E500BA707E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5BB1C0701E500BA707E /* main.m */; };
-		298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
-		298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C01C0701E500BA707E /* Shared.xcconfig */; };
 		298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD62C1C0701E500BA707E /* StoryboardConstants.m */; };
 		298FD6711C0701E500BA707E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 298FD6341C0701E500BA707E /* Localizable.strings */; };
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
@@ -54,6 +52,13 @@
 		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
+		7144980A1E07C50A0041CF67 /* ExampleLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E41DCB23A300F05FD9 /* ExampleLoaderViewController.m */; };
+		7144980E1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7144980C1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.m */; };
+		7144980F1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7144980D1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.xib */; };
+		714498131E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 714498111E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.m */; };
+		714498141E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714498121E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.xib */; };
+		714498181E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 714498161E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.m */; };
+		714498191E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714498171E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.xib */; };
 		71780D701E03F474004A6849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71780D6F1E03F474004A6849 /* Assets.xcassets */; };
 		71780D771E0402D3004A6849 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A16A41BFB3146002361EF /* AppDelegate.m */; };
 		71780D781E0402D8004A6849 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
@@ -122,6 +127,15 @@
 		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
 		651277507A69EC861BE5197C /* Pods_SDOSLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B25D55F55CFE17BCF1C4E48 /* Pods-SDOSLoader.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.preproduction.xcconfig"; sourceTree = "<group>"; };
+		7144980B1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTimeSizeTVTableViewCell.h; sourceTree = "<group>"; };
+		7144980C1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTimeSizeTVTableViewCell.m; sourceTree = "<group>"; };
+		7144980D1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTimeSizeTVTableViewCell.xib; sourceTree = "<group>"; };
+		714498101E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTextForLoaderTVTableViewCell.h; sourceTree = "<group>"; };
+		714498111E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTextForLoaderTVTableViewCell.m; sourceTree = "<group>"; };
+		714498121E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseTextForLoaderTVTableViewCell.xib; sourceTree = "<group>"; };
+		714498151E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTVTableViewCell.h; sourceTree = "<group>"; };
+		714498161E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderStyleTVTableViewCell.m; sourceTree = "<group>"; };
+		714498171E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTVTableViewCell.xib; sourceTree = "<group>"; };
 		71780D611E03F474004A6849 /* SDOSLoaderTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSLoaderTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71780D6F1E03F474004A6849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71780D7F1E040997004A6849 /* ExampleLoaderTV.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExampleLoaderTV.storyboard; sourceTree = "<group>"; };
@@ -279,12 +293,21 @@
 				5C4AD1EE1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib */,
 				5C4AD1EB1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.h */,
 				5C4AD1EC1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m */,
+				7144980B1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.h */,
+				7144980C1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.m */,
+				7144980D1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.xib */,
 				5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */,
 				5C4AD1F21DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.h */,
 				5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */,
+				714498101E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.h */,
+				714498111E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.m */,
+				714498121E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.xib */,
 				5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */,
 				5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */,
 				5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */,
+				714498151E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.h */,
+				714498161E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.m */,
+				714498171E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,7 +614,7 @@
 		2970AD6D1BFA153F007CFBD9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = SDOS;
 				TargetAttributes = {
 					2970AD741BFA153F007CFBD9 = {
@@ -648,9 +671,7 @@
 				298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */,
 				298FD6731C0701E500BA707E /* default.bundle in Resources */,
 				298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */,
-				298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */,
 				5C1BC5C51DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib in Resources */,
-				298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */,
 				5C4AD1E71DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib in Resources */,
 				298FD6711C0701E500BA707E /* Localizable.strings in Resources */,
 				5C4AD1EF1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib in Resources */,
@@ -662,9 +683,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				71780D7D1E04031D004A6849 /* default.bundle in Resources */,
+				714498141E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.xib in Resources */,
 				71780D891E040F85004A6849 /* ChooseLoaderTypeTVTableViewCell.xib in Resources */,
+				714498191E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.xib in Resources */,
 				71780D701E03F474004A6849 /* Assets.xcassets in Resources */,
 				71780D801E040997004A6849 /* ExampleLoaderTV.storyboard in Resources */,
+				7144980F1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.xib in Resources */,
 				71780D7B1E040311004A6849 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -835,7 +859,11 @@
 				71780D831E0409AC004A6849 /* DocumentationLoaderTVViewController.m in Sources */,
 				71780D7C1E040315004A6849 /* Design+Extensions.m in Sources */,
 				71780D791E0402DD004A6849 /* main.m in Sources */,
+				7144980A1E07C50A0041CF67 /* ExampleLoaderViewController.m in Sources */,
+				7144980E1E07D6860041CF67 /* ChooseTimeSizeTVTableViewCell.m in Sources */,
+				714498181E07F2B40041CF67 /* ChooseLoaderStyleTVTableViewCell.m in Sources */,
 				71780D7A1E04030B004A6849 /* StoryboardConstants.m in Sources */,
+				714498131E07EE270041CF67 /* ChooseTextForLoaderTVTableViewCell.m in Sources */,
 				71780D781E0402D8004A6849 /* LoaderManager+BaseiOS.m in Sources */,
 				71780D7E1E040320004A6849 /* Util.m in Sources */,
 			);
@@ -863,6 +891,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -872,8 +901,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -909,6 +940,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -918,8 +950,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -987,6 +1021,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -996,8 +1031,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

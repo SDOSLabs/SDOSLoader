@@ -7,6 +7,7 @@
 //
 
 #import "ChooseLoaderTypeTVTableViewCell.h"
+#define HEIGHT 255
 
 @interface ChooseLoaderTypeTVTableViewCell () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,6 +27,9 @@
     self.supportedLoaderTypes = @[];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES  scrollPosition:UITableViewScrollPositionNone];
 }
 
 -(void)setDelegate:(id<ChooseLoaderTypeTVDelegate>)delegate forSupportedLoaderTypes:(NSArray<LoaderType> *)supportedLoaderTypes {
@@ -36,6 +40,10 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -56,39 +64,16 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
++ (CGFloat)height{
     
+    return HEIGHT;
 }
 
-//#pragma mark -
-//#pragma mark UIPickerViewDataSource
-//
-//
-//-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-//    return 1;
-//}
-//
-//-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-//    return self.supportedLoaderTypes.count;
-//}
-//
-//-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-//    
-//    LoaderType loaderType = [self.supportedLoaderTypes objectAtIndex:row];
-//    NSString *camelCaseTitle = [loaderType stringByReplacingOccurrencesOfString:@"LoaderType" withString:@""];
-//    
-//    NSString *title = [camelCaseTitle stringByReplacingOccurrencesOfString:@"([a-z])([A-Z])" withString:@"$1 $2" options:NSRegularExpressionSearch range:NSMakeRange(0, camelCaseTitle.length)];
-//    
-//    return title;
-//}
-//
-//#pragma mark - UIPickerViewDelegate
-//
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-//    
-//    LoaderType selectedLoaderType = [self.supportedLoaderTypes objectAtIndex:row];
-//    
-//    [self.delegate didSelectLoaderType:selectedLoaderType];
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    LoaderType selectedLoaderType = [self.supportedLoaderTypes objectAtIndex:indexPath.row];
+    
+    [self.delegate didSelectLoaderType:selectedLoaderType];
+}
 
 @end

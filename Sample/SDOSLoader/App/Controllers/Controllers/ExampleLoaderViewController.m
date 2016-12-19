@@ -15,7 +15,15 @@
 #import "ChooseLoaderStyleTableViewCell.h"
 #elif TARGET_OS_TV
 #import "ChooseLoaderTypeTVTableViewCell.h"
+#import "ChooseTimeSizeTVTableViewCell.h"
+#import "ChooseTextForLoaderTVTableViewCell.h"
+#import "ChooseLoaderStyleTVTableViewCell.h"
 #endif
+
+#define MINTIME 2.f
+#define MAXTIME 10.f
+#define MINSIZE 40.f
+#define MAXSIZE 200.f
 
 #define SECTION_CHOOSE_LOADER_TYPE 0
 #define SECTION_CUSTOMIZE_LOADER 1
@@ -23,9 +31,9 @@
 #define TIME_BETWEEN_UPDATES_IN_LOADERS 0.1 // seconds
 
 #if TARGET_OS_IOS
-@interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, ChooseSliderDelegate, ChooseTextForLoaderDelegate, ChooseLoaderStyleDelegate, UITableViewDataSource>
+@interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, ChooseSliderDelegate, ChooseTextForLoaderDelegate, ChooseLoaderStyleDelegate, UITableViewDataSource, UITableViewDelegate>
 #elif TARGET_OS_TV
-@interface ExampleLoaderViewController () <ChooseLoaderTypeDelegate, UITableViewDataSource>
+@interface ExampleLoaderViewController () <ChooseLoaderTypeTVDelegate, ChooseCellTVDelegate, ChooseTextForLoaderTVDelegate, ChooseLoaderStyleTVDelegate, UITableViewDataSource, UITableViewDelegate>
 #endif
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -45,11 +53,12 @@
 
 @property (strong, nonatomic) NSArray <UIControl *> *arrayControlsInTableView;
 
+#if TARGET_OS_IOS
 @property (strong, nonatomic) ChooseSliderTableViewCell *cellLoadingTimeLoader;
 @property (strong, nonatomic) ChooseSliderTableViewCell *cellSizeLoader;
 @property (strong, nonatomic) ChooseTextForLoaderTableViewCell *cellTextLoader;
 @property (strong, nonatomic) ChooseLoaderStyleTableViewCell *cellLoaderStyle;
-
+#endif
 
 @end
 
@@ -79,12 +88,19 @@
     [self registerCellsTV];
 #endif
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.tableView.allowsSelection = NO;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 100;
     
+    self.selectedLoaderSize = CGSizeMake(MINSIZE, MAXSIZE);
+    self.selectedLoaderType = [self.arraySupportedLoaderTypes objectAtIndex:0];
+    self.selectedLoadingTime = MINTIME;
+    
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 0.5)];
+#if TARGET_OS_IOS
     footer.backgroundColor = self.tableView.separatorColor;
+#endif
     self.tableView.tableFooterView = footer;
 }
 
@@ -98,6 +114,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(showHideLoader:)];
 }
 
+#if TARGET_OS_IOS
 - (void)registerCells {
     UINib *chooseLoaderTypeCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderTypeTableViewCell class]) bundle:nil];
     [self.tableView registerNib:chooseLoaderTypeCellNib forCellReuseIdentifier:ChooseLoaderTypeCellIdentifier];
@@ -108,11 +125,18 @@
     UINib *chooseLoaderStyleCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderStyleTableViewCell class]) bundle:nil];
     [self.tableView registerNib:chooseLoaderStyleCellNib forCellReuseIdentifier:ChooseLoaderStyleCellIdentifier];
 }
-
+#elif TARGET_OS_TV
 - (void)registerCellsTV {
     UINib *chooseLoaderTypeCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderTypeTVTableViewCell class]) bundle:nil];
     [self.tableView registerNib:chooseLoaderTypeCellNib forCellReuseIdentifier:ChooseLoaderTypeTVCellIdentifier];
+    UINib *chooseCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseTimeSizeTVTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:chooseCellNib forCellReuseIdentifier:ChooseCellTVCellIdentifier];
+    UINib *chooseTextForLoaderCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseTextForLoaderTVTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:chooseTextForLoaderCellNib forCellReuseIdentifier:ChooseTextForLoaderTVCellIdentifier];
+    UINib *chooseLoaderStyleCellNib = [UINib nibWithNibName:NSStringFromClass([ChooseLoaderStyleTVTableViewCell class]) bundle:nil];
+    [self.tableView registerNib:chooseLoaderStyleCellNib forCellReuseIdentifier:ChooseLoaderStyleTVCellIdentifier];
 }
+#endif
 
 #pragma mark - Properties
 
@@ -120,6 +144,7 @@
     return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeIndeterminateCircular];
 }
 
+#if TARGET_OS_IOS
 -(ChooseSliderTableViewCell *)cellLoadingTimeLoader {
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:SECTION_CUSTOMIZE_LOADER];
@@ -163,12 +188,30 @@
     }
     return nil;
 }
+#elif TARGET_OS_TV
+
+-(ChooseTimeSizeTVTableViewCell *)cellSizeLoaderTV {
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:SECTION_CUSTOMIZE_LOADER];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if ([cell isKindOfClass:[ChooseTimeSizeTVTableViewCell class]]) {
+        return (ChooseTimeSizeTVTableViewCell *)cell;
+    }
+    return nil;
+}
+#endif
+
 
 
 #pragma mark - User Interaction
 
 - (void) dismiss:(id)sender {
+#if TARGET_OS_IOS
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+#elif TARGET_OS_TV
+    [self.navigationController popViewControllerAnimated:YES];
+#endif
 }
 
 - (void) showHideLoader:(id)sender {
@@ -213,12 +256,13 @@
     }
     
     self.selectedLoaderType = loaderType;
-    
     [self enableOrDisableControls];
+
 }
 
 #pragma mark ChooseSliderDelegate
 
+#if TARGET_OS_IOS
 - (void)sliderOfType:(SliderType)sliderType changedToValue:(CGFloat)value {
     
     switch (sliderType) {
@@ -232,6 +276,21 @@
             break;
     }
 }
+#elif TARGET_OS_TV
+- (void)cellOfType:(CellType)cellType changedToValue:(CGFloat)value {
+    
+    switch (cellType) {
+        case CellTypeSize:
+            self.selectedLoaderSize = CGSizeMake(value, value);
+            break;
+        case CellTypeLoadingTime:
+            self.selectedLoadingTime = value;
+            break;
+        default:
+            break;
+    }
+}
+#endif
 
 #pragma mark ChooseTextForLoaderDelegate
 
@@ -280,7 +339,19 @@
     return 2;
 }
 
+#if TARGET_OS_TV
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == SECTION_CHOOSE_LOADER_TYPE && indexPath.row == 0) {
+        return [ChooseLoaderTypeTVTableViewCell height];
+    }
+    
+    return 100;
+}
+#endif
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     switch (section) {
         case SECTION_CHOOSE_LOADER_TYPE:
             return 1;
@@ -292,10 +363,11 @@
             return 0;
             break;
     }
+
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
+
     NSString *title;
     
     switch (section) {
@@ -310,12 +382,13 @@
             break;
     }
     return title;
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell;
-    
+#if TARGET_OS_IOS
     if (indexPath.section == SECTION_CHOOSE_LOADER_TYPE && indexPath.row == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:ChooseLoaderTypeCellIdentifier forIndexPath:indexPath];
         if ([cell isKindOfClass:[ChooseLoaderTypeTableViewCell class]]) {
@@ -336,12 +409,12 @@
                 
                 if (indexPath.row == 0) {
                     sliderType = SliderTypeLoadingTime;
-                    minSliderValue = 2.f;
-                    maxSliderValue = 10.f;
+                    minSliderValue = MINTIME;
+                    maxSliderValue = MAXTIME;
                 } else if (indexPath.row == 1) {
                     sliderType = SliderTypeSize;
-                    minSliderValue = 25.f;
-                    maxSliderValue = 200.f;
+                    minSliderValue = MINSIZE;
+                    maxSliderValue = MAXSIZE;
                 }
 
                 [sliderCell setDelegate:self forSliderType:sliderType minValue:minSliderValue maxValue:maxSliderValue];
@@ -367,6 +440,57 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] init];
     }
+    
+#elif TARGET_OS_TV
+    if (indexPath.section == SECTION_CHOOSE_LOADER_TYPE && indexPath.row == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:ChooseLoaderTypeTVCellIdentifier forIndexPath:indexPath];
+        if ([cell isKindOfClass:[ChooseLoaderTypeTVTableViewCell class]]) {
+
+            [(ChooseLoaderTypeTVTableViewCell *)cell setDelegate:self forSupportedLoaderTypes:self.arraySupportedLoaderTypes];
+        }
+    }else if (indexPath.section == SECTION_CUSTOMIZE_LOADER) {
+        
+        if (indexPath.row == 0 || indexPath.row == 1) {
+            // Choose Loading Time
+            cell = [tableView dequeueReusableCellWithIdentifier:ChooseCellTVCellIdentifier forIndexPath:indexPath];
+            if ([cell isKindOfClass:[ChooseTimeSizeTVTableViewCell class]]) {
+                
+                ChooseTimeSizeTVTableViewCell *cellTimeSize = (ChooseTimeSizeTVTableViewCell *)cell;
+                
+                CellType cellType;
+                CGFloat minValue;
+                CGFloat maxValue;
+                
+                if (indexPath.row == 0) {
+                    cellType = CellTypeLoadingTime;
+                    minValue = MINTIME;
+                    maxValue = MAXTIME;
+                } else if (indexPath.row == 1) {
+                    cellType = CellTypeSize;
+                    minValue = MINSIZE;
+                    maxValue = MAXSIZE;
+                }
+                
+                [cellTimeSize setDelegate:self forCellType:cellType minValue:minValue maxValue:maxValue];
+            }
+        } else if (indexPath.row == 2) {
+            cell = [tableView dequeueReusableCellWithIdentifier:ChooseTextForLoaderTVCellIdentifier forIndexPath:indexPath];
+            if ([cell isKindOfClass:[ChooseTextForLoaderTVTableViewCell class]]) {
+                
+                ChooseTextForLoaderTVTableViewCell * textCell = (ChooseTextForLoaderTVTableViewCell *)cell;
+                
+                [textCell setChooseTextForLoaderDelegate:self];
+            }
+        } else if (indexPath.row == 3) {
+            cell = [tableView dequeueReusableCellWithIdentifier:ChooseLoaderStyleTVCellIdentifier forIndexPath:indexPath];
+            if ([cell isKindOfClass:[ChooseLoaderStyleTVTableViewCell class]]) {
+                ChooseLoaderStyleTVTableViewCell *styleCell = (ChooseLoaderStyleTVTableViewCell *)cell;
+                
+                [styleCell setChooseLoaderStyleDelegate:self];
+            }
+        }
+    }
+#endif
     
     return cell;
 }
@@ -440,11 +564,15 @@
     if ([type isEqualToString:LoaderTypeText] || [type isEqualToString:LoaderTypeProgressBar] || [type isEqualToString:LoaderTypeProgressCircular]) {
         loaderSupportsSize = NO;
     }
-
+#if TARGET_OS_IOS
     [self.cellLoadingTimeLoader loaderSupportsAttribute:loaderSupportsLoadingTime];
     [self.cellSizeLoader loaderSupportsAttribute:loaderSupportsSize];
     [self.cellTextLoader loaderSupportsAttribute:loaderSupportsText];
     [self.cellLoaderStyle loaderSupportsAttribute:loaderSupportsCustomStyle];
+#elif TARGET_OS_TV
+    [self.cellSizeLoaderTV loaderSupportsAttribute:loaderSupportsSize];
+#endif
+    
 }
 
 @end

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <deployment identifier="tvOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChooseTextForLoaderTVCellIdentifier" id="fBs-An-CcD" customClass="ChooseTextForLoaderTVTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="1000" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fBs-An-CcD" id="S0Q-fX-qc8">
+                <rect key="frame" x="0.0" y="0.0" width="984" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzg-aU-HPX">
+                        <rect key="frame" x="200" y="27" width="600" height="46"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="textFieldDidChange:" destination="fBs-An-CcD" eventType="editingChanged" id="99z-JD-s2q"/>
+                        </connections>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGQ-I5-Td1">
+                        <rect key="frame" x="0.0" y="99" width="1000" height="1"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="iKJ-X4-lM6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fzg-aU-HPX" firstAttribute="leading" secondItem="S0Q-fX-qc8" secondAttribute="leading" constant="200" id="8m2-Ar-W17"/>
+                    <constraint firstItem="IGQ-I5-Td1" firstAttribute="leading" secondItem="S0Q-fX-qc8" secondAttribute="leading" id="ezC-W6-u13"/>
+                    <constraint firstAttribute="trailing" secondItem="IGQ-I5-Td1" secondAttribute="trailing" id="mG3-GW-3aK"/>
+                    <constraint firstAttribute="trailing" secondItem="fzg-aU-HPX" secondAttribute="trailing" constant="200" id="nGe-6B-Ias"/>
+                    <constraint firstItem="fzg-aU-HPX" firstAttribute="centerY" secondItem="S0Q-fX-qc8" secondAttribute="centerY" id="rqj-KJ-u9W"/>
+                    <constraint firstAttribute="bottom" secondItem="IGQ-I5-Td1" secondAttribute="bottom" id="x4K-kZ-wV1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="fzg-aU-HPX" id="Uae-Kr-ixH"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

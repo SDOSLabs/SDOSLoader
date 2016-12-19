@@ -20,4 +20,6 @@
 
 - (void)setDelegate:(id<ChooseLoaderTypeTVDelegate>)delegate forSupportedLoaderTypes:(NSArray <LoaderType> *)supportedLoaderTypes;
 
++ (CGFloat)height;
+
 @end
