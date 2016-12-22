@@ -188,7 +188,7 @@
   _circularProgressDiameter = circularProgressDiameter;
   drawingLayer.circularProgressDiameter = circularProgressDiameter;
     if ([drawingLayer isKindOfClass:[SDOSMDCircularProgressLayer class]]) {
-        [((SDOSMDCircularProgressLayer *) drawingLayer) resetLayer];
+        [((SDOSMDCircularProgressLayer *) drawingLayer) sdosResetLayer];
         if (_progressType == Indeterminate) {
             [drawingLayer startAnimating];
         }

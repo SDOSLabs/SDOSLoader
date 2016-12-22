@@ -36,15 +36,15 @@
 
 @implementation SDOSMDCircularProgressLayer
 
-float animationDuration = 0.75f;
-float rotateAnimationDuration = 2.f;
-float anArc = 1.f / kMDArcsCount;
-CAMediaTimingFunction *timmingFunction;
+float sdosAnimationDuration = 0.75f;
+float sdosRotateAnimationDuration = 2.f;
+float sdosAnArc = 1.f / kMDArcsCount;
+CAMediaTimingFunction *sdosTimmingFunction;
 
 - (instancetype)initWithSuperLayer:(CALayer *)superLayer {
   if (self = [super initWithSuperLayer:superLayer]) {
-    if (!timmingFunction)
-      timmingFunction = [CAMediaTimingFunction
+    if (!sdosTimmingFunction)
+      sdosTimmingFunction = [CAMediaTimingFunction
           functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
   }
 
@@ -53,27 +53,27 @@ CAMediaTimingFunction *timmingFunction;
 
 - (void)initContents {
 
-  _progressLayer = [CAShapeLayer layer];
-  _progressLayer.strokeColor = self.progressColor.CGColor;
-  _progressLayer.fillColor = nil;
-  _progressLayer.lineWidth = self.trackWidth;
-  _progressLayer.strokeStart = 0.f;
-  _progressLayer.strokeEnd = 0.5f;
+  _sdosProgressLayer = [CAShapeLayer layer];
+  _sdosProgressLayer.strokeColor = self.progressColor.CGColor;
+  _sdosProgressLayer.fillColor = nil;
+  _sdosProgressLayer.lineWidth = self.trackWidth;
+  _sdosProgressLayer.strokeStart = 0.f;
+  _sdosProgressLayer.strokeEnd = 0.5f;
 
-  _trackLayer = [CAShapeLayer layer];
-  _trackLayer.strokeColor = self.trackColor.CGColor;
-  _trackLayer.fillColor = nil;
-  _trackLayer.lineWidth = self.trackWidth;
-  _trackLayer.strokeStart = 0.f;
-  _trackLayer.strokeEnd = 1.f;
+  _sdosTrackLayer = [CAShapeLayer layer];
+  _sdosTrackLayer.strokeColor = self.trackColor.CGColor;
+  _sdosTrackLayer.fillColor = nil;
+  _sdosTrackLayer.lineWidth = self.trackWidth;
+  _sdosTrackLayer.strokeStart = 0.f;
+  _sdosTrackLayer.strokeEnd = 1.f;
     
     [self adjustFrame];
 
-  [self addSublayer:_trackLayer];
-  [self addSublayer:_progressLayer];
+  [self addSublayer:_sdosTrackLayer];
+  [self addSublayer:_sdosProgressLayer];
 
   if (!self.drawTrack) {
-    _trackLayer.opacity = 0;
+    _sdosTrackLayer.opacity = 0;
   }
 }
 
@@ -94,7 +94,7 @@ CAMediaTimingFunction *timmingFunction;
         CGPoint center = CGRectCenter(self.bounds);
         CGFloat radius =
         MIN(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2) -
-        _progressLayer.lineWidth / 2;
+        _sdosProgressLayer.lineWidth / 2;
         CGFloat startAngle = (CGFloat)(0);
         CGFloat endAngle = (CGFloat)((kMDArcsCount * 2 + 1.5f) * M_PI);
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center
@@ -103,37 +103,37 @@ CAMediaTimingFunction *timmingFunction;
                                                           endAngle:endAngle
                                                          clockwise:YES];
         
-        _trackLayer.path = path.CGPath;
-        _progressLayer.path = path.CGPath;
+        _sdosTrackLayer.path = path.CGPath;
+        _sdosProgressLayer.path = path.CGPath;
         
-        _trackLayer.frame = self.bounds;
-        _progressLayer.frame = self.bounds;
+        _sdosTrackLayer.frame = self.bounds;
+        _sdosProgressLayer.frame = self.bounds;
     }
 }
 
 #pragma mark Setters
 - (void)setProgressColor:(UIColor *)progressColor {
   [super setProgressColor:progressColor];
-  _progressLayer.strokeColor = self.progressColor.CGColor;
+  _sdosProgressLayer.strokeColor = self.progressColor.CGColor;
 }
 
 - (void)setTrackColor:(UIColor *)trackColor {
   [super setTrackColor:trackColor];
-  _trackLayer.strokeColor = self.trackColor.CGColor;
+  _sdosTrackLayer.strokeColor = self.trackColor.CGColor;
 }
 
 - (void)setTrackWidth:(float)trackWidth {
   [super setTrackWidth:trackWidth];
-  _progressLayer.lineWidth = self.trackWidth;
-  _trackLayer.lineWidth = self.trackWidth;
+  _sdosProgressLayer.lineWidth = self.trackWidth;
+  _sdosTrackLayer.lineWidth = self.trackWidth;
 }
 
 - (void)setDrawTrack:(BOOL)drawTrack {
   [super setDrawTrack:drawTrack];
   if (drawTrack) {
-    _trackLayer.opacity = 1.0f;
+    _sdosTrackLayer.opacity = 1.0f;
   } else {
-    _trackLayer.opacity = 0.0f;
+    _sdosTrackLayer.opacity = 0.0f;
   }
 }
 
@@ -151,8 +151,8 @@ CAMediaTimingFunction *timmingFunction;
   if (!self.determinate)
     return;
 
-  _progressLayer.strokeEnd = anArc * self.progress;
-  _progressLayer.transform =
+  _sdosProgressLayer.strokeEnd = sdosAnArc * self.progress;
+  _sdosProgressLayer.transform =
       CATransform3DMakeRotation(self.progress * 3 * M_PI_2, 0, 0, 1);
 }
 
@@ -170,7 +170,7 @@ CAMediaTimingFunction *timmingFunction;
 
   CABasicAnimation *rotateAnimation =
       [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-  rotateAnimation.duration = rotateAnimationDuration;
+  rotateAnimation.duration = sdosRotateAnimationDuration;
   rotateAnimation.fromValue = @(0.f);
   rotateAnimation.toValue = @(2 * M_PI);
   rotateAnimation.repeatCount = INFINITY;
@@ -178,7 +178,7 @@ CAMediaTimingFunction *timmingFunction;
   rotateAnimation.fillMode = kCAFillModeForwards;
 
   [self addAnimation:rotateAnimation forKey:kMDRotateAnimationKey];
-  [_progressLayer addAnimation:[SDOSMDCircularProgressLayer indeterminateAnimation]
+  [_sdosProgressLayer addAnimation:[SDOSMDCircularProgressLayer indeterminateAnimation]
                         forKey:kMDStrokeAnimationKey];
   self.isAnimating = true;
 }
@@ -188,7 +188,7 @@ CAMediaTimingFunction *timmingFunction;
     return;
 
   [self removeAllAnimations];
-  [_progressLayer removeAllAnimations];
+  [_sdosProgressLayer removeAllAnimations];
   self.isAnimating = false;
 }
 
@@ -207,9 +207,9 @@ CAMediaTimingFunction *timmingFunction;
       [animations
           addObjectsFromArray:[self createAnimationFromStartValue:startValue
                                                      andStartTime:startTime
-                                                   withValueScale:anArc]];
-      startValue += anArc * (kMDMaxStrokeLength + kMDMinStrokeLength);
-      startTime += animationDuration * 2;
+                                                   withValueScale:sdosAnArc]];
+      startValue += sdosAnArc * (kMDMaxStrokeLength + kMDMinStrokeLength);
+      startTime += sdosAnimationDuration * 2;
     } while (!fmodf(floorf(startValue * 1000), 1000) == 0);
 
     animationGroups = [CAAnimationGroup animation];
@@ -228,42 +228,42 @@ CAMediaTimingFunction *timmingFunction;
                             withValueScale:(float)aCircle {
   CABasicAnimation *headAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-  headAnimation.duration = animationDuration;
+  headAnimation.duration = sdosAnimationDuration;
   headAnimation.beginTime = beginTime;
   headAnimation.fromValue = @(beginValue);
   headAnimation.toValue =
       @(beginValue + aCircle * (kMDMaxStrokeLength + kMDMinStrokeLength));
-  headAnimation.timingFunction = timmingFunction;
+  headAnimation.timingFunction = sdosTimmingFunction;
 
   CABasicAnimation *tailAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-  tailAnimation.duration = animationDuration;
+  tailAnimation.duration = sdosAnimationDuration;
   tailAnimation.beginTime = beginTime;
   tailAnimation.fromValue = @(beginValue - aCircle * kMDMinStrokeLength);
   tailAnimation.toValue = @(beginValue);
-  tailAnimation.timingFunction = timmingFunction;
+  tailAnimation.timingFunction = sdosTimmingFunction;
 
   CABasicAnimation *endHeadAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-  endHeadAnimation.duration = animationDuration;
-  endHeadAnimation.beginTime = beginTime + animationDuration;
+  endHeadAnimation.duration = sdosAnimationDuration;
+  endHeadAnimation.beginTime = beginTime + sdosAnimationDuration;
   endHeadAnimation.fromValue =
       @(beginValue + aCircle * (kMDMaxStrokeLength + kMDMinStrokeLength));
   endHeadAnimation.toValue =
       @(beginValue + aCircle * (kMDMaxStrokeLength + kMDMinStrokeLength));
-  endHeadAnimation.timingFunction = timmingFunction;
+  endHeadAnimation.timingFunction = sdosTimmingFunction;
 
   CABasicAnimation *endTailAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-  endTailAnimation.duration = animationDuration;
-  endTailAnimation.beginTime = beginTime + animationDuration;
+  endTailAnimation.duration = sdosAnimationDuration;
+  endTailAnimation.beginTime = beginTime + sdosAnimationDuration;
   endTailAnimation.fromValue = @(beginValue);
   endTailAnimation.toValue = @(beginValue + aCircle * kMDMaxStrokeLength);
-  endTailAnimation.timingFunction = timmingFunction;
+  endTailAnimation.timingFunction = sdosTimmingFunction;
   return @[ headAnimation, tailAnimation, endHeadAnimation, endTailAnimation ];
 }
 
-- (void) resetLayer {
+- (void) sdosResetLayer {
     [self adjustFrame];
 }
 

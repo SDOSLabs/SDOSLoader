@@ -26,9 +26,9 @@
 
 @interface SDOSMDCircularProgressLayer : SDOSMDProgressLayer
 
-@property(nonatomic) CAShapeLayer *progressLayer;
-@property(nonatomic) CAShapeLayer *trackLayer;
+@property(nonatomic) CAShapeLayer *sdosProgressLayer;
+@property(nonatomic) CAShapeLayer *sdosTrackLayer;
 
-- (void) resetLayer;
+- (void) sdosResetLayer;
  
 @end
