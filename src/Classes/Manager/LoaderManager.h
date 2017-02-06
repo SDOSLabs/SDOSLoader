@@ -44,6 +44,40 @@ static const LoaderType LoaderTypeProgressCircularWithProgress = @"LoaderTypePro
  */
 static const LoaderType LoaderTypeIndeterminateCircular = @"LoaderTypeIndeterminateCircular";
 
+static const LoaderType LoaderTypeNineDots = @"LoaderTypeNineDots";
+static const LoaderType LoaderTypeTriplePulse = @"LoaderTypeTriplePulse";
+static const LoaderType LoaderTypeFiveDots = @"LoaderTypeFiveDots";
+static const LoaderType LoaderTypeRotatingSquares = @"LoaderTypeRotatingSquares";
+static const LoaderType LoaderTypeDoubleBounce = @"LoaderTypeDoubleBounce";
+static const LoaderType LoaderTypeTwoDots = @"LoaderTypeTwoDots";
+static const LoaderType LoaderTypeThreeDots = @"LoaderTypeThreeDots";
+static const LoaderType LoaderTypeBallPulse = @"LoaderTypeBallPulse";
+static const LoaderType LoaderTypeBallClipRotate = @"LoaderTypeBallClipRotate";
+static const LoaderType LoaderTypeBallClipRotatePulse = @"LoaderTypeBallClipRotatePulse";
+static const LoaderType LoaderTypeBallClipRotateMultiple = @"LoaderTypeBallClipRotateMultiple";
+static const LoaderType LoaderTypeBallRotate = @"LoaderTypeBallRotate";
+static const LoaderType LoaderTypeBallZigZag = @"LoaderTypeBallZigZag";
+static const LoaderType LoaderTypeBallZigZagDeflect = @"LoaderTypeBallZigZagDeflect";
+static const LoaderType LoaderTypeBallTrianglePath = @"LoaderTypeBallTrianglePath";
+static const LoaderType LoaderTypeBallScale = @"LoaderTypeBallScale";
+static const LoaderType LoaderTypeLineScale = @"LoaderTypeLineScale";
+static const LoaderType LoaderTypeLineScaleParty = @"LoaderTypeLineScaleParty";
+static const LoaderType LoaderTypeBallScaleMultiple = @"LoaderTypeBallScaleMultiple";
+static const LoaderType LoaderTypeBallPulseSync = @"LoaderTypeBallPulseSync";
+static const LoaderType LoaderTypeBallBeat = @"LoaderTypeBallBeat";
+static const LoaderType LoaderTypeLineScalePulseOut = @"LoaderTypeLineScalePulseOut";
+static const LoaderType LoaderTypeLineScalePulseOutRapid = @"LoaderTypeLineScalePulseOutRapid";
+static const LoaderType LoaderTypeBallScaleRipple = @"LoaderTypeBallScaleRipple";
+static const LoaderType LoaderTypeBallScaleRippleMultiple = @"LoaderTypeBallScaleRippleMultiple";
+static const LoaderType LoaderTypeTriangleSkewSpin = @"LoaderTypeTriangleSkewSpin";
+static const LoaderType LoaderTypeBallGridBeat = @"LoaderTypeBallGridBeat";
+static const LoaderType LoaderTypeBallGridPulse = @"LoaderTypeBallGridPulse";
+static const LoaderType LoaderTypeRotatingSandglass = @"LoaderTypeRotatingSandglass";
+static const LoaderType LoaderTypeRotatingTrigons = @"LoaderTypeRotatingTrigons";
+static const LoaderType LoaderTypeTripleRings = @"LoaderTypeTripleRings";
+static const LoaderType LoaderTypeCookieTerminator = @"LoaderTypeCookieTerminator";
+static const LoaderType LoaderTypeBallSpinFadeLoader = @"LoaderTypeBallSpinFadeLoader";
+
 /**
  *  Clase encargada de manejar cualquier tipo de loader de la aplicación. Proporciona funcionalidades para mostrar y ocultar los loaders de forma controlada.
  *  Para añadir un nuevo loader es necesario sobrescribir el metodo de la inicialización para añadir el nuevo tipo (A través de categorías y sin perder la implementación original)

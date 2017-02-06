@@ -26,6 +26,8 @@
 #import <M13ProgressSuite/M13ProgressViewRing.h>
 #import <MaterialControlsCustom/MDProgress.h>
 #import <PureLayout/PureLayout.h>
+#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
+
 
 @interface LoaderManager ()
 
@@ -105,6 +107,14 @@
 
 - (LoaderObject *) loaderWithType:(LoaderType) loaderType inView:(UIView *) view size:(CGSize) size tag:(NSInteger)tag {
     LoaderObject *loaderObject = [LoaderObject new];
+    
+//    activityIndicatorView.frame = view.frame;
+//    [activityIndicatorView setSize:size.width];
+    
+//    [view addSubview:activityIndicatorView];
+//    [activityIndicatorView startAnimating];
+    
+    
     [loaderObject setLoaderType:loaderType view:view size:size tag:tag];
     id<GenericLoaderCustomizationProtocol> loaderView;
     
@@ -302,6 +312,1425 @@
                     [loaderView removeFromSuperview];
                 }];
             };
+            break;
+        }
+        CASE_LOADER (LoaderTypeNineDots) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeNineDots tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+                        
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                    [UIView animateWithDuration:0.3 animations:^{
+                        loaderView.alpha = 0;
+                    } completion:^(BOOL finished) {
+                        [loaderView stopAnimating];
+                        [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeTriplePulse) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTriplePulse tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeFiveDots) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeFiveDots tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeRotatingSquares) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingSquares tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeDoubleBounce) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeDoubleBounce tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeTwoDots) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTwoDots tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeThreeDots) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeThreeDots tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallPulse) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallPulse tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallClipRotate) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotate tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallClipRotatePulse) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotatePulse tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallClipRotateMultiple) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotateMultiple tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallRotate) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallRotate tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallZigZag) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallZigZag tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallZigZagDeflect) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallZigZagDeflect tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallTrianglePath) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallTrianglePath tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallScale) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScale tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeLineScale) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScale tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeLineScaleParty) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScaleParty tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallScaleMultiple) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleMultiple tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallPulseSync) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallPulseSync tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallBeat) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallBeat tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeLineScalePulseOut) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOut tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeLineScalePulseOutRapid) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOutRapid tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallScaleRipple) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleRipple tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallScaleRippleMultiple) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleRippleMultiple tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeTriangleSkewSpin) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTriangleSkewSpin tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallGridBeat) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallGridBeat tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallGridPulse) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallGridPulse tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeRotatingSandglass) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingSandglass tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeRotatingTrigons) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingTrigons tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeTripleRings) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTripleRings tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeCookieTerminator) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
+            break;
+        }
+        CASE_LOADER (LoaderTypeBallSpinFadeLoader) {
+            NSAssert((view), @"Es necesario un view para este tipo de loader");
+            
+            CGRect frame;
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                frame = CGRectMake(0, 0, LoaderDefaultSize.width, LoaderDefaultSize.height);
+            } else {
+                frame = CGRectMake(0, 0, size.width, size.height);
+            }
+            
+            NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
+            
+            
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:[UIColor blueColor] size:size.height];
+            [activityIndicatorView setFrame:frame];
+            
+            loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
+            
+            loaderObject.showBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                loaderView.alpha = 0;
+                [loaderObject.view addSubview:loaderView];
+                [loaderView autoCenterInSuperview];
+                [loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
+                [loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+                [loaderView startAnimating];
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 1;
+                }];
+            };
+            
+            loaderObject.hideBlock = ^(LoaderObject *loaderObject){
+                DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+                [UIView animateWithDuration:0.3 animations:^{
+                    loaderView.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [loaderView stopAnimating];
+                    [loaderView removeFromSuperview];
+                }];
+            };
+            
             break;
         }
         DEFAULT_LOADER {
