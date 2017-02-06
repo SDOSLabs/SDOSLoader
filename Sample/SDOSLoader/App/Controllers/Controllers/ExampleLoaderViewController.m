@@ -12,6 +12,7 @@
 #import "ChooseSliderTableViewCell.h"
 #import "ChooseTextForLoaderTableViewCell.h"
 #import "ChooseLoaderStyleTableViewCell.h"
+#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 #define SECTION_CHOOSE_LOADER_TYPE 0
 #define SECTION_CUSTOMIZE_LOADER 1
@@ -51,9 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleNameKey];;
-    
+        
+    self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleNameKey];
     [self loadDismissButton];
     [self loadShowLoaderButton];
     [self configureTableView];
@@ -102,7 +102,7 @@
 #pragma mark - Properties
 
 -(NSArray <LoaderType> *)arraySupportedLoaderTypes {
-    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular];
+    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular, LoaderTypeNineDots, LoaderTypeTriplePulse, LoaderTypeFiveDots,LoaderTypeRotatingSquares, LoaderTypeDoubleBounce, LoaderTypeTwoDots, LoaderTypeThreeDots, LoaderTypeBallPulse, LoaderTypeBallClipRotate, LoaderTypeBallClipRotatePulse, LoaderTypeBallClipRotateMultiple, LoaderTypeBallRotate, LoaderTypeBallZigZag, LoaderTypeBallZigZagDeflect, LoaderTypeBallTrianglePath, LoaderTypeBallScale, LoaderTypeLineScale, LoaderTypeLineScaleParty, LoaderTypeBallScaleMultiple, LoaderTypeBallPulseSync, LoaderTypeBallBeat, LoaderTypeLineScalePulseOut, LoaderTypeLineScalePulseOutRapid, LoaderTypeBallScaleRipple, LoaderTypeBallScaleRippleMultiple, LoaderTypeTriangleSkewSpin, LoaderTypeBallGridBeat, LoaderTypeBallGridPulse, LoaderTypeRotatingSandglass, LoaderTypeRotatingTrigons, LoaderTypeTripleRings, LoaderTypeCookieTerminator, LoaderTypeBallSpinFadeLoader];
 }
 
 -(ChooseSliderTableViewCell *)cellLoadingTimeLoader {
