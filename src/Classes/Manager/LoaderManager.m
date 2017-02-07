@@ -108,13 +108,6 @@
 - (LoaderObject *) loaderWithType:(LoaderType) loaderType inView:(UIView *) view size:(CGSize) size tag:(NSInteger)tag {
     LoaderObject *loaderObject = [LoaderObject new];
     
-//    activityIndicatorView.frame = view.frame;
-//    [activityIndicatorView setSize:size.width];
-    
-//    [view addSubview:activityIndicatorView];
-//    [activityIndicatorView startAnimating];
-    
-    
     [loaderObject setLoaderType:loaderType view:view size:size tag:tag];
     id<GenericLoaderCustomizationProtocol> loaderView;
     
@@ -327,8 +320,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeNineDots tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeNineDots];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
                         
@@ -370,8 +364,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTriplePulse tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTriplePulse];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -413,8 +408,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeFiveDots tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeFiveDots];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -456,8 +452,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingSquares tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingSquares];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -499,8 +496,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeDoubleBounce tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeDoubleBounce];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -542,8 +540,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTwoDots tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTwoDots];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -585,8 +584,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeThreeDots tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeThreeDots];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -628,8 +628,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallPulse tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallPulse];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -671,8 +672,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotate tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotate];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -714,8 +716,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotatePulse tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotatePulse];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -757,8 +760,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotateMultiple tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallClipRotateMultiple];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -800,8 +804,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallRotate tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallRotate];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -843,8 +848,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallZigZag tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallZigZag];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -886,8 +892,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallZigZagDeflect tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallZigZagDeflect];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -929,8 +936,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallTrianglePath tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallTrianglePath];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -972,8 +980,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScale tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScale];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1015,8 +1024,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScale tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScale];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1058,8 +1068,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScaleParty tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScaleParty];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1101,8 +1112,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleMultiple tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleMultiple];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1144,8 +1156,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallPulseSync tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallPulseSync];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1187,8 +1200,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallBeat tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallBeat];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1230,8 +1244,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOut tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOut];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1273,8 +1288,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOutRapid tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeLineScalePulseOutRapid];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1316,8 +1332,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleRipple tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleRipple];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1359,8 +1376,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleRippleMultiple tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallScaleRippleMultiple];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1402,8 +1420,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTriangleSkewSpin tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTriangleSkewSpin];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1445,8 +1464,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallGridBeat tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallGridBeat];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1488,8 +1508,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallGridPulse tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallGridPulse];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1531,8 +1552,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingSandglass tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingSandglass];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1574,8 +1596,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingTrigons tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeRotatingTrigons];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1617,8 +1640,9 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTripleRings tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeTripleRings];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1660,8 +1684,10 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeCookieTerminator];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
@@ -1703,8 +1729,10 @@
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
             
-            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader tintColor:[UIColor blueColor] size:size.height];
+            DGActivityIndicatorView *activityIndicatorView = [[DGActivityIndicatorView alloc] initWithType:DGActivityIndicatorAnimationTypeBallSpinFadeLoader];
             [activityIndicatorView setFrame:frame];
+            [activityIndicatorView setSize:size.height];
+            [activityIndicatorView setSize:size.height];
             
             loaderView = (id<GenericLoaderCustomizationProtocol>) activityIndicatorView;
             
