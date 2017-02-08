@@ -22,8 +22,6 @@ def shared_pods
 	pod 'SDOSLoader', :path => '../../'
 
 	pod 'IQKeyboardManager'
-
-	pod 'DGActivityIndicatorView'
 end
 
 target :SDOSLoader do
