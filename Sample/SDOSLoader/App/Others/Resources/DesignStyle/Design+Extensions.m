@@ -302,3 +302,21 @@
 }
 
 @end
+
+#pragma mark - DGActivityIndicatorView
+
+@implementation DGActivityIndicatorView (Desing)
+
+- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
+    switch (tag) {
+        case LOADER_TAG_CUSTOMIZED_LOADER: {
+                [self setTintColor:[UIColor orangeColor]];
+        } break;
+        default:
+            break;
+    }
+}
+
+@end
+
+

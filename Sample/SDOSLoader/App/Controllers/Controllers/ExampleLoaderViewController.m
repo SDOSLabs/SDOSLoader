@@ -12,6 +12,7 @@
 #import "ChooseSliderTableViewCell.h"
 #import "ChooseTextForLoaderTableViewCell.h"
 #import "ChooseLoaderStyleTableViewCell.h"
+#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 #define SECTION_CHOOSE_LOADER_TYPE 0
 #define SECTION_CUSTOMIZE_LOADER 1
@@ -51,9 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleNameKey];;
-    
+        
+    self.title = [[[NSBundle mainBundle] infoDictionary] objectForKey:(id)kCFBundleNameKey];
     [self loadDismissButton];
     [self loadShowLoaderButton];
     [self configureTableView];
@@ -102,7 +102,7 @@
 #pragma mark - Properties
 
 -(NSArray <LoaderType> *)arraySupportedLoaderTypes {
-    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular];
+    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular, LoaderTypeNineDots, LoaderTypeTriplePulse, LoaderTypeFiveDots,LoaderTypeRotatingSquares, LoaderTypeDoubleBounce, LoaderTypeTwoDots, LoaderTypeThreeDots, LoaderTypeBallPulse, LoaderTypeBallClipRotate, LoaderTypeBallClipRotatePulse, LoaderTypeBallClipRotateMultiple, LoaderTypeBallRotate, LoaderTypeBallZigZag, LoaderTypeBallZigZagDeflect, LoaderTypeBallTrianglePath, LoaderTypeBallScale, LoaderTypeLineScale, LoaderTypeLineScaleParty, LoaderTypeBallScaleMultiple, LoaderTypeBallPulseSync, LoaderTypeBallBeat, LoaderTypeLineScalePulseOut, LoaderTypeLineScalePulseOutRapid, LoaderTypeBallScaleRipple, LoaderTypeBallScaleRippleMultiple, LoaderTypeTriangleSkewSpin, LoaderTypeBallGridBeat, LoaderTypeBallGridPulse, LoaderTypeRotatingSandglass, LoaderTypeRotatingTrigons, LoaderTypeTripleRings, LoaderTypeCookieTerminator, LoaderTypeBallSpinFadeLoader];
 }
 
 -(ChooseSliderTableViewCell *)cellLoadingTimeLoader {
@@ -426,7 +426,8 @@
         loaderSupportsSize = NO;
     }
     
-    if ([type isEqualToString:LoaderTypeProgressCircularWithProgress] || [type isEqualToString:LoaderTypeIndeterminateCircular]) {
+    if ([type isEqualToString:LoaderTypeProgressCircularWithProgress] || [type isEqualToString:LoaderTypeIndeterminateCircular] || [type isEqualToString:LoaderTypeNineDots] || [type isEqualToString:LoaderTypeTriplePulse] || [type isEqualToString:LoaderTypeFiveDots] || [type isEqualToString:LoaderTypeRotatingSquares] || [type isEqualToString:LoaderTypeDoubleBounce] || [type isEqualToString:LoaderTypeTwoDots] || [type isEqualToString:LoaderTypeThreeDots] || [type isEqualToString:LoaderTypeBallPulse] || [type isEqualToString:LoaderTypeBallClipRotate] || [type isEqualToString:LoaderTypeBallClipRotatePulse] || [type isEqualToString:LoaderTypeBallClipRotateMultiple] || [type isEqualToString:LoaderTypeBallRotate] || [type isEqualToString:LoaderTypeBallZigZag] || [type isEqualToString:LoaderTypeBallZigZagDeflect] || [type isEqualToString:LoaderTypeBallTrianglePath] || [type isEqualToString:LoaderTypeBallScale] || [type isEqualToString:LoaderTypeLineScale] || [type isEqualToString:LoaderTypeLineScaleParty] || [type isEqualToString:LoaderTypeBallScaleMultiple] || [type isEqualToString:LoaderTypeBallPulseSync] || [type isEqualToString:LoaderTypeBallBeat] || [type isEqualToString:LoaderTypeLineScalePulseOut] || [type isEqualToString:LoaderTypeLineScalePulseOutRapid] || [type isEqualToString:LoaderTypeBallScaleRipple] || [type isEqualToString:LoaderTypeBallScaleRippleMultiple] || [type isEqualToString:LoaderTypeTriangleSkewSpin] || [type isEqualToString:LoaderTypeBallGridBeat] || [type isEqualToString:LoaderTypeBallGridPulse] || [type isEqualToString:LoaderTypeRotatingSandglass] || [type isEqualToString:LoaderTypeRotatingTrigons] || [type isEqualToString:LoaderTypeTripleRings] ||[type isEqualToString:LoaderTypeCookieTerminator] || [type isEqualToString:LoaderTypeBallSpinFadeLoader]) {
+        
         loaderSupportsText = NO;
     }
     
