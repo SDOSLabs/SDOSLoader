@@ -9,6 +9,7 @@
 #import "MDProgress.h"
 #import "MBProgressHUD.h"
 #import "M13ProgressViewRing.h"
+#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 #pragma mark - UIButton
 
@@ -169,5 +170,11 @@
 #pragma mark -  M13ProgressViewRing
 
 @interface  M13ProgressViewRing (Design) <GenericLoaderCustomizationProtocol>
+
+@end
+
+#pragma mark -  DGActivityIndicatorView
+
+@interface  DGActivityIndicatorView (Design) <GenericLoaderCustomizationProtocol>
 
 @end

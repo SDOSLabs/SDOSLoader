@@ -1,4 +1,4 @@
-@version = "1.0.0"
+@version = "1.1.0"
 Pod::Spec.new do |spec|
   spec.platform     = :ios, '8.0'
   spec.name         = 'SDOSLoader'
@@ -32,5 +32,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'MaterialControlsCustom', '~> 1.1'
   spec.dependency 'PureLayout', '~> 3.0'
   spec.dependency 'SDOSLocalizableString', '~> 1.0'
+  spec.dependency 'DGActivityIndicatorView', '~> 2.1'
 
 end
