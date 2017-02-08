@@ -44,38 +44,235 @@ static const LoaderType LoaderTypeProgressCircularWithProgress = @"LoaderTypePro
  */
 static const LoaderType LoaderTypeIndeterminateCircular = @"LoaderTypeIndeterminateCircular";
 
+/**
+ *  Loader con estilo de bolitas en una disposición 3x3 con efectos de crecimiento y decrecimiento individual por cada bolita
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeNineDots = @"LoaderTypeNineDots";
+
+/**
+ *  Loader con estilo de triple pulsación de dentro hacia afuera con difuminado conforme llega al crecimiento máximo
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeTriplePulse = @"LoaderTypeTriplePulse";
+
+/**
+ *  Loader con estilo de bolitas en una disposición de 3 arriba y 2 abajo, con movimiento vertical entre ellas
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeFiveDots = @"LoaderTypeFiveDots";
+
+/**
+ *  Loader con estilo de cuadrados que se mueven formando un cuadrado imaginario y cambiando el tamaño de los cuadrados
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeRotatingSquares = @"LoaderTypeRotatingSquares";
+
+/**
+ *  Loader con estilo de dos bolas que crecen y decrecen de forma alternada sobre el mismo centro
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeDoubleBounce = @"LoaderTypeDoubleBounce";
+
+/**
+ *  Loader con estilo de dos bolas que crecen y decrecen de forma alternada sobre diferentes centros
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeTwoDots = @"LoaderTypeTwoDots";
+
+/**
+ *  Loader con estilo de tres bolas que crecen y decrecen de forma al mismo tiempo sobre diferentes centros
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeThreeDots = @"LoaderTypeThreeDots";
+
+/**
+ *  Loader con estilo de tres bolas que crecen y decrecen de forma alternada sobre diferentes centros
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallPulse = @"LoaderTypeBallPulse";
+
+/**
+ *  Loader con estilo de anillo que crece y decrece
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallClipRotate = @"LoaderTypeBallClipRotate";
+
+/**
+ *  Loader con estilo de semianillo que crece y decrece con una bola en la parte central
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallClipRotatePulse = @"LoaderTypeBallClipRotatePulse";
+
+/**
+ *  Loader con estilo de seminanillo que crece y decrece, teniendo otro semi anillo que gira en el sentido opuesto
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallClipRotateMultiple = @"LoaderTypeBallClipRotateMultiple";
+
+/**
+ *  Loader con estilo de tres bolas que crecen y decrecen de forma al mismo tiempo pivotando sobre la bola central
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallRotate = @"LoaderTypeBallRotate";
+
+/**
+ *  Loader con estilo de dos bolas que describen una trayectoria de zig zag
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallZigZag = @"LoaderTypeBallZigZag";
+
+/**
+ *  Loader con estilo de dos bolas que describen una trayectoria de zig zag, realizando solo la mitad de la animación
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallZigZagDeflect = @"LoaderTypeBallZigZagDeflect";
+
+/**
+ *  Loader con estilo de tres bolas que describen la trayectoria de un triangulo imaginario
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallTrianglePath = @"LoaderTypeBallTrianglePath";
+
+/**
+ *  Loader con estilo de pulsación de dentro hacia afuera con difuminado conforme llega al crecimiento máximo
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallScale = @"LoaderTypeBallScale";
+
+/**
+ *  Loader con estilo de 5 líneas verticales que crecen con un efecto de ola
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeLineScale = @"LoaderTypeLineScale";
+
+/**
+ *  Loader con estilo de 5 líneas verticales que crecen con un efecto asíncrono
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeLineScaleParty = @"LoaderTypeLineScaleParty";
+
+/**
+ *  Loader con estilo de multiple pulsación de dentro hacia afuera con difuminado conforme llega al crecimiento máximo
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallScaleMultiple = @"LoaderTypeBallScaleMultiple";
+
+/**
+ *  Loader con estilo de tres bolitas que tienen un efecto de ola
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallPulseSync = @"LoaderTypeBallPulseSync";
+
+/**
+ *  Loader con estilo de tres bolitas que tienen un efecto de desaparición y aparición
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallBeat = @"LoaderTypeBallBeat";
+
+/**
+ *  Loader con estilo de 5 líneas verticales que crecen con un efecto de ola de dentro a afuera
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeLineScalePulseOut = @"LoaderTypeLineScalePulseOut";
+
+/**
+ *  Loader con estilo de 5 líneas verticales que crecen con un efecto de ola de dentro a afuera
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeLineScalePulseOutRapid = @"LoaderTypeLineScalePulseOutRapid";
+
+/**
+ *  Loader con estilo de anillo de pulsación de dentro hacia afuera
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallScaleRipple = @"LoaderTypeBallScaleRipple";
+
+/**
+ *  Loader con estilo de triple anillo de pulsación de dentro hacia afuera
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallScaleRippleMultiple = @"LoaderTypeBallScaleRippleMultiple";
+
+/**
+ *  Loader con estilo de triangulo
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeTriangleSkewSpin = @"LoaderTypeTriangleSkewSpin";
+
+/**
+ *  Loader con estilo de bolitas en una disposición 3x3 con efectos de desaparición y aparición por cada bolita
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallGridBeat = @"LoaderTypeBallGridBeat";
+
+/**
+ *  Loader con estilo de bolitas en una disposición 3x3 con efectos de crecimiento y decrecimiento individual por cada bolita
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallGridPulse = @"LoaderTypeBallGridPulse";
+
+/**
+ *  Loader con estilo de bolitas con un efecto en zig zag
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeRotatingSandglass = @"LoaderTypeRotatingSandglass";
+
+/**
+ *  Loader con estilo de tres bolas que describen la trayectoria de un triangulo imaginario
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeRotatingTrigons = @"LoaderTypeRotatingTrigons";
+
+/**
+ *  Loader con estilo de triple anillo de pulsación de dentro hacia afuera
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeTripleRings = @"LoaderTypeTripleRings";
+
+/**
+ *  Loader con estilo de pacman
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeCookieTerminator = @"LoaderTypeCookieTerminator";
+
+/**
+ *  Loader con estilo de spinner circular de bolitas
+ *  Vista obligatoria
+ *  Tamaño personalizable. Por defecto tiene un tamaño de 50x50
+ */
 static const LoaderType LoaderTypeBallSpinFadeLoader = @"LoaderTypeBallSpinFadeLoader";
 
 /**

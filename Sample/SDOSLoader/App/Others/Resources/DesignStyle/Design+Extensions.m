@@ -312,9 +312,6 @@
         case LOADER_TAG_CUSTOMIZED_LOADER: {
                 [self setTintColor:[UIColor orangeColor]];
         } break;
-        case LOADER_TAG_DEFAULT_APPEARANCE_LOADER: {
-            [self setTintColor:[UIColor blueColor]];
-        } break;
         default:
             break;
     }
