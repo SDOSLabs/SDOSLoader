@@ -522,6 +522,7 @@
 				TargetAttributes = {
 					2970AD741BFA153F007CFBD9 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = FR53QH8ZBJ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -799,6 +800,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
@@ -815,6 +817,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
@@ -876,6 +879,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
