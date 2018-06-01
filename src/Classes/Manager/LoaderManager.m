@@ -23,9 +23,9 @@
 #import "LoaderManager.h"
 #import "LoaderObjectPrivateInterface.h"
 
+#import "SDOSLoaderProgress.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <M13ProgressSuite/M13ProgressViewRing.h>
-#import "MDProgress.h"
 #import <PureLayout/PureLayout.h>
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
@@ -125,8 +125,8 @@
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
-	} else if ([loaderObject.loaderView isKindOfClass:[MDProgress class]]) {
-		MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
+	} else if ([loaderObject.loaderView isKindOfClass:[SDOSLoaderProgress class]]) {
+		SDOSLoaderProgress *loaderView = (SDOSLoaderProgress *)loaderObject.loaderView;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
 		[loaderView autoCenterInSuperview];
@@ -161,8 +161,8 @@
 		} completion:^(BOOL finished) {
 			[loaderView removeFromSuperview];
 		}];
-	} else if ([loaderObject.loaderView isKindOfClass:[MDProgress class]]) {
-		MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
+	} else if ([loaderObject.loaderView isKindOfClass:[SDOSLoaderProgress class]]) {
+		SDOSLoaderProgress *loaderView = (SDOSLoaderProgress *)loaderObject.loaderView;
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 0;
 		} completion:^(BOOL finished) {
@@ -328,7 +328,7 @@
             
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
-            MDProgress *mdProgress = [[MDProgress alloc] initWithFrame:frame type:Indeterminate];
+            SDOSLoaderProgress *mdProgress = [[SDOSLoaderProgress alloc] initWithFrame:frame type:Indeterminate];
             mdProgress.progressStyle = Circular;
             mdProgress.center = CGPointMake(view.frame.size.width / 2, view.frame.size.height / 2);
             mdProgress.circularProgressDiameter = mdProgress.frame.size.width;

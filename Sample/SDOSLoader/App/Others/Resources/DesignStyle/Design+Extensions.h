@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 S·dos. All rights reserved.
 //
 
-#import "MDProgress.h"
+#import "SDOSLoaderProgress.h"
 #import "MBProgressHUD.h"
 #import "M13ProgressViewRing.h"
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
@@ -155,9 +155,9 @@
 
 @end
 
-#pragma mark - MDProgress
+#pragma mark - SDOSLoaderProgress
 
-@interface MDProgress (Design) <GenericLoaderCustomizationProtocol>
+@interface SDOSLoaderProgress (Design) <GenericLoaderCustomizationProtocol>
 
 @end
 

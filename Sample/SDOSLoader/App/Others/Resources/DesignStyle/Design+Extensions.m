@@ -232,9 +232,9 @@
 
 @end
 
-#pragma mark - MDProgress
+#pragma mark - SDOSLoaderProgress
 
-@implementation MDProgress (Design)
+@implementation SDOSLoaderProgress (Design)
 
 - (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
     switch (tag) {

@@ -1,35 +1,19 @@
-// The MIT License (MIT)
 //
-// Copyright (c) 2015 FPT Software
+//  SDOSLoaderProgress.m
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright © 2018 SDOS. All rights reserved.
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-#import "MDProgress.h"
-#import "MDCircularProgressLayer.h"
-#import "MDLinearProgressLayer.h"
-#import "MDConstants.h"
-#import "UIColorHelper.h"
+#import "SDOSLoaderProgress.h"
+#import "SDOSLoaderCircularProgressLayer.h"
+#import "SDOSLoaderLinearProgressLayer.h"
+#import "SDOSLoaderConstants.h"
+#import "UIColorSDOSLoaderHelper.h"
 
-#define kMDCirleDiameter 48.f
+#define kSDOSLoaderCirleDiameter 48.f
 
-@implementation MDProgress {
-  MDProgressLayer *drawingLayer;
+@implementation SDOSLoaderProgress {
+  SDOSLoaderProgressLayer *drawingLayer;
 }
 
 - (instancetype)init {
@@ -50,7 +34,7 @@
   return self;
 }
 
-- (id)initWithFrame:(CGRect)frame type:(enum MDProgressType)progressType {
+- (id)initWithFrame:(CGRect)frame type:(enum SDOSLoaderProgressType)progressType {
   if (self = [super initWithFrame:frame]) {
     [self initLayer];
     _type = progressType;
@@ -59,12 +43,12 @@
 }
 
 - (void)initLayer {
-  _progressColor = [UIColorHelper colorWithRGBA:kMDProgressColor];
-  _trackColor = [UIColorHelper colorWithRGBA:kMDProgressTrackColor];
-  //_circularProgressDiameter = kMDCirleDiameter;
+  _progressColor = [UIColorSDOSLoaderHelper colorWithRGBA:kSDOSLoaderProgressColor];
+  _trackColor = [UIColorSDOSLoaderHelper colorWithRGBA:kSDOSLoaderProgressTrackColor];
+  //_circularProgressDiameter = kSDOSLoaderCirleDiameter;
 
   drawingLayer =
-      [[MDCircularProgressLayer alloc] initWithSuperLayer:self.layer];
+      [[SDOSLoaderCircularProgressLayer alloc] initWithSuperLayer:self.layer];
   drawingLayer.progressColor = _progressColor;
   drawingLayer.trackColor = _trackColor;
   drawingLayer.circularProgressDiameter = _circularProgressDiameter;
@@ -125,7 +109,7 @@
   }
 }
 
-- (void)setProgressStyle:(enum MDProgressStyle)progressStyle {
+- (void)setProgressStyle:(enum SDOSLoaderProgressStyle)progressStyle {
 
   if (_progressStyle != progressStyle) {
     _progressStyle = progressStyle;
@@ -133,9 +117,9 @@
     switch (progressStyle) {
     case Circular:
       drawingLayer =
-          [[MDCircularProgressLayer alloc] initWithSuperLayer:self.layer];
+          [[SDOSLoaderCircularProgressLayer alloc] initWithSuperLayer:self.layer];
       //      drawingLayer =
-      //          [[MDCircularProgressLayer alloc]
+      //          [[SDOSLoaderCircularProgressLayer alloc]
       //          initWithSuperLayer:self.layer];
       drawingLayer.progressColor = _progressColor;
       drawingLayer.trackColor = _trackColor;
@@ -143,7 +127,7 @@
       break;
     case Linear:
       drawingLayer =
-          [[MDLinearProgressLayer alloc] initWithSuperLayer:self.layer];
+          [[SDOSLoaderLinearProgressLayer alloc] initWithSuperLayer:self.layer];
       drawingLayer.progressColor = _progressColor;
       drawingLayer.trackColor = _trackColor;
       break;
@@ -159,7 +143,7 @@
   }
 }
 
-- (void)setProgressType:(enum MDProgressType)progressType {
+- (void)setProgressType:(enum SDOSLoaderProgressType)progressType {
   _progressType = progressType;
   switch (progressType) {
   case Indeterminate:
@@ -187,8 +171,8 @@
 - (void)setCircularProgressDiameter:(CGFloat)circularProgressDiameter {
   _circularProgressDiameter = circularProgressDiameter;
   drawingLayer.circularProgressDiameter = circularProgressDiameter;
-    if ([drawingLayer isKindOfClass:[MDCircularProgressLayer class]]) {
-        [((MDCircularProgressLayer *) drawingLayer) resetLayer];
+    if ([drawingLayer isKindOfClass:[SDOSLoaderCircularProgressLayer class]]) {
+        [((SDOSLoaderCircularProgressLayer *) drawingLayer) resetLayer];
         if (_progressType == Indeterminate) {
             [drawingLayer startAnimating];
         }

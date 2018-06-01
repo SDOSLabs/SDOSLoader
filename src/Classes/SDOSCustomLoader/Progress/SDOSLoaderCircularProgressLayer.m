@@ -1,44 +1,28 @@
-// The MIT License (MIT)
 //
-// Copyright (c) 2015 FPT Software
+//  SDOSLoaderCircularProgressLayer.h
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  Copyright © 2018 SDOS. All rights reserved.
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-#import "MDCircularProgressLayer.h"
-#import "UIViewHelper.h"
+#import "SDOSLoaderCircularProgressLayer.h"
+#import "UIViewSDOSLoaderHelper.h"
 #import <UIKit/UIKit.h>
 
-#define kMDRotateAnimationKey @"rotate"
-#define kMDStrokeAnimationKey @"stroke"
-#define kMDCirleDiameter 48.f
-#define kMDArcsCount 20.f
-#define kMDMaxStrokeLength .75f
-#define kMDMinStrokeLength .05f
+#define kSDOSLoaderRotateAnimationKey @"rotate"
+#define kSDOSLoaderStrokeAnimationKey @"stroke"
+#define kSDOSLoaderCirleDiameter 48.f
+#define kSDOSLoaderArcsCount 20.f
+#define kSDOSLoaderMaxStrokeLength .75f
+#define kSDOSLoaderMinStrokeLength .05f
 
-@interface MDCircularProgressLayer ()
+@interface SDOSLoaderCircularProgressLayer ()
 @end
 
-@implementation MDCircularProgressLayer
+@implementation SDOSLoaderCircularProgressLayer
 
 float animationDuration = 0.75f;
 float rotateAnimationDuration = 2.f;
-float anArc = 1.f / kMDArcsCount;
+float anArc = 1.f / kSDOSLoaderArcsCount;
 CAMediaTimingFunction *timmingFunction;
 
 - (instancetype)initWithSuperLayer:(CALayer *)superLayer {
@@ -81,9 +65,9 @@ CAMediaTimingFunction *timmingFunction;
     if (self.circularProgressDiameter != 0) {
         CGPoint centerInParent = CGRectCenter(self.superLayer.bounds);
         
-        self.frame = CGRectMake(centerInParent.x - kMDCirleDiameter / 2,
-                                centerInParent.y - kMDCirleDiameter / 2,
-                                kMDCirleDiameter, kMDCirleDiameter);
+        self.frame = CGRectMake(centerInParent.x - kSDOSLoaderCirleDiameter / 2,
+                                centerInParent.y - kSDOSLoaderCirleDiameter / 2,
+                                kSDOSLoaderCirleDiameter, kSDOSLoaderCirleDiameter);
         
         if (self.circularProgressDiameter) {
             self.frame = CGRectMake(centerInParent.x - self.circularProgressDiameter / 2,
@@ -96,7 +80,7 @@ CAMediaTimingFunction *timmingFunction;
         MIN(CGRectGetWidth(self.bounds) / 2, CGRectGetHeight(self.bounds) / 2) -
         _progressLayer.lineWidth / 2;
         CGFloat startAngle = (CGFloat)(0);
-        CGFloat endAngle = (CGFloat)((kMDArcsCount * 2 + 1.5f) * M_PI);
+        CGFloat endAngle = (CGFloat)((kSDOSLoaderArcsCount * 2 + 1.5f) * M_PI);
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center
                                                             radius:radius
                                                         startAngle:startAngle
@@ -177,9 +161,9 @@ CAMediaTimingFunction *timmingFunction;
   rotateAnimation.removedOnCompletion = false;
   rotateAnimation.fillMode = kCAFillModeForwards;
 
-  [self addAnimation:rotateAnimation forKey:kMDRotateAnimationKey];
-  [_progressLayer addAnimation:[MDCircularProgressLayer indeterminateAnimation]
-                        forKey:kMDStrokeAnimationKey];
+  [self addAnimation:rotateAnimation forKey:kSDOSLoaderRotateAnimationKey];
+  [_progressLayer addAnimation:[SDOSLoaderCircularProgressLayer indeterminateAnimation]
+                        forKey:kSDOSLoaderStrokeAnimationKey];
   self.isAnimating = true;
 }
 
@@ -208,9 +192,9 @@ CAMediaTimingFunction *timmingFunction;
           addObjectsFromArray:[self createAnimationFromStartValue:startValue
                                                      andStartTime:startTime
                                                    withValueScale:anArc]];
-      startValue += anArc * (kMDMaxStrokeLength + kMDMinStrokeLength);
+      startValue += anArc * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength);
       startTime += animationDuration * 2;
-    } while (!fmodf(floorf(startValue * 1000), 1000) == 0);
+    } while (!(fmodf(floorf(startValue * 1000), 1000) == 0));
 
     animationGroups = [CAAnimationGroup animation];
     animationGroups.duration = startTime;
@@ -232,14 +216,14 @@ CAMediaTimingFunction *timmingFunction;
   headAnimation.beginTime = beginTime;
   headAnimation.fromValue = @(beginValue);
   headAnimation.toValue =
-      @(beginValue + aCircle * (kMDMaxStrokeLength + kMDMinStrokeLength));
+      @(beginValue + aCircle * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength));
   headAnimation.timingFunction = timmingFunction;
 
   CABasicAnimation *tailAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeStart"];
   tailAnimation.duration = animationDuration;
   tailAnimation.beginTime = beginTime;
-  tailAnimation.fromValue = @(beginValue - aCircle * kMDMinStrokeLength);
+  tailAnimation.fromValue = @(beginValue - aCircle * kSDOSLoaderMinStrokeLength);
   tailAnimation.toValue = @(beginValue);
   tailAnimation.timingFunction = timmingFunction;
 
@@ -248,9 +232,9 @@ CAMediaTimingFunction *timmingFunction;
   endHeadAnimation.duration = animationDuration;
   endHeadAnimation.beginTime = beginTime + animationDuration;
   endHeadAnimation.fromValue =
-      @(beginValue + aCircle * (kMDMaxStrokeLength + kMDMinStrokeLength));
+      @(beginValue + aCircle * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength));
   endHeadAnimation.toValue =
-      @(beginValue + aCircle * (kMDMaxStrokeLength + kMDMinStrokeLength));
+      @(beginValue + aCircle * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength));
   endHeadAnimation.timingFunction = timmingFunction;
 
   CABasicAnimation *endTailAnimation =
@@ -258,7 +242,7 @@ CAMediaTimingFunction *timmingFunction;
   endTailAnimation.duration = animationDuration;
   endTailAnimation.beginTime = beginTime + animationDuration;
   endTailAnimation.fromValue = @(beginValue);
-  endTailAnimation.toValue = @(beginValue + aCircle * kMDMaxStrokeLength);
+  endTailAnimation.toValue = @(beginValue + aCircle * kSDOSLoaderMaxStrokeLength);
   endTailAnimation.timingFunction = timmingFunction;
   return @[ headAnimation, tailAnimation, endHeadAnimation, endTailAnimation ];
 }
