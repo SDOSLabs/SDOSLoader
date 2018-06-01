@@ -52,7 +52,7 @@
     
     if (sender.selectedSegmentIndex == SEGMENTED_INDEX_DEFAULT_STYLE) {
         loaderStyle = LoaderStyleDefault;
-    } else if (sender.selectedSegmentIndex == SEGMENTED_INDEX_CUSTOM_STYLE) {
+    } else {
         loaderStyle = LoaderStyleCustom;
     }
     [self.delegate didChangeLoaderStyle:loaderStyle];

@@ -1,9 +1,7 @@
 //
-//  LoaderFactory.m
-//  BaseProject
+//  LoaderManager.m
 //
-//  Created by Rafael Fernandez Alvarez on 23/11/15.
-//  Copyright © 2015 SDOS. All rights reserved.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 #undef CASE_LOADER
@@ -17,18 +15,15 @@
 #define SWITCH_LOADER(s)                       for (NSString *__s__ = (s); ; )
 #define DEFAULT_LOADER
 
-#import <SDOSLocalizableString/SDOSLocalizableString.h>
-
 #define LoaderDefaultSize CGSizeMake(50, 50)
-#define LoaderDefaultLoaderText LS(@"coreiOS.cargando")
+#define LoaderDefaultLoaderText @"Cargando"
 
 #import "LoaderManager.h"
 #import "LoaderObjectPrivateInterface.h"
 
+#import "SDOSLoaderProgress.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <M13ProgressSuite/M13ProgressViewRing.h>
-#import <MaterialControlsCustom/MDProgress.h>
-#import <PureLayout/PureLayout.h>
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 
@@ -110,52 +105,86 @@
 
 + (void) loadShowBlockWithLoaderObject:(LoaderObject *) loaderObject {
 	
+    UIView *loaderViewFinal;
 	if ([loaderObject.loaderView isKindOfClass:[MBProgressHUD class]]) {
 		MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
-		[loaderView show:YES];
+		[loaderView showAnimated:YES];
 	} else if ([loaderObject.loaderView isKindOfClass:[M13ProgressViewRing class]]) {
 		M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+        
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
-	} else if ([loaderObject.loaderView isKindOfClass:[MDProgress class]]) {
-		MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
+	} else if ([loaderObject.loaderView isKindOfClass:[SDOSLoaderProgress class]]) {
+		SDOSLoaderProgress *loaderView = (SDOSLoaderProgress *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
 		[loaderView startAnimation];
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
 	} else if ([loaderObject.loaderView isKindOfClass:[DGActivityIndicatorView class]]) {
 		DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
 		[loaderView startAnimating];
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
 	}
+    
+    //Add constraints
+    NSLayoutConstraint *centreHorizontallyConstraint = [NSLayoutConstraint
+                                                        constraintWithItem:loaderViewFinal.superview
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        relatedBy:NSLayoutRelationEqual
+                                                        toItem:loaderViewFinal
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        multiplier:1.0
+                                                        constant:0];
+    NSLayoutConstraint *centreVerticallyConstraint = [NSLayoutConstraint
+                                                      constraintWithItem:loaderViewFinal.superview
+                                                      attribute:NSLayoutAttributeCenterY
+                                                      relatedBy:NSLayoutRelationEqual
+                                                      toItem:loaderViewFinal
+                                                      attribute:NSLayoutAttributeCenterY
+                                                      multiplier:1.0
+                                                      constant:0];
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
+                                            constraintWithItem:loaderViewFinal
+                                            attribute:NSLayoutAttributeHeight
+                                            relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                            attribute:NSLayoutAttributeNotAnAttribute
+                                            multiplier:1.0
+                                            constant:loaderViewFinal.frame.size.height];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
+                                           constraintWithItem:loaderViewFinal
+                                           attribute:NSLayoutAttributeWidth
+                                           relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                           attribute:NSLayoutAttributeNotAnAttribute
+                                           multiplier:1.0
+                                           constant:loaderViewFinal.frame.size.width];
+    
+    [NSLayoutConstraint activateConstraints:@[centreVerticallyConstraint, centreHorizontallyConstraint, heightConstraint, widthConstraint]];
 }
 
 + (void) loadHideBlockWithLoaderObject:(LoaderObject *) loaderObject {
 	if ([loaderObject.loaderView isKindOfClass:[MBProgressHUD class]]) {
 		MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
-		[loaderView hide:YES];
+		[loaderView hideAnimated:YES];
 	} else if ([loaderObject.loaderView isKindOfClass:[M13ProgressViewRing class]]) {
 		M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
 		[UIView animateWithDuration:0.3 animations:^{
@@ -163,8 +192,8 @@
 		} completion:^(BOOL finished) {
 			[loaderView removeFromSuperview];
 		}];
-	} else if ([loaderObject.loaderView isKindOfClass:[MDProgress class]]) {
-		MDProgress *loaderView = (MDProgress *)loaderObject.loaderView;
+	} else if ([loaderObject.loaderView isKindOfClass:[SDOSLoaderProgress class]]) {
+		SDOSLoaderProgress *loaderView = (SDOSLoaderProgress *)loaderObject.loaderView;
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 0;
 		} completion:^(BOOL finished) {
@@ -185,7 +214,7 @@
 + (void) loadChangeTextBlockWithLoaderObject:(LoaderObject *) loaderObject loaderText:(NSString *) loaderText{
 	if ([loaderObject.loaderView isKindOfClass:[MBProgressHUD class]]) {
 		MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
-		loaderView.labelText = loaderText;
+		loaderView.label.text = loaderText;
 	}
 }
 
@@ -330,7 +359,7 @@
             
             NSLog(@"Loader \"%@\" con tamaño: %@", loaderType, NSStringFromCGSize(frame.size));
             
-            MDProgress *mdProgress = [[MDProgress alloc] initWithFrame:frame type:Indeterminate];
+            SDOSLoaderProgress *mdProgress = [[SDOSLoaderProgress alloc] initWithFrame:frame type:Indeterminate];
             mdProgress.progressStyle = Circular;
             mdProgress.center = CGPointMake(view.frame.size.width / 2, view.frame.size.height / 2);
             mdProgress.circularProgressDiameter = mdProgress.frame.size.width;
@@ -576,7 +605,7 @@
     NSAssert((view), @"Es necesario un view para este tipo de loader");
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
     hud.removeFromSuperViewOnHide = YES;
-    hud.labelText = LoaderDefaultLoaderText;
+    hud.label.text = LoaderDefaultLoaderText;
     
     return hud;
 }
