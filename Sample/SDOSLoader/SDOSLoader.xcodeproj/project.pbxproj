@@ -32,10 +32,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 290A16A41BFB3146002361EF /* AppDelegate.m */; };
 		298FD6471C0701E500BA707E /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
 		298FD6491C0701E500BA707E /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
-		298FD64A1C0701E500BA707E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD5BB1C0701E500BA707E /* main.m */; };
 		298FD64B1C0701E500BA707E /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
 		298FD64E1C0701E500BA707E /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C01C0701E500BA707E /* Shared.xcconfig */; };
 		298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD62C1C0701E500BA707E /* StoryboardConstants.m */; };
@@ -54,20 +52,18 @@
 		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
-		9032438F799F46E49E8600AC /* Pods_SDOSLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AA005F082D843170CBB82A /* Pods_SDOSLoader.framework */; };
+		6A98A54E0A179583F5E0AB26 /* libPods-SDOSLoader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1754CEA3B84BB8DDF3B7BFC /* libPods-SDOSLoader.a */; };
 		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
+		B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A4903E20C13BB30061EF56 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		290A16A31BFB3146002361EF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		290A16A41BFB3146002361EF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5B71C0701E500BA707E /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		298FD5B81C0701E500BA707E /* SDOSLoader-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDOSLoader-Prefix.pch"; sourceTree = "<group>"; };
 		298FD5B91C0701E500BA707E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298FD5BA1C0701E500BA707E /* Launcher.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launcher.xcassets; sourceTree = "<group>"; };
-		298FD5BB1C0701E500BA707E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		298FD5BD1C0701E500BA707E /* App.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = App.debug.xcconfig; sourceTree = "<group>"; };
 		298FD5C01C0701E500BA707E /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		298FD5CA1C0701E500BA707E /* Leeme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Leeme.txt; sourceTree = "<group>"; };
@@ -107,10 +103,12 @@
 		5CB30D1F1DCA26EF0055BC7F /* DocumentationLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationLoaderViewController.h; sourceTree = "<group>"; };
 		5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationLoaderViewController.m; sourceTree = "<group>"; };
 		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
-		62AA005F082D843170CBB82A /* Pods_SDOSLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ECC9CEFD63032122C834AFE /* Pods-SDOSLoader.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoader.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader.preproduction.xcconfig"; sourceTree = "<group>"; };
 		B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
 		B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
+		B1754CEA3B84BB8DDF3B7BFC /* libPods-SDOSLoader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSLoader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A4903D20C13BB30061EF56 /* SDOSLoader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSLoader-Bridging-Header.h"; sourceTree = "<group>"; };
+		B1A4903E20C13BB30061EF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9032438F799F46E49E8600AC /* Pods_SDOSLoader.framework in Frameworks */,
+				6A98A54E0A179583F5E0AB26 /* libPods-SDOSLoader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
-				62AA005F082D843170CBB82A /* Pods_SDOSLoader.framework */,
+				B1754CEA3B84BB8DDF3B7BFC /* libPods-SDOSLoader.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -137,8 +135,8 @@
 		290A16A21BFB3146002361EF /* App */ = {
 			isa = PBXGroup;
 			children = (
-				290A16A31BFB3146002361EF /* AppDelegate.h */,
-				290A16A41BFB3146002361EF /* AppDelegate.m */,
+				B1A4903E20C13BB30061EF56 /* AppDelegate.swift */,
+				B1A4903D20C13BB30061EF56 /* SDOSLoader-Bridging-Header.h */,
 				B12F4C381DBB89BB0061E9F1 /* Base */,
 				298FD5B61C0701E500BA707E /* Configuration */,
 				298FD5C61C0701E500BA707E /* Controllers */,
@@ -169,7 +167,6 @@
 		298FD5B61C0701E500BA707E /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				298FD5BB1C0701E500BA707E /* main.m */,
 				298FD5B81C0701E500BA707E /* SDOSLoader-Prefix.pch */,
 				298FD5B91C0701E500BA707E /* Info.plist */,
 				298FD5B71C0701E500BA707E /* AppIcon.xcassets */,
@@ -202,7 +199,6 @@
 				298FD5C71C0701E500BA707E /* Controllers */,
 				298FD5CD1C0701E500BA707E /* Storyboards */,
 				298FD5CF1C0701E500BA707E /* Views */,
-				B130CBAF1D6D9106006FFD81 /* VO */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -456,37 +452,6 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
-		B130CBAF1D6D9106006FFD81 /* VO */ = {
-			isa = PBXGroup;
-			children = (
-				B130CBB01D6D9106006FFD81 /* Domain */,
-				B130CBB11D6D9106006FFD81 /* DTO */,
-				B130CBB21D6D9106006FFD81 /* VO */,
-			);
-			path = VO;
-			sourceTree = "<group>";
-		};
-		B130CBB01D6D9106006FFD81 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		B130CBB11D6D9106006FFD81 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		B130CBB21D6D9106006FFD81 /* VO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VO;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,7 +464,6 @@
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
 				2970AD731BFA153F007CFBD9 /* Resources */,
 				29AFB21D1C04C7CB004AB1B6 /* Warnings */,
-				1402FAB9DB590DC66CD6CEED /* [CP] Embed Pods Frameworks */,
 				99E6C7CBF8D4830E33B10A88 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -523,6 +487,7 @@
 					2970AD741BFA153F007CFBD9 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = FR53QH8ZBJ;
+						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -580,21 +545,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1402FAB9DB590DC66CD6CEED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,9 +593,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SDOSLoader/Pods-SDOSLoader-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -658,13 +611,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SDOSLoader-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -678,11 +634,10 @@
 				5C4AD1EA1DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m in Sources */,
 				5C4AD1ED1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m in Sources */,
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
-				290A16DC1BFB3146002361EF /* AppDelegate.m in Sources */,
 				5C4AD1E51DCB23A300F05FD9 /* ExampleLoaderViewController.m in Sources */,
 				5C1BC5C81DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
-				298FD64A1C0701E500BA707E /* main.m in Sources */,
+				B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 				B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */,
 				5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */,
@@ -743,10 +698,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -787,9 +743,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Preproduction;
@@ -800,14 +757,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoader;
+				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -817,14 +777,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoader;
+				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
 			};
 			name = Preproduction;
 		};
@@ -866,9 +828,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Production;
@@ -879,14 +842,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = FR53QH8ZBJ;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoader-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoader;
+				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
 			};
 			name = Production;
 		};

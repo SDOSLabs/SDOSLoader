@@ -1,3 +1,3 @@
 ## SDOSLoader
 
-Esta librería está documentada en http://kc.sdos.es/display/mobility/SDOSLoader
+Esta librería está documentada en https://kc.sdos.es/x/GgBm

@@ -1,9 +1,7 @@
 //
-//  LoaderFactory.m
-//  BaseProject
+//  LoaderManager.m
 //
-//  Created by Rafael Fernandez Alvarez on 23/11/15.
-//  Copyright © 2015 SDOS. All rights reserved.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 #undef CASE_LOADER
@@ -27,7 +25,7 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <M13ProgressSuite/M13ProgressViewRing.h>
-#import <MaterialControlsCustom/MDProgress.h>
+#import "MDProgress.h"
 #import <PureLayout/PureLayout.h>
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
@@ -116,7 +114,7 @@
 		[loaderView autoCenterInSuperview];
 		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
 		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
-		[loaderView show:YES];
+		[loaderView showAnimated:YES];
 	} else if ([loaderObject.loaderView isKindOfClass:[M13ProgressViewRing class]]) {
 		M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
 		loaderView.alpha = 0;
@@ -155,7 +153,7 @@
 + (void) loadHideBlockWithLoaderObject:(LoaderObject *) loaderObject {
 	if ([loaderObject.loaderView isKindOfClass:[MBProgressHUD class]]) {
 		MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
-		[loaderView hide:YES];
+		[loaderView hideAnimated:YES];
 	} else if ([loaderObject.loaderView isKindOfClass:[M13ProgressViewRing class]]) {
 		M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
 		[UIView animateWithDuration:0.3 animations:^{
@@ -185,7 +183,7 @@
 + (void) loadChangeTextBlockWithLoaderObject:(LoaderObject *) loaderObject loaderText:(NSString *) loaderText{
 	if ([loaderObject.loaderView isKindOfClass:[MBProgressHUD class]]) {
 		MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
-		loaderView.labelText = loaderText;
+		loaderView.label.text = loaderText;
 	}
 }
 
@@ -576,7 +574,7 @@
     NSAssert((view), @"Es necesario un view para este tipo de loader");
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:view];
     hud.removeFromSuperViewOnHide = YES;
-    hud.labelText = LoaderDefaultLoaderText;
+    hud.label.text = LoaderDefaultLoaderText;
     
     return hud;
 }

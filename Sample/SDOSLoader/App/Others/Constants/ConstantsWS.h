@@ -8,4 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-#define DOCUMENTATION_URL @"http://kc.sdos.es/display/mobility/SDOSLoader"
+#define DOCUMENTATION_URL @"https://kc.sdos.es/x/GgBm"
