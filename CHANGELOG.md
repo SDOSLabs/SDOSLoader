@@ -1,6 +1,7 @@
-## [1.2.0 Eliminación de dependencias. Comentarios y estructura del podspec](https://git.sdos.es/ios/SDOSLoader/tree/v1.2.0)
+## [2.0.0 Eliminación de dependencias. Comentarios y estructura del podspec](https://git.sdos.es/ios/SDOSLoader/tree/v2.0.0)
 
 - Se han eliminado dependencias de la librería MaterialControlCustom. Ahora la clase del loader ha cambiado de MDProgress a SDOSLoaderProgress para la personalización
+- Se ha eliminado la dependencia de SDOSLocalizableString
 - Se ha modificado la estructura del podspec
 - Se han eliminado comentarios de las cabeceras de los ficheros
 
