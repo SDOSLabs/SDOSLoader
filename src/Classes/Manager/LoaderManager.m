@@ -15,10 +15,8 @@
 #define SWITCH_LOADER(s)                       for (NSString *__s__ = (s); ; )
 #define DEFAULT_LOADER
 
-#import <SDOSLocalizableString/SDOSLocalizableString.h>
-
 #define LoaderDefaultSize CGSizeMake(50, 50)
-#define LoaderDefaultLoaderText LS(@"coreiOS.cargando")
+#define LoaderDefaultLoaderText @"Cargando"
 
 #import "LoaderManager.h"
 #import "LoaderObjectPrivateInterface.h"
@@ -26,7 +24,6 @@
 #import "SDOSLoaderProgress.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <M13ProgressSuite/M13ProgressViewRing.h>
-#import <PureLayout/PureLayout.h>
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 
@@ -108,46 +105,80 @@
 
 + (void) loadShowBlockWithLoaderObject:(LoaderObject *) loaderObject {
 	
+    UIView *loaderViewFinal;
 	if ([loaderObject.loaderView isKindOfClass:[MBProgressHUD class]]) {
 		MBProgressHUD *loaderView = (MBProgressHUD *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
 		[loaderView showAnimated:YES];
 	} else if ([loaderObject.loaderView isKindOfClass:[M13ProgressViewRing class]]) {
 		M13ProgressViewRing *loaderView = (M13ProgressViewRing *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
+        
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
 	} else if ([loaderObject.loaderView isKindOfClass:[SDOSLoaderProgress class]]) {
 		SDOSLoaderProgress *loaderView = (SDOSLoaderProgress *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
 		[loaderView startAnimation];
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
 	} else if ([loaderObject.loaderView isKindOfClass:[DGActivityIndicatorView class]]) {
 		DGActivityIndicatorView *loaderView = (DGActivityIndicatorView *)loaderObject.loaderView;
+        loaderViewFinal = loaderView;
+        loaderView.translatesAutoresizingMaskIntoConstraints = NO;
 		loaderView.alpha = 0;
 		[loaderObject.view addSubview:loaderView];
-		[loaderView autoCenterInSuperview];
-		[loaderView autoSetDimension:ALDimensionHeight toSize:loaderView.frame.size.height];
-		[loaderView autoSetDimension:ALDimensionWidth toSize:loaderView.frame.size.width];
 		[loaderView startAnimating];
 		[UIView animateWithDuration:0.3 animations:^{
 			loaderView.alpha = 1;
 		}];
 	}
+    
+    //Add constraints
+    NSLayoutConstraint *centreHorizontallyConstraint = [NSLayoutConstraint
+                                                        constraintWithItem:loaderViewFinal.superview
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        relatedBy:NSLayoutRelationEqual
+                                                        toItem:loaderViewFinal
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        multiplier:1.0
+                                                        constant:0];
+    NSLayoutConstraint *centreVerticallyConstraint = [NSLayoutConstraint
+                                                      constraintWithItem:loaderViewFinal.superview
+                                                      attribute:NSLayoutAttributeCenterY
+                                                      relatedBy:NSLayoutRelationEqual
+                                                      toItem:loaderViewFinal
+                                                      attribute:NSLayoutAttributeCenterY
+                                                      multiplier:1.0
+                                                      constant:0];
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint
+                                            constraintWithItem:loaderViewFinal
+                                            attribute:NSLayoutAttributeHeight
+                                            relatedBy:NSLayoutRelationEqual
+                                            toItem:nil
+                                            attribute:NSLayoutAttributeNotAnAttribute
+                                            multiplier:1.0
+                                            constant:loaderViewFinal.frame.size.height];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint
+                                           constraintWithItem:loaderViewFinal
+                                           attribute:NSLayoutAttributeWidth
+                                           relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                           attribute:NSLayoutAttributeNotAnAttribute
+                                           multiplier:1.0
+                                           constant:loaderViewFinal.frame.size.width];
+    
+    [NSLayoutConstraint activateConstraints:@[centreVerticallyConstraint, centreHorizontallyConstraint, heightConstraint, widthConstraint]];
 }
 
 + (void) loadHideBlockWithLoaderObject:(LoaderObject *) loaderObject {

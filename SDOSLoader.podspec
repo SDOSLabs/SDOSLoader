@@ -18,8 +18,6 @@ Pod::Spec.new do |spec|
 
   spec.dependency 'MBProgressHUD', '~> 1.1'
   spec.dependency 'M13ProgressSuite', '~> 1.2'
-  spec.dependency 'PureLayout', '~> 3.0'
   spec.dependency 'DGActivityIndicatorView', '~> 2.1'
-  spec.dependency 'SDOSLocalizableString'
 
 end
