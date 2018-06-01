@@ -1,9 +1,7 @@
 //
 //  LoaderObjectPrivateInterface.h
-//  BaseProject
 //
-//  Created by Rafael Fernandez Alvarez on 24/11/15.
-//  Copyright © 2015 SDOS. All rights reserved.
+//  Copyright © 2018 SDOS. All rights reserved.
 //
 
 /**
