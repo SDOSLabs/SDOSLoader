@@ -11,6 +11,7 @@ def shared_pods
 
     pod 'SDOSLocalizableString'
 	pod 'IQKeyboardManager'
+    
 end
 
 target :SDOSLoaderSample do
