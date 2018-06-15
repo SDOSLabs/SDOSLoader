@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2970AD741BFA153F007CFBD9"
-               BuildableName = "SDOSLoader.app"
-               BlueprintName = "SDOSLoader"
-               ReferencedContainer = "container:SDOSLoader.xcodeproj">
+               BuildableName = "SDOSLoaderSample.app"
+               BlueprintName = "SDOSLoaderSample"
+               ReferencedContainer = "container:SDOSLoaderSample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2970AD741BFA153F007CFBD9"
-            BuildableName = "SDOSLoader.app"
-            BlueprintName = "SDOSLoader"
-            ReferencedContainer = "container:SDOSLoader.xcodeproj">
+            BuildableName = "SDOSLoaderSample.app"
+            BlueprintName = "SDOSLoaderSample"
+            ReferencedContainer = "container:SDOSLoaderSample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2970AD741BFA153F007CFBD9"
-            BuildableName = "SDOSLoader.app"
-            BlueprintName = "SDOSLoader"
-            ReferencedContainer = "container:SDOSLoader.xcodeproj">
+            BuildableName = "SDOSLoaderSample.app"
+            BlueprintName = "SDOSLoaderSample"
+            ReferencedContainer = "container:SDOSLoaderSample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2970AD741BFA153F007CFBD9"
-            BuildableName = "SDOSLoader.app"
-            BlueprintName = "SDOSLoader"
-            ReferencedContainer = "container:SDOSLoader.xcodeproj">
+            BuildableName = "SDOSLoaderSample.app"
+            BlueprintName = "SDOSLoaderSample"
+            ReferencedContainer = "container:SDOSLoaderSample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

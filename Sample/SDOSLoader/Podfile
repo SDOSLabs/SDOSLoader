@@ -6,13 +6,14 @@ use_modular_headers!
 inhibit_all_warnings!
 
 def shared_pods
-	pod 'SDOS/Loader', '~> 1.0'
+	pod 'SDOS/Loader'
 	pod 'SDOSLoader', :path => '../../', :inhibit_warnings => false
 
     pod 'SDOSLocalizableString'
 	pod 'IQKeyboardManager'
+    
 end
 
-target :SDOSLoader do
+target :SDOSLoaderSample do
 	shared_pods
 end

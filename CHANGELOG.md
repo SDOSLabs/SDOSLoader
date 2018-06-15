@@ -1,3 +1,7 @@
+## [2.0.1 Variables renombradas](https://git.sdos.es/ios/SDOSLoader/tree/v2.0.1)
+
+- Renombradas variables para evitar conflictos con otras librerías
+
 ## [2.0.0 Eliminación de dependencias. Comentarios y estructura del podspec](https://git.sdos.es/ios/SDOSLoader/tree/v2.0.0)
 
 - Se han eliminado dependencias de la librería MaterialControlCustom. Ahora la clase del loader ha cambiado de MDProgress a SDOSLoaderProgress para la personalización

@@ -20,15 +20,15 @@
 
 @implementation SDOSLoaderCircularProgressLayer
 
-float animationDuration = 0.75f;
-float rotateAnimationDuration = 2.f;
-float anArc = 1.f / kSDOSLoaderArcsCount;
-CAMediaTimingFunction *timmingFunction;
+float SDOSanimationDuration = 0.75f;
+float SDOSrotateAnimationDuration = 2.f;
+float SDOSanArc = 1.f / kSDOSLoaderArcsCount;
+CAMediaTimingFunction *SDOStimmingFunction;
 
 - (instancetype)initWithSuperLayer:(CALayer *)superLayer {
   if (self = [super initWithSuperLayer:superLayer]) {
-    if (!timmingFunction)
-      timmingFunction = [CAMediaTimingFunction
+    if (!SDOStimmingFunction)
+      SDOStimmingFunction = [CAMediaTimingFunction
           functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
   }
 
@@ -135,7 +135,7 @@ CAMediaTimingFunction *timmingFunction;
   if (!self.determinate)
     return;
 
-  _progressLayer.strokeEnd = anArc * self.progress;
+  _progressLayer.strokeEnd = SDOSanArc * self.progress;
   _progressLayer.transform =
       CATransform3DMakeRotation(self.progress * 3 * M_PI_2, 0, 0, 1);
 }
@@ -154,7 +154,7 @@ CAMediaTimingFunction *timmingFunction;
 
   CABasicAnimation *rotateAnimation =
       [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
-  rotateAnimation.duration = rotateAnimationDuration;
+  rotateAnimation.duration = SDOSrotateAnimationDuration;
   rotateAnimation.fromValue = @(0.f);
   rotateAnimation.toValue = @(2 * M_PI);
   rotateAnimation.repeatCount = INFINITY;
@@ -191,9 +191,9 @@ CAMediaTimingFunction *timmingFunction;
       [animations
           addObjectsFromArray:[self createAnimationFromStartValue:startValue
                                                      andStartTime:startTime
-                                                   withValueScale:anArc]];
-      startValue += anArc * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength);
-      startTime += animationDuration * 2;
+                                                   withValueScale:SDOSanArc]];
+      startValue += SDOSanArc * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength);
+      startTime += SDOSanimationDuration * 2;
     } while (!(fmodf(floorf(startValue * 1000), 1000) == 0));
 
     animationGroups = [CAAnimationGroup animation];
@@ -212,38 +212,38 @@ CAMediaTimingFunction *timmingFunction;
                             withValueScale:(float)aCircle {
   CABasicAnimation *headAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-  headAnimation.duration = animationDuration;
+  headAnimation.duration = SDOSanimationDuration;
   headAnimation.beginTime = beginTime;
   headAnimation.fromValue = @(beginValue);
   headAnimation.toValue =
       @(beginValue + aCircle * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength));
-  headAnimation.timingFunction = timmingFunction;
+  headAnimation.timingFunction = SDOStimmingFunction;
 
   CABasicAnimation *tailAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-  tailAnimation.duration = animationDuration;
+  tailAnimation.duration = SDOSanimationDuration;
   tailAnimation.beginTime = beginTime;
   tailAnimation.fromValue = @(beginValue - aCircle * kSDOSLoaderMinStrokeLength);
   tailAnimation.toValue = @(beginValue);
-  tailAnimation.timingFunction = timmingFunction;
+  tailAnimation.timingFunction = SDOStimmingFunction;
 
   CABasicAnimation *endHeadAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-  endHeadAnimation.duration = animationDuration;
-  endHeadAnimation.beginTime = beginTime + animationDuration;
+  endHeadAnimation.duration = SDOSanimationDuration;
+  endHeadAnimation.beginTime = beginTime + SDOSanimationDuration;
   endHeadAnimation.fromValue =
       @(beginValue + aCircle * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength));
   endHeadAnimation.toValue =
       @(beginValue + aCircle * (kSDOSLoaderMaxStrokeLength + kSDOSLoaderMinStrokeLength));
-  endHeadAnimation.timingFunction = timmingFunction;
+  endHeadAnimation.timingFunction = SDOStimmingFunction;
 
   CABasicAnimation *endTailAnimation =
       [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-  endTailAnimation.duration = animationDuration;
-  endTailAnimation.beginTime = beginTime + animationDuration;
+  endTailAnimation.duration = SDOSanimationDuration;
+  endTailAnimation.beginTime = beginTime + SDOSanimationDuration;
   endTailAnimation.fromValue = @(beginValue);
   endTailAnimation.toValue = @(beginValue + aCircle * kSDOSLoaderMaxStrokeLength);
-  endTailAnimation.timingFunction = timmingFunction;
+  endTailAnimation.timingFunction = SDOStimmingFunction;
   return @[ headAnimation, tailAnimation, endHeadAnimation, endTailAnimation ];
 }
 
