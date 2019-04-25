@@ -29,8 +29,8 @@
 
 - (void)configureSegmentedCtr {
     
-    [self.segmentedCtrStyle setTitle:LS(@"Example.defaultStyle") forSegmentAtIndex:SEGMENTED_INDEX_DEFAULT_STYLE];
-    [self.segmentedCtrStyle setTitle:LS(@"Example.customStyle") forSegmentAtIndex:SEGMENTED_INDEX_CUSTOM_STYLE];
+    [self.segmentedCtrStyle setTitle:NSLocalizedString(@"Example.defaultStyle", nil) forSegmentAtIndex:SEGMENTED_INDEX_DEFAULT_STYLE];
+    [self.segmentedCtrStyle setTitle:NSLocalizedString(@"Example.customStyle", nil) forSegmentAtIndex:SEGMENTED_INDEX_CUSTOM_STYLE];
     [self.segmentedCtrStyle setSelectedSegmentIndex:SEGMENTED_INDEX_DEFAULT_STYLE];
 }
 
