@@ -1,7 +1,7 @@
-source 'http://git.sdos.es/ios/cocoapods-specs.git'
+source 'https://svrgitpub.sdos.es/ios/cocoapods-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
+platform :ios, '10.0'
 use_frameworks!
 inhibit_all_warnings!
 

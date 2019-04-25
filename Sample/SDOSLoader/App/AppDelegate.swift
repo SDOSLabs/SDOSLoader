@@ -8,6 +8,19 @@
 
 import Foundation
 import UIKit
+import SDOSLoader
+import SDOSCustomLoader
+import SDOSSwiftExtension
+
+extension LoaderObject {
+    enum style {
+        static var styleRed: Style<SDOSLoaderProgress> {
+            return Style<SDOSLoaderProgress> {
+                $0.progressColor = .red
+            }
+        }
+    }
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +34,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard.init(name: ExampleLoader, bundle: nil)
         let viewcontroller = storyboard.instantiateInitialViewController()
+        
+        var loader = LoaderManager.loader(loaderType: .indeterminateCircular(LoaderObject.style.styleRed), inView: viewcontroller?.view, size: nil)
+        LoaderManager.showLoader(loader)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            LoaderManager.hideLoader(loader)
+        }
         
         self.window?.rootViewController = viewcontroller
         self.window?.makeKeyAndVisible()
