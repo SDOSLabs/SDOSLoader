@@ -52,7 +52,7 @@
 		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
-		8CF86A8D6135896BFCC52F40 /* libPods-SDOSLoaderSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46177C2B5B0C8CA92AEB53 /* libPods-SDOSLoaderSample.a */; };
+		95F9E4CAA4470BFB5A87A72C /* Pods_SDOSLoaderSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */; };
 		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
 		B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A4903E20C13BB30061EF56 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -84,7 +84,6 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
-		2A46177C2B5B0C8CA92AEB53 /* libPods-SDOSLoaderSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDOSLoaderSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		512FC38978F72CA2A1FA0083 /* Pods-SDOSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTableViewCell.xib; sourceTree = "<group>"; };
 		5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTableViewCell.h; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
 		B1A4903D20C13BB30061EF56 /* SDOSLoader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSLoader-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1A4903E20C13BB30061EF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoaderSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CF86A8D6135896BFCC52F40 /* libPods-SDOSLoaderSample.a in Frameworks */,
+				95F9E4CAA4470BFB5A87A72C /* Pods_SDOSLoaderSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
-				2A46177C2B5B0C8CA92AEB53 /* libPods-SDOSLoaderSample.a */,
+				CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
 				2970AD731BFA153F007CFBD9 /* Resources */,
 				29AFB21D1C04C7CB004AB1B6 /* Warnings */,
-				A7FE07970178C5A93AE07B91 /* [CP] Copy Pods Resources */,
+				C6AE4A6FF0436145230C9CC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -587,22 +587,36 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		A7FE07970178C5A93AE07B91 /* [CP] Copy Pods Resources */ = {
+		C6AE4A6FF0436145230C9CC8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+			inputFileListPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/M13ProgressSuite/M13ProgressSuite.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSCustomLoader/SDOSCustomLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSLoader/SDOSLoader.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13ProgressSuite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSCustomLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSLoader.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E7C1859B210D39BC4CDF5C8A /* [CP] Check Pods Manifest.lock */ = {

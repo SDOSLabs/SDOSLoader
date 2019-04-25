@@ -21,7 +21,7 @@
 #import "LoaderManager.h"
 #import "LoaderObjectPrivateInterface.h"
 
-#import "SDOSLoaderProgress.h"
+#import <SDOSCustomLoader/SDOSLoaderProgress.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <M13ProgressSuite/M13ProgressViewRing.h>
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
