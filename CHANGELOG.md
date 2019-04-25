@@ -1,3 +1,7 @@
+## [2.0.2 Cambio URL dependencia](https://svrgitpub.sdos.es/ios/SDOSLoader/tree/v2.0.2)
+
+- Modificada url source de la dependencia
+
 ## [2.0.1 Variables renombradas](https://git.sdos.es/ios/SDOSLoader/tree/v2.0.1)
 
 - Renombradas variables para evitar conflictos con otras librerías
