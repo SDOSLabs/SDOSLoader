@@ -1,19 +1,13 @@
 //
 //  Loader+MBProgressHUD.swift
-//  DGActivityIndicatorView
 //
-//  Created by Rafael Fernandez Alvarez on 25/04/2019.
+//  Copyright © 2019 SDOS. All rights reserved.
 //
 
 import Foundation
-import SDOSSwiftExtension
 import MBProgressHUD
 
-extension MBProgressHUD: Stylable {
-    
-}
-
-extension MBProgressHUD: Loadable {
+extension MBProgressHUD: Loadable, FixConstraints {
     public static func createLoader(loaderType: LoaderType, inView view: UIView, size: CGSize?) -> LoaderObject {
         let loader = MBProgressHUD(view: view)
         loader.removeFromSuperViewOnHide = true
@@ -32,7 +26,7 @@ extension MBProgressHUD: Loadable {
         return loaderObject
     }
     
-    public func show(loaderObject: LoaderObject, delay: TimeInterval) {
+    public func show(loaderObject: LoaderObject) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0
         loaderObject.view.addSubview(self)

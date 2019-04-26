@@ -17,7 +17,7 @@ import SDOSLoader
         return loaderObject == nil ? false : true
     }
     
-    @objc func showLoader(type: String, view: UIView, size: CGSize, text: String?, disable: [UIView]?, applyStyle: Bool) {
+    @objc func showLoader(type: String, view: UIView, size: CGSize, text: String?, disableInteraction: [UIView]?, hideView: [UIView]?, disable: [UIControl]?, applyStyle: Bool) {
         var loaderType: LoaderType?
         
         if type == LoaderTypeText {
@@ -99,8 +99,11 @@ import SDOSLoader
         }
         if let loaderType = loaderType {
             loaderObject = LoaderManager.loader(loaderType: loaderType, inView: view, size: size)
+            loaderObject?.disableControls = disable
+            loaderObject?.disableUserInteractionViews = disableInteraction
+            loaderObject?.hideViews = hideView
             LoaderManager.changeText(text, loaderObject: loaderObject)
-            LoaderManager.showLoader(loaderObject)
+            LoaderManager.showLoader(loaderObject, delay: 2)
         }
     }
     

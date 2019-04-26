@@ -1,19 +1,13 @@
 //
 //  Loader+SDOSLoaderProgress.swift
-//  SDOSLoader
 //
-//  Created by Rafael Fernandez Alvarez on 25/04/2019.
+//  Copyright © 2019 SDOS. All rights reserved.
 //
 
 import Foundation
 import SDOSCustomLoader
-import SDOSSwiftExtension
 
-extension SDOSLoaderProgress: Stylable {
-    
-}
-
-extension SDOSLoaderProgress: Loadable {
+extension SDOSLoaderProgress: Loadable, FixConstraints {
     public static func createLoader(loaderType: LoaderType, inView view: UIView, size: CGSize?) -> LoaderObject {
         let realSize: CGSize
         if let size = size {
@@ -33,7 +27,7 @@ extension SDOSLoaderProgress: Loadable {
         return loaderObject
     }
     
-    public func show(loaderObject: LoaderObject, delay: TimeInterval) {
+    public func show(loaderObject: LoaderObject) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0
         loaderObject.view.addSubview(self)

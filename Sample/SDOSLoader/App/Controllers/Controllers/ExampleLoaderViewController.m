@@ -189,7 +189,7 @@
         self.mask.hidden = NO;
     }];
     
-    [self.projectLoaderManager showLoaderWithType:self.selectedLoaderType view:self.view size:self.selectedLoaderSize text:self.selectedLoaderText disable: @[self.tableView] applyStyle:self.loaderStyle];
+    [self.projectLoaderManager showLoaderWithType:self.selectedLoaderType view:self.view size:self.selectedLoaderSize text:self.selectedLoaderText disableInteraction: @[self.tableView] hideView: @[self.tableView] disable:nil applyStyle:self.loaderStyle];
 }
 
 - (void) hideLoader:(NSTimer *)timer {

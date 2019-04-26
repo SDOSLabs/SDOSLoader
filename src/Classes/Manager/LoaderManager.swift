@@ -1,8 +1,7 @@
 //
 //  LoaderManager.swift
-//  DGActivityIndicatorView
 //
-//  Created by Rafael Fernandez Alvarez on 25/04/2019.
+//  Copyright © 2019 SDOS. All rights reserved.
 //
 
 import Foundation
@@ -13,12 +12,12 @@ import M13ProgressSuite
 import DGActivityIndicatorView
 
 
-public class LoaderManager {
+public class LoaderManager: NSObject {
     
     private static let shared = LoaderManager()
     private var activeLoaders = [String: LoaderObject]()
     
-    private init() { }
+    private override init() { }
     
     public class func loader(loaderType: LoaderType, inView view: UIView? = nil, size: CGSize?) -> LoaderObject {
         switch loaderType {
@@ -75,27 +74,78 @@ public class LoaderManager {
     
     public class func showLoader(_ loaderObject: LoaderObject?, delay: TimeInterval = 0) {
         if let loaderObject = loaderObject {
-            loaderObject.loaderView.show(loaderObject: loaderObject, delay: delay)
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(_showLoader(_:)), object: loaderObject)
+            self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
+        }
+    }
+    
+    @objc class func _showLoader(_ loaderObject: LoaderObject) {
+        DispatchQueue.main.async {
+            loaderObject.loaderView.show(loaderObject: loaderObject)
             shared.activeLoaders[loaderObject.uuid] = loaderObject
+            
+            UIView.animate(withDuration: loaderObject.timeAnimation) {
+                if let disableControls = loaderObject.disableControls {
+                    for control in disableControls {
+                        control.isEnabled = false
+                    }
+                }
+                if let hideViews = loaderObject.hideViews {
+                    for view in hideViews {
+                        view.alpha = 0
+                    }
+                }
+                if let disableUserInteractionViews = loaderObject.disableUserInteractionViews {
+                    for view in disableUserInteractionViews {
+                        view.isUserInteractionEnabled = false
+                    }
+                }
+            }
         }
     }
     
     public class func changeProgress(newValue value: Float, loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
-            loaderObject.loaderView.setProgress(loaderObject: loaderObject, value: value)
+            DispatchQueue.main.async {
+                loaderObject.loaderView.setProgress(loaderObject: loaderObject, value: value)
+            }
         }
     }
     
     public class func changeText(_ text: String?, loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
-            loaderObject.loaderView.setText(loaderObject: loaderObject, text: text)
+            DispatchQueue.main.async {
+                loaderObject.loaderView.setText(loaderObject: loaderObject, text: text)
+            }
         }
     }
     
     public class func hideLoader(_ loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
-            loaderObject.loaderView.hide(loaderObject: loaderObject)
-            shared.activeLoaders.removeValue(forKey: loaderObject.uuid)
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(_showLoader(_:)), object: loaderObject)
+            
+            DispatchQueue.main.async {
+                loaderObject.loaderView.hide(loaderObject: loaderObject)
+                shared.activeLoaders.removeValue(forKey: loaderObject.uuid)
+                
+                UIView.animate(withDuration: loaderObject.timeAnimation) {
+                    if let disableControls = loaderObject.disableControls {
+                        for control in disableControls {
+                            control.isEnabled = true
+                        }
+                    }
+                    if let hideViews = loaderObject.hideViews {
+                        for view in hideViews {
+                            view.alpha = 1
+                        }
+                    }
+                    if let disableUserInteractionViews = loaderObject.disableUserInteractionViews {
+                        for view in disableUserInteractionViews {
+                            view.isUserInteractionEnabled = true
+                        }
+                    }
+                }
+            }
         }
     }
     

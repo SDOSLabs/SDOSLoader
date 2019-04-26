@@ -1,71 +1,96 @@
 //
 //  LoaderObject.swift
-//  DGActivityIndicatorView
 //
-//  Created by Rafael Fernandez Alvarez on 25/04/2019.
+//  Copyright © 2019 SDOS. All rights reserved.
 //
 
 import Foundation
 import SDOSSwiftExtension
 
-class WeakRef<T> where T: AnyObject {
-    private(set) weak var value: T?
-    
-    init(value: T) {
-        self.value = value
-    }
-    
-    init?(value: T?) {
-        if let value = value {
-            self.value = value
-        } else {
-            return nil
-        }
-    }
-}
-
-
-extension Array where Element: WeakRef<AnyObject> {
-    /// Removes the nil objects in the array.
-    mutating func compact() -> Array<Element> {
-        self = self.filter{ $0.value != nil }
-        return self
-    }
-    
-}
-
-public enum LoaderActionType {
-    /**
-     *  Opción que indica que se va a mostrar el loader
-     */
-    case show
-    /**
-     *  Opción que indica que se va a ocultar el loader
-     */
-    case hide
-    /**
-     *  Ocpión que indica que se va a modificar el texto del loader
-     */
-    case changeText
-    /**
-     *  Opción que indica que se va a modificar el progreso del loader
-     */
-    case changeProgress
-}
-
-
-public class LoaderObject {
+@objc public class LoaderObject: NSObject {
     public let uuid: String = UUID().uuidString
     public let loaderType: LoaderType
     public unowned let view: UIView
     public let loaderView: Loadable
     public let timeAnimation: TimeInterval
+    public var disableUserInteractionViews: [UIView]? {
+        get {
+            var result: [UIView]?
+            if let _disableUserInteractionViews = _disableUserInteractionViews {
+                result = [UIView]()
+                for item in _disableUserInteractionViews {
+                    if let item = item.value {
+                        result?.append(item)
+                    }
+                }
+            }
+            return result
+        }
+        set {
+            var result: [LoaderWeakRef<UIView>]?
+            if let newValue = newValue {
+                result = [LoaderWeakRef<UIView>]()
+                for item in newValue {
+                    result?.append(LoaderWeakRef(value: item))
+                }
+            }
+            _disableUserInteractionViews = result
+        }
+    }
+    public var hideViews: [UIView]? {
+        get {
+            var result: [UIView]?
+            if let _hideViews = _hideViews {
+                result = [UIView]()
+                for item in _hideViews {
+                    if let item = item.value {
+                        result?.append(item)
+                    }
+                }
+            }
+            return result
+        }
+        set {
+            var result: [LoaderWeakRef<UIView>]?
+            if let newValue = newValue {
+                result = [LoaderWeakRef<UIView>]()
+                for item in newValue {
+                    result?.append(LoaderWeakRef(value: item))
+                }
+            }
+            _hideViews = result
+        }
+    }
+    public var disableControls: [UIControl]? {
+        get {
+            var result: [UIControl]?
+            if let _disableControls = _disableControls {
+                result = [UIControl]()
+                for item in _disableControls {
+                    if let item = item.value {
+                        result?.append(item)
+                    }
+                }
+            }
+            return result
+        }
+        set {
+            var result: [LoaderWeakRef<UIControl>]?
+            if let newValue = newValue {
+                result = [LoaderWeakRef<UIControl>]()
+                for item in newValue {
+                    result?.append(LoaderWeakRef(value: item))
+                }
+            }
+            _disableControls = result
+        }
+    }
     
-    private var disableUserInteractionViews: [WeakRef<UIView>]?
-    private var hideViews: [WeakRef<UIView>]?
-    private var disableControls: [WeakRef<UIControl>]?
+    private var _disableUserInteractionViews: [LoaderWeakRef<UIView>]?
+    private var _hideViews: [LoaderWeakRef<UIView>]?
+    private var _disableControls: [LoaderWeakRef<UIControl>]?
     
-    init(loaderType: LoaderType, view: UIView, loaderView: Loadable) {
+    internal init(loaderType: LoaderType, view: UIView, loaderView: Loadable) {
         self.loaderType = loaderType
         self.view = view
         self.loaderView = loaderView
