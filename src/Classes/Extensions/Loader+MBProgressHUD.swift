@@ -44,8 +44,8 @@ extension MBProgressHUD: Loadable {
         
     }
     
-    public func setProgress(loaderObject: LoaderObject, value: Double) {
-        self.progress = Float(value)
+    public func setProgress(loaderObject: LoaderObject, value: Float) {
+        self.progress = value
     }
     
     public func setText(loaderObject: LoaderObject, text: String) {
@@ -54,8 +54,5 @@ extension MBProgressHUD: Loadable {
     
     public func hide(loaderObject: LoaderObject) {
         self.hide(animated: true)
-        UIView.animate(withDuration: 0.3, animations: {
-            self.alpha = 0
-        })
     }
 }

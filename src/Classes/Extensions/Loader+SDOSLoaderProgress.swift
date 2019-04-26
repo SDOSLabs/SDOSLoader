@@ -44,7 +44,7 @@ extension SDOSLoaderProgress: Loadable {
         
     }
     
-    public func setProgress(loaderObject: LoaderObject, value: Double) {
+    public func setProgress(loaderObject: LoaderObject, value: Float) {
         print("Not support")
     }
     
@@ -55,6 +55,8 @@ extension SDOSLoaderProgress: Loadable {
     public func hide(loaderObject: LoaderObject) {
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 0
-        })
+        }) { (finished) in
+            self.removeFromSuperview()
+        }
     }
 }
