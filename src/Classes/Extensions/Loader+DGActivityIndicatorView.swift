@@ -117,7 +117,7 @@ extension DGActivityIndicatorView: Loadable {
         print("Not support")
     }
     
-    public func setText(loaderObject: LoaderObject, text: String) {
+    public func setText(loaderObject: LoaderObject, text: String?) {
         print("Not support")
     }
     

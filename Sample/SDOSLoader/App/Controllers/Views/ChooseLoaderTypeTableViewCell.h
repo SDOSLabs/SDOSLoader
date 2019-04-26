@@ -9,15 +9,16 @@
 #define ChooseLoaderTypeCellIdentifier @"ChooseLoaderTypeCellIdentifier"
 
 #import <UIKit/UIKit.h>
+@import SDOSLoader;
 
 @protocol ChooseLoaderTypeDelegate <NSObject>
 
-- (void)didSelectLoaderType:(LoaderType)loaderType;
+- (void)didSelectLoaderType:(NSString *)loaderType;
 
 @end
 
 @interface ChooseLoaderTypeTableViewCell : UITableViewCell
 
-- (void)setDelegate:(id<ChooseLoaderTypeDelegate>)delegate forSupportedLoaderTypes:(NSArray <LoaderType> *)supportedLoaderTypes;
+- (void)setDelegate:(id<ChooseLoaderTypeDelegate>)delegate forSupportedLoaderTypes:(NSArray <NSString *> *)supportedLoaderTypes;
 
 @end

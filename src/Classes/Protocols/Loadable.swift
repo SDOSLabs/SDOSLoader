@@ -12,7 +12,7 @@ public protocol Loadable: UIView {
     static func createLoader(loaderType: LoaderType, inView view: UIView, size: CGSize?) -> LoaderObject
     func show(loaderObject: LoaderObject, delay: TimeInterval)
     func setProgress(loaderObject: LoaderObject, value: Float)
-    func setText(loaderObject: LoaderObject, text: String)
+    func setText(loaderObject: LoaderObject, text: String?)
     func hide(loaderObject: LoaderObject)
     
     func makeConstraints(to view: UIView)

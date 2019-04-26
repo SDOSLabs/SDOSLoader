@@ -7,9 +7,6 @@
 //
 
 #import "SDOSLoaderProgress.h"
-#import "MBProgressHUD.h"
-#import "M13ProgressViewRing.h"
-#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
 
 #pragma mark - UIButton
 
@@ -152,29 +149,5 @@
 @interface UISearchBar (Design)
 
 - (void) loadStyleSearchBarDefault;
-
-@end
-
-#pragma mark - SDOSLoaderProgress
-
-@interface SDOSLoaderProgress (Design) <GenericLoaderCustomizationProtocol>
-
-@end
-
-#pragma mark - MBProgressHUD
-
-@interface MBProgressHUD (Design) <GenericLoaderCustomizationProtocol>
-
-@end
-
-#pragma mark -  M13ProgressViewRing
-
-@interface  M13ProgressViewRing (Design) <GenericLoaderCustomizationProtocol>
-
-@end
-
-#pragma mark -  DGActivityIndicatorView
-
-@interface  DGActivityIndicatorView (Design) <GenericLoaderCustomizationProtocol>
 
 @end

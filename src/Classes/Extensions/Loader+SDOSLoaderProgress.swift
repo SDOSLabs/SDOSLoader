@@ -27,6 +27,7 @@ extension SDOSLoaderProgress: Loadable {
         loader.progressStyle = .Circular
         loader.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
         loader.circularProgressDiameter = loader.frame.size.width / 2
+        loader.trackWidth = 3
         
         let loaderObject = LoaderObject(loaderType: loaderType, view: view, loaderView: loader)
         return loaderObject
@@ -48,7 +49,7 @@ extension SDOSLoaderProgress: Loadable {
         print("Not support")
     }
     
-    public func setText(loaderObject: LoaderObject, text: String) {
+    public func setText(loaderObject: LoaderObject, text: String?) {
         print("Not support")
     }
     

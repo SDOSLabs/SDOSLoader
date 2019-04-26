@@ -41,6 +41,9 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		29F1EFF12272FCBE00C09581 /* ProjectLoaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF02272FCBE00C09581 /* ProjectLoaderType.swift */; };
+		29F1EFF32272FE9500C09581 /* ProjectLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */; };
+		29F1EFF52273149800C09581 /* LoaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF42273149800C09581 /* LoaderStyle.swift */; };
 		5C1BC5C51DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */; };
 		5C1BC5C81DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */; };
 		5C4AD1E21DCB228900F05FD9 /* ExampleLoader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */; };
@@ -53,7 +56,6 @@
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
 		95F9E4CAA4470BFB5A87A72C /* Pods_SDOSLoaderSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */; };
-		B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */; };
 		B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A4903E20C13BB30061EF56 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,9 @@
 		298FD63F1C0701E500BA707E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		298FD6401C0701E500BA707E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
+		29F1EFF02272FCBE00C09581 /* ProjectLoaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectLoaderType.swift; sourceTree = "<group>"; };
+		29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectLoaderManager.swift; sourceTree = "<group>"; };
+		29F1EFF42273149800C09581 /* LoaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderStyle.swift; sourceTree = "<group>"; };
 		512FC38978F72CA2A1FA0083 /* Pods-SDOSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTableViewCell.xib; sourceTree = "<group>"; };
 		5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTableViewCell.h; sourceTree = "<group>"; };
@@ -104,8 +109,6 @@
 		5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationLoaderViewController.m; sourceTree = "<group>"; };
 		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
 		AE590B665EEFEB5F0DF967C4 /* Pods-SDOSLoaderSample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.production.xcconfig"; sourceTree = "<group>"; };
-		B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LoaderManager+BaseiOS.h"; sourceTree = "<group>"; };
-		B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LoaderManager+BaseiOS.m"; sourceTree = "<group>"; };
 		B1A4903D20C13BB30061EF56 /* SDOSLoader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSLoader-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1A4903E20C13BB30061EF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoaderSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +202,9 @@
 				298FD5C71C0701E500BA707E /* Controllers */,
 				298FD5CD1C0701E500BA707E /* Storyboards */,
 				298FD5CF1C0701E500BA707E /* Views */,
+				29F1EFF02272FCBE00C09581 /* ProjectLoaderType.swift */,
+				29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */,
+				29F1EFF42273149800C09581 /* LoaderStyle.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,18 +434,8 @@
 		B12F4C381DBB89BB0061E9F1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B12F4C3A1DBB89BB0061E9F1 /* Loader */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		B12F4C3A1DBB89BB0061E9F1 /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				B12F4C3C1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.h */,
-				B12F4C3D1DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m */,
-			);
-			path = Loader;
 			sourceTree = "<group>";
 		};
 		DCEDBEC983ACD480E11680B4 /* Pods */ = {
@@ -649,14 +645,16 @@
 			files = (
 				5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */,
 				5C4AD1EA1DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m in Sources */,
+				29F1EFF52273149800C09581 /* LoaderStyle.swift in Sources */,
 				5C4AD1ED1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m in Sources */,
 				298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */,
 				5C4AD1E51DCB23A300F05FD9 /* ExampleLoaderViewController.m in Sources */,
+				29F1EFF12272FCBE00C09581 /* ProjectLoaderType.swift in Sources */,
+				29F1EFF32272FE9500C09581 /* ProjectLoaderManager.swift in Sources */,
 				5C1BC5C81DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m in Sources */,
 				298FD6701C0701E500BA707E /* StoryboardConstants.m in Sources */,
 				B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
-				B12F4C401DBB89BB0061E9F1 /* LoaderManager+BaseiOS.m in Sources */,
 				5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

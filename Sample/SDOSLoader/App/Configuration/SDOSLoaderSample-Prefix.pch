@@ -9,7 +9,6 @@
     #import <Foundation/Foundation.h>
 
 //Imports del proyecto
-#import "LoaderManager+BaseiOS.h"
 #import "Util.h"
 #import "Constants.h"
 #import "Design+Extensions.h"

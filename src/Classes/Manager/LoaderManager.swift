@@ -86,7 +86,7 @@ public class LoaderManager {
         }
     }
     
-    public class func changeText(_ text: String, loaderObject: LoaderObject?) {
+    public class func changeText(_ text: String?, loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
             loaderObject.loaderView.setText(loaderObject: loaderObject, text: text)
         }

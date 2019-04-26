@@ -234,89 +234,89 @@
 
 #pragma mark - SDOSLoaderProgress
 
-@implementation SDOSLoaderProgress (Design)
-
-- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
-    switch (tag) {
-        case LOADER_TAG_CUSTOMIZED_LOADER: {
-            if ([loaderType isEqualToString: LoaderTypeIndeterminateCircular]) {
-                self.progressColor = [UIColor greenColor];
-                self.trackColor = [UIColor orangeColor];
-                self.trackWidth = 20;
-            }
-        } break;
-        default:
-            break;
-    }
-}
-
-@end
-
-#pragma mark - MBProgressHUD
-
-@implementation MBProgressHUD (Design)
-
-- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
-    switch (tag) {
-        case LOADER_TAG_CUSTOMIZED_LOADER: {
-            if ([loaderType isEqualToString: LoaderTypeText]) {
-                self.contentColor = [UIColor redColor];
-                self.detailsLabel.text = @"Por favor, espere";
-                self.animationType = MBProgressHUDAnimationZoomIn;
-            } else if ([loaderType isEqualToString:LoaderTypeProgressBar]) {
-                self.contentColor = [UIColor blueColor];
-                self.detailsLabel.text = @"Por favor, espere";
-                self.animationType = MBProgressHUDAnimationZoomOut;
-            } else if ([loaderType isEqualToString:LoaderTypeProgressCircular]) {
-                self.contentColor = [UIColor whiteColor];
-                self.bezelView.backgroundColor = [UIColor blackColor];
-                self.detailsLabel.text = @"Por favor, espere";
-                self.animationType = MBProgressHUDAnimationZoom;
-            }
-        } break;
-        default:
-            break;
-    }
-}
-
-@end
-
-#pragma mark - M13ProgressViewRing
-
-@implementation M13ProgressViewRing (Desing)
-
-- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
-    switch (tag) {
-        case LOADER_TAG_CUSTOMIZED_LOADER: {
-            if ([loaderType isEqualToString: LoaderTypeProgressCircularWithProgress]) {
-                self.backgroundRingWidth = 10;
-                self.progressRingWidth = 10;
-                self.showPercentage = NO;
-                self.primaryColor = [UIColor blackColor];
-                self.secondaryColor = [UIColor lightGrayColor];
-            }
-        } break;
-        default:
-            break;
-    }
-}
-
-@end
-
-#pragma mark - DGActivityIndicatorView
-
-@implementation DGActivityIndicatorView (Desing)
-
-- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
-    switch (tag) {
-        case LOADER_TAG_CUSTOMIZED_LOADER: {
-                [self setTintColor:[UIColor orangeColor]];
-        } break;
-        default:
-            break;
-    }
-}
-
-@end
+//@implementation SDOSLoaderProgress (Design)
+//
+//- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
+//    switch (tag) {
+//        case LOADER_TAG_CUSTOMIZED_LOADER: {
+//            if ([loaderType isEqualToString: LoaderTypeIndeterminateCircular]) {
+//                self.progressColor = [UIColor greenColor];
+//                self.trackColor = [UIColor orangeColor];
+//                self.trackWidth = 20;
+//            }
+//        } break;
+//        default:
+//            break;
+//    }
+//}
+//
+//@end
+//
+//#pragma mark - MBProgressHUD
+//
+//@implementation MBProgressHUD (Design)
+//
+//- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
+//    switch (tag) {
+//        case LOADER_TAG_CUSTOMIZED_LOADER: {
+//            if ([loaderType isEqualToString: LoaderTypeText]) {
+//                self.contentColor = [UIColor redColor];
+//                self.detailsLabel.text = @"Por favor, espere";
+//                self.animationType = MBProgressHUDAnimationZoomIn;
+//            } else if ([loaderType isEqualToString:LoaderTypeProgressBar]) {
+//                self.contentColor = [UIColor blueColor];
+//                self.detailsLabel.text = @"Por favor, espere";
+//                self.animationType = MBProgressHUDAnimationZoomOut;
+//            } else if ([loaderType isEqualToString:LoaderTypeProgressCircular]) {
+//                self.contentColor = [UIColor whiteColor];
+//                self.bezelView.backgroundColor = [UIColor blackColor];
+//                self.detailsLabel.text = @"Por favor, espere";
+//                self.animationType = MBProgressHUDAnimationZoom;
+//            }
+//        } break;
+//        default:
+//            break;
+//    }
+//}
+//
+//@end
+//
+//#pragma mark - M13ProgressViewRing
+//
+//@implementation M13ProgressViewRing (Desing)
+//
+//- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
+//    switch (tag) {
+//        case LOADER_TAG_CUSTOMIZED_LOADER: {
+//            if ([loaderType isEqualToString: LoaderTypeProgressCircularWithProgress]) {
+//                self.backgroundRingWidth = 10;
+//                self.progressRingWidth = 10;
+//                self.showPercentage = NO;
+//                self.primaryColor = [UIColor blackColor];
+//                self.secondaryColor = [UIColor lightGrayColor];
+//            }
+//        } break;
+//        default:
+//            break;
+//    }
+//}
+//
+//@end
+//
+//#pragma mark - DGActivityIndicatorView
+//
+//@implementation DGActivityIndicatorView (Desing)
+//
+//- (void) loaderCustomizationInitWithType:(NSString *) loaderType tag:(NSInteger) tag {
+//    switch (tag) {
+//        case LOADER_TAG_CUSTOMIZED_LOADER: {
+//                [self setTintColor:[UIColor orangeColor]];
+//        } break;
+//        default:
+//            break;
+//    }
+//}
+//
+//@end
 
 

@@ -48,7 +48,7 @@ extension MBProgressHUD: Loadable {
         self.progress = value
     }
     
-    public func setText(loaderObject: LoaderObject, text: String) {
+    public func setText(loaderObject: LoaderObject, text: String?) {
         self.label.text = text
     }
     

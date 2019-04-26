@@ -40,7 +40,7 @@
 
 - (void)setChooseTextForLoaderDelegate:(id<ChooseTextForLoaderDelegate>)delegate {
     self.delegate = delegate;
-    self.textField.text = nil;
+    self.textField.text = @"Cargando";
     [self.delegate didChangeTextForLoader:nil];
 }
 

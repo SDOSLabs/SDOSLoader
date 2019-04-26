@@ -45,7 +45,7 @@ extension M13ProgressViewRing: Loadable {
         self.setProgress(CGFloat(value), animated: true)
     }
     
-    public func setText(loaderObject: LoaderObject, text: String) {
+    public func setText(loaderObject: LoaderObject, text: String?) {
         print("Not support")
     }
     
