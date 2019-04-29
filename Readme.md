@@ -77,21 +77,13 @@ public enum LoaderType {
 Interfaz pública del manager del loader
 ```js
 public class LoaderManager : NSObject {
-
-    public class func loader(loaderType: LoaderType, size: CGSize?, inView view: UIView? = nil) -> LoaderObject
-
+    public class func loader(loaderType: LoaderType, inView view: UIView, size: CGSize?) -> LoaderObject
     public class func showLoader(_ loaderObject: LoaderObject?, delay: TimeInterval = 0)
-
     public class func changeProgress(newValue value: Float, loaderObject: LoaderObject?)
-
     public class func changeText(_ text: String?, loaderObject: LoaderObject?)
-
     public class func hideLoader(_ loaderObject: LoaderObject?)
-
     public class func hideLoaderOfView(_ view: UIView)
-
     public static func loaderOfView(_ view: UIView) -> [LoaderObject]?
-
     public static func hideAllLoaders()
 }
 ```

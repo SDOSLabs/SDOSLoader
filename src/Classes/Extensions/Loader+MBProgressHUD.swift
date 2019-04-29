@@ -22,15 +22,15 @@ extension MBProgressHUD: Loadable, FixConstraints {
         default:
             loader.mode = MBProgressHUDMode.text
         }
-        let loaderObject = LoaderObject(loaderType: loaderType, view: view, loaderView: loader)
+        let loaderObject = LoaderObject(loaderType: loaderType, parentView: view, loaderView: loader)
         return loaderObject
     }
     
     public func show(loaderObject: LoaderObject) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0
-        loaderObject.view.addSubview(self)
-        makeConstraints(to: loaderObject.view)
+        loaderObject.parentView.addSubview(self)
+        makeConstraints(to: loaderObject.parentView)
         self.show(animated: true)
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1

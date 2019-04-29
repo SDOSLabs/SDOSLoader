@@ -91,15 +91,15 @@ extension DGActivityIndicatorView: Loadable, FixConstraints {
         let loader = DGActivityIndicatorView(type: type, tintColor: UIColor(red: 31.0/255.0, green: 155.0/255.0, blue: 222.0/255.0, alpha: 1), size: realSize.height)
         loader?.frame = frame
         
-        let loaderObject = LoaderObject(loaderType: loaderType, view: view, loaderView: loader!)
+        let loaderObject = LoaderObject(loaderType: loaderType, parentView: view, loaderView: loader!)
         return loaderObject
     }
     
     public func show(loaderObject: LoaderObject) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0
-        loaderObject.view.addSubview(self)
-        makeConstraints(to: loaderObject.view)
+        loaderObject.parentView.addSubview(self)
+        makeConstraints(to: loaderObject.parentView)
         self.startAnimating()
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1

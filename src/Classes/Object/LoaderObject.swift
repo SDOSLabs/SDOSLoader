@@ -7,12 +7,25 @@
 import Foundation
 import SDOSSwiftExtension
 
+/// Objeto que contiene toda la información referente a un loader
 @objc public class LoaderObject: NSObject {
+    
+    /// Identificador único
     public let uuid: String = UUID().uuidString
+    
+    /// Tipo de loader a cargar
     public let loaderType: LoaderType
-    public unowned let view: UIView
-    public let loaderView: Loadable
+    
+    /// Vista donde se mostrará el loader
+    public unowned let parentView: UIView
+    
+    /// Vista del propio loader que se mostrará
+    public let view: Loadable
+    
+    /// Tiempo de animación para mostrar y ocultar los elementos asociados al loader (hideViews)
     public let timeAnimation: TimeInterval
+    
+    /// Vistas que se deshabilitarán (isUserInteractionEnabled = false) cuando se muestre el loader. Cuando se oculten se volverán a habilitar
     public var disableUserInteractionViews: [UIView]? {
         get {
             var result: [UIView]?
@@ -37,6 +50,8 @@ import SDOSSwiftExtension
             _disableUserInteractionViews = result
         }
     }
+    
+    /// Vistas que se ocultarán (alpha = 0) cuando se muestre el loader. Cuando el loader se oculte se volverán a mostrar las vistas
     public var hideViews: [UIView]? {
         get {
             var result: [UIView]?
@@ -61,6 +76,8 @@ import SDOSSwiftExtension
             _hideViews = result
         }
     }
+    
+    /// Elementos que se deshabilitarán (isEnabled = false) cuando se muestre el loader. Cuando se oculten se volverán a habilitar
     public var disableControls: [UIControl]? {
         get {
             var result: [UIControl]?
@@ -90,14 +107,15 @@ import SDOSSwiftExtension
     private var _hideViews: [LoaderWeakRef<UIView>]?
     private var _disableControls: [LoaderWeakRef<UIControl>]?
     
-    internal init(loaderType: LoaderType, view: UIView, loaderView: Loadable) {
+    internal init(loaderType: LoaderType, parentView: UIView, loaderView view: Loadable) {
         self.loaderType = loaderType
+        self.parentView = parentView
         self.view = view
-        self.loaderView = loaderView
         timeAnimation = 0.3
     }
 }
 
+/// Extensión que indica que se le pueden aplicar estilos
 extension LoaderObject: Stylable {
     
 }

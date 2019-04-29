@@ -20,15 +20,15 @@ extension M13ProgressViewRing: Loadable, FixConstraints {
         let loader = M13ProgressViewRing(frame: frame)
         loader.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
         
-        let loaderObject = LoaderObject(loaderType: loaderType, view: view, loaderView: loader)
+        let loaderObject = LoaderObject(loaderType: loaderType, parentView: view, loaderView: loader)
         return loaderObject
     }
     
     public func show(loaderObject: LoaderObject) {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0
-        loaderObject.view.addSubview(self)
-        makeConstraints(to: loaderObject.view)
+        loaderObject.parentView.addSubview(self)
+        makeConstraints(to: loaderObject.parentView)
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
         })
