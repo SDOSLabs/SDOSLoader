@@ -103,7 +103,7 @@ import SDOSLoader
             loaderObject?.disableUserInteractionViews = disableInteraction
             loaderObject?.hideViews = hideView
             LoaderManager.changeText(text, loaderObject: loaderObject)
-            LoaderManager.showLoader(loaderObject, delay: 2)
+            LoaderManager.showLoader(loaderObject)
         }
     }
     
