@@ -98,7 +98,7 @@ import SDOSLoader
             loaderType = .ballSpinFadeLoader((applyStyle) ? LoaderObject.style.styleDGActivityIndicatorView : nil)
         }
         if let loaderType = loaderType {
-            loaderObject = LoaderManager.loader(loaderType: loaderType, inView: view, size: size)
+            loaderObject = LoaderManager.loader(loaderType: loaderType, size: size, inView: view)
             loaderObject?.disableControls = disable
             loaderObject?.disableUserInteractionViews = disableInteraction
             loaderObject?.hideViews = hideView

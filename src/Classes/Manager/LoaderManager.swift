@@ -19,7 +19,7 @@ public class LoaderManager: NSObject {
     
     private override init() { }
     
-    public class func loader(loaderType: LoaderType, inView view: UIView? = nil, size: CGSize?) -> LoaderObject {
+    public class func loader(loaderType: LoaderType, size: CGSize?, inView view: UIView? = nil) -> LoaderObject {
         switch loaderType {
         case .indeterminateCircular(let style):
             let loaderObject = SDOSLoaderProgress.createLoader(loaderType: loaderType, inView: view!, size: size)
@@ -79,7 +79,7 @@ public class LoaderManager: NSObject {
         }
     }
     
-    @objc class func _showLoader(_ loaderObject: LoaderObject) {
+    @objc private class func _showLoader(_ loaderObject: LoaderObject) {
         DispatchQueue.main.async {
             loaderObject.loaderView.show(loaderObject: loaderObject)
             shared.activeLoaders[loaderObject.uuid] = loaderObject

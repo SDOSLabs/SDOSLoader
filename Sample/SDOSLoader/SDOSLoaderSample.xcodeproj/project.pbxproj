@@ -87,7 +87,7 @@
 		298FD6751C0706D400BA707E /* ImagesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesConstants.h; sourceTree = "<group>"; };
 		29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectLoaderManager.swift; sourceTree = "<group>"; };
 		29F1EFF42273149800C09581 /* LoaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderStyle.swift; sourceTree = "<group>"; };
-		29F1EFF8227330E100C09581 /* SDOSLoader.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDOSLoader.podspec; path = ../../SDOSLoader.podspec; sourceTree = "<group>"; };
+		29F1EFF8227330E100C09581 /* SDOSLoader.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDOSLoader.podspec; path = ../../SDOSLoader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		29F1EFF9227330E100C09581 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
 		29F1EFFA227330E100C09581 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../../Readme.md; sourceTree = "<group>"; };
 		512FC38978F72CA2A1FA0083 /* Pods-SDOSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
