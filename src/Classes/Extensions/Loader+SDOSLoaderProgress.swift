@@ -17,8 +17,28 @@ extension SDOSLoaderProgress: Loadable, FixConstraints {
         }
         let frame = CGRect(x: 0, y: 0, width: realSize.width, height: realSize.height);
         
-        let loader = SDOSLoaderProgress(frame: frame, type: .Indeterminate)
-        loader.progressStyle = .Circular
+        let progressType: SDOSLoaderProgressType
+        let progressStyle: SDOSLoaderProgressStyle
+        switch loaderType {
+        case .indeterminateLinear(_):
+            progressType = .Indeterminate
+            progressStyle = .Linear
+        case .indeterminateCircular(_):
+            progressType = .Indeterminate
+            progressStyle = .Circular
+        case .determinateLinear(_):
+            progressType = .Determinate
+            progressStyle = .Linear
+        case .determinateCircular(_):
+            progressType = .Determinate
+            progressStyle = .Circular
+        default:
+            progressType = .Indeterminate
+            progressStyle = .Circular
+        }
+        
+        let loader = SDOSLoaderProgress(frame: frame, type: progressType)
+        loader.progressStyle = progressStyle
         loader.center = CGPoint(x: view.frame.size.width / 2, y: view.frame.size.height / 2)
         loader.circularProgressDiameter = loader.frame.size.width / 2
         loader.trackWidth = 3
@@ -40,7 +60,13 @@ extension SDOSLoaderProgress: Loadable, FixConstraints {
     }
     
     public func setProgress(loaderObject: LoaderObject, value: Float) {
-        print("Not support")
+        switch loaderObject.type {
+        case .determinateLinear(_),
+             .determinateCircular(_):
+            self.progress = value
+        default:
+            print("Not support")
+        }
     }
     
     public func setText(loaderObject: LoaderObject, text: String?) {

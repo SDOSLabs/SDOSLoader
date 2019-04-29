@@ -28,7 +28,10 @@ public class LoaderManager: NSObject {
     /// - Returns: Objeto loader listo para mostrarse
     public class func loader(loaderType: LoaderType, inView view: UIView, size: CGSize?) -> LoaderObject {
         switch loaderType {
-        case .indeterminateCircular(let style):
+        case .indeterminateCircular(let style),
+             .indeterminateLinear(let style),
+             .determinateCircular(let style),
+             .determinateLinear(let style):
             let loaderObject = SDOSLoaderProgress.createLoader(loaderType: loaderType, inView: view, size: size)
             style?.apply(to: loaderObject.view as? SDOSLoaderProgress)
             return loaderObject

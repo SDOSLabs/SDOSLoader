@@ -30,6 +30,12 @@ import SDOSLoader
             loaderType = .progressCircularWithProgress((applyStyle) ? LoaderObject.style.styleM13ProgressViewRing : nil)
         } else if type == LoaderTypeIndeterminateCircular {
             loaderType = .indeterminateCircular((applyStyle) ? LoaderObject.style.styleSDOSLoaderProgress : nil)
+        } else if type == LoaderTypeIndeterminateLinear {
+            loaderType = .indeterminateLinear((applyStyle) ? LoaderObject.style.styleSDOSLoaderProgress : nil)
+        } else if type == LoaderTypeDeterminateCircular {
+            loaderType = .determinateCircular((applyStyle) ? LoaderObject.style.styleSDOSLoaderProgress : nil)
+        } else if type == LoaderTypeDeterminateLinear {
+            loaderType = .determinateLinear((applyStyle) ? LoaderObject.style.styleSDOSLoaderProgress : nil)
         } else if type == LoaderTypeNineDots {
             loaderType = .nineDots((applyStyle) ? LoaderObject.style.styleDGActivityIndicatorView : nil)
         } else if type == LoaderTypeTriplePulse {

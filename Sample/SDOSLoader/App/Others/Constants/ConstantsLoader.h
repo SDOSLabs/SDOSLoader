@@ -42,6 +42,11 @@ static const NSString * LoaderTypeProgressCircularWithProgress = @"LoaderTypePro
  */
 static const NSString * LoaderTypeIndeterminateCircular = @"LoaderTypeIndeterminateCircular";
 
+
+static const NSString * LoaderTypeIndeterminateLinear = @"LoaderTypeIndeterminateLinear";
+static const NSString * LoaderTypeDeterminateCircular = @"LoaderTypeDeterminateCircular";
+static const NSString * LoaderTypeDeterminateLinear = @"LoaderTypeDeterminateLinear";
+
 /**
  *  Loader con estilo de bolitas en una disposición 3x3 con efectos de crecimiento y decrecimiento individual por cada bolita
  *  Vista obligatoria

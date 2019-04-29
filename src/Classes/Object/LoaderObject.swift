@@ -14,7 +14,7 @@ import SDOSSwiftExtension
     public let uuid: String = UUID().uuidString
     
     /// Tipo de loader a cargar
-    public let loaderType: LoaderType
+    public let type: LoaderType
     
     /// Vista donde se mostrará el loader
     public unowned let parentView: UIView
@@ -108,7 +108,7 @@ import SDOSSwiftExtension
     private var _disableControls: [LoaderWeakRef<UIControl>]?
     
     internal init(loaderType: LoaderType, parentView: UIView, loaderView view: Loadable) {
-        self.loaderType = loaderType
+        self.type = loaderType
         self.parentView = parentView
         self.view = view
         timeAnimation = 0.3
