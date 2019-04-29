@@ -97,6 +97,7 @@ public class LoaderManager : NSObject {
 ```
 
 Cualquier acción que se realice sobre un loader será llevada a cabo a partir de `LoaderManager`. Esta clase centraliza todas las operaciones que se realizan sobre los loaders
+
 Creación de loader y asignación de estilo
 ```js
 var loaderObject = LoaderManager.loader(loaderType: .indeterminateCircular(LoaderObject.style.styleSDOSLoaderProgress), size: size, inView: view)
@@ -137,12 +138,12 @@ Ocultar un loader
 LoaderManager.hideLoader(loaderObject)
 ```
 
-Ocultar todos los loaders de una vista
+Ocultar todos los loaders de una vista y cargados desde el manager
 ```js
 LoaderManager.hideLoaderOfView(view)
 ```
 
-Ocultar **todos** los loaders
+Ocultar **todos** los loaders cargados desde el manager
 ```js
 LoaderManager.hideAllLoaders()
 ```
@@ -155,7 +156,6 @@ loaderObject.hideViews = [tableView]
 ```
 
 ## Dependencias
-* [Firebase/Core](https://cocoapods.org/pods/Firebase) - 5.x
 * [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - 1.1.0 o superior
 * [M13ProgressSuite](https://github.com/Marxon13/M13ProgressSuite) - 1.2.9 o superior
 * [DGActivityIndicatorView](https://github.com/gontovnik/DGActivityIndicatorView) - 2.1.1 o superior
