@@ -12,8 +12,8 @@
 
 
 typedef enum {
-    LoaderStyleDefault,
-    LoaderStyleCustom
+    LoaderStyleDefault = 0,
+    LoaderStyleCustom = 1
 } LoaderStyle;
 
 @protocol ChooseLoaderStyleDelegate <NSObject>

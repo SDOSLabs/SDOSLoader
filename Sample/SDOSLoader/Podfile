@@ -1,15 +1,13 @@
-source 'http://git.sdos.es/ios/cocoapods-specs.git'
+source 'https://svrgitpub.sdos.es/ios/cocoapods-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
-use_modular_headers!
+platform :ios, '10.0'
+use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
-	pod 'SDOS/Loader'
 	pod 'SDOSLoader', :path => '../../', :inhibit_warnings => false
-
-    pod 'SDOSLocalizableString'
+  pod 'SDOSCustomLoader'
 	pod 'IQKeyboardManager'
     
 end

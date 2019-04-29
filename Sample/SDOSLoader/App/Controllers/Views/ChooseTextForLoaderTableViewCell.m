@@ -40,7 +40,7 @@
 
 - (void)setChooseTextForLoaderDelegate:(id<ChooseTextForLoaderDelegate>)delegate {
     self.delegate = delegate;
-    self.textField.text = nil;
+    self.textField.text = @"Cargando";
     [self.delegate didChangeTextForLoader:nil];
 }
 
@@ -49,6 +49,8 @@
     self.textField.placeholder = supported ? PLACEHOLDER_TEXT_LOADER : PLACEHOLDER_TEXT_NOT_SUPPORTED_BY_LOADER;
     if (!supported) {
         self.textField.text = nil;
+    } else if (self.textField.text == nil || [self.textField.text isEqualToString:@""]) {
+        self.textField.text = @"Cargando";
     }
 }
 
