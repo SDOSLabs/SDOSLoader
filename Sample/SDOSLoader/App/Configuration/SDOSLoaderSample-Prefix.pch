@@ -8,11 +8,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-//Import de las dependencias
-#import <SDOS/SDOS.h>
-
 //Imports del proyecto
-#import "LoaderManager+BaseiOS.h"
 #import "Util.h"
 #import "Constants.h"
 #import "Design+Extensions.h"

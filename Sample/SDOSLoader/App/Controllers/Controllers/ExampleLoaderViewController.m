@@ -13,6 +13,7 @@
 #import "ChooseTextForLoaderTableViewCell.h"
 #import "ChooseLoaderStyleTableViewCell.h"
 #import <DGActivityIndicatorView/DGActivityIndicatorView.h>
+#import "SDOSLoaderSample-Swift.h"
 
 #define SECTION_CHOOSE_LOADER_TYPE 0
 #define SECTION_CUSTOMIZE_LOADER 1
@@ -24,16 +25,16 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSArray <LoaderType> *arraySupportedLoaderTypes;
+@property (strong, nonatomic) NSArray <NSString *> *arraySupportedLoaderTypes;
 
 // User selection
-@property (strong, nonatomic) LoaderType selectedLoaderType;
+@property (strong, nonatomic) NSString *selectedLoaderType;
 @property (nonatomic) CGFloat selectedLoadingTime; // seconds
 @property (nonatomic) CGSize selectedLoaderSize;
 @property (copy, nonatomic) NSString *selectedLoaderText;
-@property (nonatomic) NSInteger selectedTagForLoaderStyle;
+@property (nonatomic) LoaderStyle loaderStyle;
 
-@property (strong, nonatomic) LoaderObject *loaderShowing;
+@property (strong, nonatomic) ProjectLoaderManager *projectLoaderManager;
 
 @property (strong, nonatomic) NSTimer *timerToStopLoader;
 @property (strong, nonatomic) NSTimer *timerToUpdateLoader;
@@ -45,10 +46,19 @@
 @property (strong, nonatomic) ChooseTextForLoaderTableViewCell *cellTextLoader;
 @property (strong, nonatomic) ChooseLoaderStyleTableViewCell *cellLoaderStyle;
 
+@property (strong, nonatomic) UIView *mask;
+
 
 @end
 
 @implementation ExampleLoaderViewController
+
+- (ProjectLoaderManager *)projectLoaderManager {
+    if (!_projectLoaderManager) {
+        _projectLoaderManager = [[ProjectLoaderManager alloc] init];
+    }
+    return _projectLoaderManager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -84,7 +94,7 @@
 
 - (void) loadShowLoaderButton {
     
-    UIBarButtonSystemItem systemItem = self.loaderShowing != nil ? UIBarButtonSystemItemStop : UIBarButtonSystemItemPlay;
+    UIBarButtonSystemItem systemItem = self.projectLoaderManager.isShowing ? UIBarButtonSystemItemStop : UIBarButtonSystemItemPlay;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItem target:self action:@selector(showHideLoader:)];
 }
 
@@ -101,8 +111,8 @@
 
 #pragma mark - Properties
 
--(NSArray <LoaderType> *)arraySupportedLoaderTypes {
-    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular, LoaderTypeNineDots, LoaderTypeTriplePulse, LoaderTypeFiveDots,LoaderTypeRotatingSquares, LoaderTypeDoubleBounce, LoaderTypeTwoDots, LoaderTypeThreeDots, LoaderTypeBallPulse, LoaderTypeBallClipRotate, LoaderTypeBallClipRotatePulse, LoaderTypeBallClipRotateMultiple, LoaderTypeBallRotate, LoaderTypeBallZigZag, LoaderTypeBallZigZagDeflect, LoaderTypeBallTrianglePath, LoaderTypeBallScale, LoaderTypeLineScale, LoaderTypeLineScaleParty, LoaderTypeBallScaleMultiple, LoaderTypeBallPulseSync, LoaderTypeBallBeat, LoaderTypeLineScalePulseOut, LoaderTypeLineScalePulseOutRapid, LoaderTypeBallScaleRipple, LoaderTypeBallScaleRippleMultiple, LoaderTypeTriangleSkewSpin, LoaderTypeBallGridBeat, LoaderTypeBallGridPulse, LoaderTypeRotatingSandglass, LoaderTypeRotatingTrigons, LoaderTypeTripleRings, LoaderTypeCookieTerminator, LoaderTypeBallSpinFadeLoader];
+-(NSArray <NSString *> *)arraySupportedLoaderTypes {
+    return @[LoaderTypeText, LoaderTypeProgressBar, LoaderTypeProgressCircular, LoaderTypeProgressCircularWithProgress, LoaderTypeIndeterminateCircular, LoaderTypeIndeterminateLinear, LoaderTypeDeterminateCircular, LoaderTypeDeterminateLinear, LoaderTypeNineDots, LoaderTypeTriplePulse, LoaderTypeFiveDots,LoaderTypeRotatingSquares, LoaderTypeDoubleBounce, LoaderTypeTwoDots, LoaderTypeThreeDots, LoaderTypeBallPulse, LoaderTypeBallClipRotate, LoaderTypeBallClipRotatePulse, LoaderTypeBallClipRotateMultiple, LoaderTypeBallRotate, LoaderTypeBallZigZag, LoaderTypeBallZigZagDeflect, LoaderTypeBallTrianglePath, LoaderTypeBallScale, LoaderTypeLineScale, LoaderTypeLineScaleParty, LoaderTypeBallScaleMultiple, LoaderTypeBallPulseSync, LoaderTypeBallBeat, LoaderTypeLineScalePulseOut, LoaderTypeLineScalePulseOutRapid, LoaderTypeBallScaleRipple, LoaderTypeBallScaleRippleMultiple, LoaderTypeTriangleSkewSpin, LoaderTypeBallGridBeat, LoaderTypeBallGridPulse, LoaderTypeRotatingSandglass, LoaderTypeRotatingTrigons, LoaderTypeTripleRings, LoaderTypeCookieTerminator, LoaderTypeBallSpinFadeLoader];
 }
 
 -(ChooseSliderTableViewCell *)cellLoadingTimeLoader {
@@ -158,7 +168,7 @@
 
 - (void) showHideLoader:(id)sender {
     
-    if (self.loaderShowing != nil) {
+    if (self.projectLoaderManager.isShowing) {
         [self hideLoader:nil];
     } else {
         [self showLoader];
@@ -168,12 +178,18 @@
 }
 
 - (void) showLoader {
-    self.loaderShowing = [self configuredLoader];
-    
     self.timerToStopLoader = [NSTimer scheduledTimerWithTimeInterval:self.selectedLoadingTime target:self selector:@selector(showHideLoader:) userInfo:nil repeats:NO];
     self.timerToUpdateLoader = [NSTimer scheduledTimerWithTimeInterval:TIME_BETWEEN_UPDATES_IN_LOADERS target:self selector:@selector(updateLoader:) userInfo:nil repeats:YES];
     
-    [LoaderManager showLoader:self.loaderShowing];
+    self.mask = [[UIView alloc] initWithFrame:self.view.frame];
+    self.mask.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
+    self.mask.hidden = YES;
+    [self.view addSubview:self.mask];
+    [UIView animateWithDuration:1 animations:^{
+        self.mask.hidden = NO;
+    }];
+    
+    [self.projectLoaderManager showLoaderWithType:self.selectedLoaderType view:self.view size:self.selectedLoaderSize text:self.selectedLoaderText disableInteraction: @[self.tableView] hideView: @[self.tableView] disable:nil applyStyle:self.loaderStyle];
 }
 
 - (void) hideLoader:(NSTimer *)timer {
@@ -184,14 +200,20 @@
     [self.timerToUpdateLoader invalidate];
     self.timerToUpdateLoader = nil;
     
-    self.loaderShowing = nil;
-    [LoaderManager hideLoadersOfView:self.view];
+    [self.projectLoaderManager hideLoader];
+    [UIView animateWithDuration:1 animations:^{
+        self.mask.hidden = YES;
+    } completion:^(BOOL finished) {
+        if (finished) {
+            [self.mask removeFromSuperview];
+        }
+    }];
 }
 
 
 #pragma mark ChooseLoaderTypeDelegate
 
-- (void)didSelectLoaderType:(LoaderType)loaderType {
+- (void)didSelectLoaderType:(NSString *)loaderType {
     
     if ([self.selectedLoaderType isEqualToString:loaderType]) {
         return;
@@ -246,17 +268,7 @@
 #pragma mark - ChooseLoaderStyleDelegate
 
 -(void)didChangeLoaderStyle:(LoaderStyle)loaderStyle {
-    switch (loaderStyle) {
-        case LoaderStyleDefault:
-            self.selectedTagForLoaderStyle = LOADER_TAG_DEFAULT_APPEARANCE_LOADER;
-            break;
-        case LoaderStyleCustom:
-            self.selectedTagForLoaderStyle = LOADER_TAG_CUSTOMIZED_LOADER;
-            break;
-        default:
-            self.selectedTagForLoaderStyle = LOADER_TAG_DEFAULT_APPEARANCE_LOADER;
-            break;
-    }
+    self.loaderStyle = loaderStyle;
 }
 
 #pragma mark - UITableViewDataSource
@@ -356,57 +368,14 @@
     return cell;
 }
 
-
-
-#pragma mark - Loader Configuration
-
-- (LoaderObject *)configuredLoader {
-    
-    LoaderObject *loader = [LoaderManager loaderWithType:self.selectedLoaderType inView:self.view size:self.selectedLoaderSize tag:self.selectedTagForLoaderStyle];
-    if (self.selectedLoaderText.length > 0) {
-        [LoaderManager changeText:self.selectedLoaderText fromLoader:loader];
-    }
-    loader.disableUserInteractionViews = @[self.tableView];
-    
-    __block NSTimeInterval timeAnimation = 1;
-    __weak typeof(self)weakSelf = self;
-    __block UIView *mask = [[UIView alloc] initWithFrame:self.view.frame];
-    mask.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.7];
-    mask.hidden = YES;
-    
-    loader.executeActionBlock = ^void(LoaderObject *loaderObject, LoaderActionType loaderAction) {
-        switch (loaderAction) {
-            case LoaderActionShow:
-                [weakSelf.view addSubview:mask];
-                [UIView animateWithDuration:timeAnimation animations:^{
-                    mask.hidden = NO;
-                }];
-                break;
-            case LoaderActionHide:
-                [UIView animateWithDuration:timeAnimation animations:^{
-                    mask.hidden = YES;
-                } completion:^(BOOL finished) {
-                    if (finished) {
-                        [mask removeFromSuperview];
-                    }
-                }];
-                break;
-            default:
-                break;
-        }
-    };
-    
-    return loader;
-}
-
 - (void) updateLoader:(NSTimer *)timer {
-    if (self.loaderShowing != nil) {
+    if (self.projectLoaderManager.isShowing) {
         
         NSTimeInterval timeToFinishLoader = [[self.timerToStopLoader fireDate] timeIntervalSinceNow];
         
         CGFloat progress = (self.selectedLoadingTime - (CGFloat)timeToFinishLoader) / self.selectedLoadingTime;
         
-        [LoaderManager changeProgress:progress fromLoader:self.loaderShowing];
+        [self.projectLoaderManager setProgressWithValue:progress];
         
     } else {
         [timer invalidate];
@@ -420,7 +389,7 @@
     BOOL loaderSupportsText = YES;
     BOOL loaderSupportsCustomStyle = YES;
     
-    LoaderType type = self.selectedLoaderType;
+    NSString *type = self.selectedLoaderType;
     
     if ([type isEqualToString:LoaderTypeText] || [type isEqualToString:LoaderTypeProgressBar] || [type isEqualToString:LoaderTypeProgressCircular]) {
         loaderSupportsSize = NO;

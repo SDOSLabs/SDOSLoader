@@ -7,12 +7,14 @@
 //
 
 #import "ChooseLoaderTypeTableViewCell.h"
+#import "SDOSLoaderSample-Swift.h"
+@import SDOSLoader;
 
 @interface ChooseLoaderTypeTableViewCell () <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong, nonatomic) id<ChooseLoaderTypeDelegate> delegate;
 
-@property (strong, nonatomic) NSArray<LoaderType> *supportedLoaderTypes;
+@property (strong, nonatomic) NSArray<NSString *> *supportedLoaderTypes;
 
 @property (weak, nonatomic) IBOutlet UIPickerView *pckrLoaderType;
 
@@ -28,7 +30,7 @@
     self.pckrLoaderType.delegate = self;
 }
 
--(void)setDelegate:(id<ChooseLoaderTypeDelegate>)delegate forSupportedLoaderTypes:(NSArray<LoaderType> *)supportedLoaderTypes {
+-(void)setDelegate:(id<ChooseLoaderTypeDelegate>)delegate forSupportedLoaderTypes:(NSArray<NSString *> *)supportedLoaderTypes {
     self.supportedLoaderTypes = supportedLoaderTypes;
     self.delegate = delegate;
     [self.delegate didSelectLoaderType:[supportedLoaderTypes objectAtIndex:[self.pckrLoaderType selectedRowInComponent:0]]];
@@ -48,7 +50,7 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     
-    LoaderType loaderType = [self.supportedLoaderTypes objectAtIndex:row];
+    NSString *loaderType = [self.supportedLoaderTypes objectAtIndex:row];
     NSString *camelCaseTitle = [loaderType stringByReplacingOccurrencesOfString:@"LoaderType" withString:@""];
     
     NSString *title = [camelCaseTitle stringByReplacingOccurrencesOfString:@"([a-z])([A-Z])" withString:@"$1 $2" options:NSRegularExpressionSearch range:NSMakeRange(0, camelCaseTitle.length)];
@@ -60,7 +62,7 @@
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
-    LoaderType selectedLoaderType = [self.supportedLoaderTypes objectAtIndex:row];
+    NSString *selectedLoaderType = [self.supportedLoaderTypes objectAtIndex:row];
     
     [self.delegate didSelectLoaderType:selectedLoaderType];
 }
