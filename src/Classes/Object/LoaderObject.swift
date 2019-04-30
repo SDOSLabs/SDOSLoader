@@ -20,7 +20,13 @@ import SDOSSwiftExtension
     public unowned let parentView: UIView
     
     /// Vista del propio loader que se mostrará
-    public let view: Loadable
+    public var view: UIView {
+        get {
+            return _view
+        }
+    }
+    
+    internal let _view: Loadable
     
     /// Tiempo de animación para mostrar y ocultar los elementos asociados al loader (hideViews)
     public let timeAnimation: TimeInterval
@@ -110,7 +116,7 @@ import SDOSSwiftExtension
     internal init(loaderType: LoaderType, parentView: UIView, loaderView view: Loadable) {
         self.type = loaderType
         self.parentView = parentView
-        self.view = view
+        self._view = view
         timeAnimation = 0.3
     }
 }

@@ -7,7 +7,7 @@
 import Foundation
 import SDOSSwiftExtension
 
-public protocol Loadable: UIView {
+internal protocol Loadable: UIView {
     static func createLoader(loaderType: LoaderType, inView view: UIView, size: CGSize?) -> LoaderObject
     func show(loaderObject: LoaderObject)
     func setProgress(loaderObject: LoaderObject, value: Float)
