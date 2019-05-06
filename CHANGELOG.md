@@ -1,3 +1,7 @@
+## [HEAD]
+
+- Modificado el LoaderObject para que el objeto loadable sea internal
+
 ## [3.0.0 Rediseño completo para la adaptación a Swift](https://svrgitpub.sdos.es/ios/SDOSLoader/tree/v3.0.0)
 
 - Se ha rediseñado la librería para su uso nativo en Swift. En esencia es igual que antes pero ahora se ha adaptado la funcionalidad para la asginación de estilos
