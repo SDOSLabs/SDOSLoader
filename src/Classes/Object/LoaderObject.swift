@@ -34,78 +34,30 @@ import SDOSSwiftExtension
     /// Vistas que se deshabilitarán (isUserInteractionEnabled = false) cuando se muestre el loader. Cuando se oculten se volverán a habilitar
     public var disableUserInteractionViews: [UIView]? {
         get {
-            var result: [UIView]?
-            if let _disableUserInteractionViews = _disableUserInteractionViews {
-                result = [UIView]()
-                for item in _disableUserInteractionViews {
-                    if let item = item.value {
-                        result?.append(item)
-                    }
-                }
-            }
-            return result
+            return _disableUserInteractionViews?.compactMap { $0.value }
         }
         set {
-            var result: [LoaderWeakRef<UIView>]?
-            if let newValue = newValue {
-                result = [LoaderWeakRef<UIView>]()
-                for item in newValue {
-                    result?.append(LoaderWeakRef(value: item))
-                }
-            }
-            _disableUserInteractionViews = result
+            _disableUserInteractionViews = newValue?.map { LoaderWeakRef(value: $0) }
         }
     }
     
     /// Vistas que se ocultarán (alpha = 0) cuando se muestre el loader. Cuando el loader se oculte se volverán a mostrar las vistas
     public var hideViews: [UIView]? {
         get {
-            var result: [UIView]?
-            if let _hideViews = _hideViews {
-                result = [UIView]()
-                for item in _hideViews {
-                    if let item = item.value {
-                        result?.append(item)
-                    }
-                }
-            }
-            return result
+            return _hideViews?.compactMap { $0.value }
         }
         set {
-            var result: [LoaderWeakRef<UIView>]?
-            if let newValue = newValue {
-                result = [LoaderWeakRef<UIView>]()
-                for item in newValue {
-                    result?.append(LoaderWeakRef(value: item))
-                }
-            }
-            _hideViews = result
+            _hideViews = newValue?.map { LoaderWeakRef(value: $0) }
         }
     }
     
     /// Elementos que se deshabilitarán (isEnabled = false) cuando se muestre el loader. Cuando se oculten se volverán a habilitar
     public var disableControls: [UIControl]? {
         get {
-            var result: [UIControl]?
-            if let _disableControls = _disableControls {
-                result = [UIControl]()
-                for item in _disableControls {
-                    if let item = item.value {
-                        result?.append(item)
-                    }
-                }
-            }
-            return result
+            return _disableControls?.compactMap { $0.value }
         }
         set {
-            var result: [LoaderWeakRef<UIControl>]?
-            if let newValue = newValue {
-                result = [LoaderWeakRef<UIControl>]()
-                for item in newValue {
-                    result?.append(LoaderWeakRef(value: item))
-                }
-            }
-            _disableControls = result
+            _disableControls = newValue?.map { LoaderWeakRef(value: $0) }
         }
     }
     

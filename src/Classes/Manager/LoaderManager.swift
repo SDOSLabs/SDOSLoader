@@ -100,21 +100,10 @@ public class LoaderManager: NSObject {
             shared.activeLoaders[loaderObject.uuid] = loaderObject
             
             UIView.animate(withDuration: loaderObject.timeAnimation) {
-                if let disableControls = loaderObject.disableControls {
-                    for control in disableControls {
-                        control.isEnabled = false
-                    }
-                }
-                if let hideViews = loaderObject.hideViews {
-                    for view in hideViews {
-                        view.alpha = 0
-                    }
-                }
-                if let disableUserInteractionViews = loaderObject.disableUserInteractionViews {
-                    for view in disableUserInteractionViews {
-                        view.isUserInteractionEnabled = false
-                    }
-                }
+                loaderObject.disableControls?.forEach { $0.isEnabled = false }
+                loaderObject.hideViews?.forEach { $0.alpha = 0 }
+                loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = false }
+
             }
         }
     }
@@ -157,21 +146,9 @@ public class LoaderManager: NSObject {
                     loaderObject._view.hide(loaderObject: loaderObject)
                     
                     UIView.animate(withDuration: loaderObject.timeAnimation) {
-                        if let disableControls = loaderObject.disableControls {
-                            for control in disableControls {
-                                control.isEnabled = true
-                            }
-                        }
-                        if let hideViews = loaderObject.hideViews {
-                            for view in hideViews {
-                                view.alpha = 1
-                            }
-                        }
-                        if let disableUserInteractionViews = loaderObject.disableUserInteractionViews {
-                            for view in disableUserInteractionViews {
-                                view.isUserInteractionEnabled = true
-                            }
-                        }
+                        loaderObject.disableControls?.forEach { $0.isEnabled = true }
+                        loaderObject.hideViews?.forEach { $0.alpha = 1 }
+                        loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = true }
                     }
                     
                     shared.activeLoaders.removeValue(forKey: loaderObject.uuid)
