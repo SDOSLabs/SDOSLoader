@@ -1,4 +1,4 @@
-## [HEAD]
+## [3.0.1 Refactor](https://svrgitpub.sdos.es/ios/SDOSLoader/tree/v3.0.1)
 
 - Modificado el LoaderObject para que el objeto loadable sea internal
 
