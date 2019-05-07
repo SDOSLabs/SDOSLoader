@@ -96,25 +96,14 @@ public class LoaderManager: NSObject {
     
     @objc private class func _showLoader(_ loaderObject: LoaderObject) {
         DispatchQueue.main.async {
-            loaderObject.view.show(loaderObject: loaderObject)
+            loaderObject._view.show(loaderObject: loaderObject)
             shared.activeLoaders[loaderObject.uuid] = loaderObject
             
             UIView.animate(withDuration: loaderObject.timeAnimation) {
-                if let disableControls = loaderObject.disableControls {
-                    for control in disableControls {
-                        control.isEnabled = false
-                    }
-                }
-                if let hideViews = loaderObject.hideViews {
-                    for view in hideViews {
-                        view.alpha = 0
-                    }
-                }
-                if let disableUserInteractionViews = loaderObject.disableUserInteractionViews {
-                    for view in disableUserInteractionViews {
-                        view.isUserInteractionEnabled = false
-                    }
-                }
+                loaderObject.disableControls?.forEach { $0.isEnabled = false }
+                loaderObject.hideViews?.forEach { $0.alpha = 0 }
+                loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = false }
+
             }
         }
     }
@@ -127,7 +116,7 @@ public class LoaderManager: NSObject {
     public class func changeProgress(newValue value: Float, loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
             DispatchQueue.main.async {
-                loaderObject.view.setProgress(loaderObject: loaderObject, value: value)
+                loaderObject._view.setProgress(loaderObject: loaderObject, value: value)
             }
         }
     }
@@ -140,7 +129,7 @@ public class LoaderManager: NSObject {
     public class func changeText(_ text: String?, loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
             DispatchQueue.main.async {
-                loaderObject.view.setText(loaderObject: loaderObject, text: text)
+                loaderObject._view.setText(loaderObject: loaderObject, text: text)
             }
         }
     }
@@ -154,24 +143,12 @@ public class LoaderManager: NSObject {
             
             DispatchQueue.main.async {
                 if shared.activeLoaders.keys.contains(loaderObject.uuid) {
-                    loaderObject.view.hide(loaderObject: loaderObject)
+                    loaderObject._view.hide(loaderObject: loaderObject)
                     
                     UIView.animate(withDuration: loaderObject.timeAnimation) {
-                        if let disableControls = loaderObject.disableControls {
-                            for control in disableControls {
-                                control.isEnabled = true
-                            }
-                        }
-                        if let hideViews = loaderObject.hideViews {
-                            for view in hideViews {
-                                view.alpha = 1
-                            }
-                        }
-                        if let disableUserInteractionViews = loaderObject.disableUserInteractionViews {
-                            for view in disableUserInteractionViews {
-                                view.isUserInteractionEnabled = true
-                            }
-                        }
+                        loaderObject.disableControls?.forEach { $0.isEnabled = true }
+                        loaderObject.hideViews?.forEach { $0.alpha = 1 }
+                        loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = true }
                     }
                     
                     shared.activeLoaders.removeValue(forKey: loaderObject.uuid)
