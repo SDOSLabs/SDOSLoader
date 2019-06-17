@@ -1,4 +1,4 @@
-## [HEAD]
+## [3.0.2 Refactor](https://svrgitpub.sdos.es/ios/SDOSLoader/tree/v3.0.2)
 
 - Modificado el LoaderObject para que el objeto parentView sea weak
 
