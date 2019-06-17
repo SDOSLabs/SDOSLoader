@@ -17,7 +17,7 @@ import SDOSSwiftExtension
     public let type: LoaderType
     
     /// Vista donde se mostrará el loader
-    public unowned let parentView: UIView
+    public weak var parentView: UIView?
     
     /// Vista del propio loader que se mostrará
     public var view: UIView {

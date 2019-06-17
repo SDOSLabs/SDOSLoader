@@ -48,10 +48,14 @@ extension SDOSLoaderProgress: Loadable, FixConstraints {
     }
     
     public func show(loaderObject: LoaderObject) {
+        guard let parentView = loaderObject.parentView else {
+            return
+        }
+        
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0
-        loaderObject.parentView.addSubview(self)
-        makeConstraints(to: loaderObject.parentView)
+        parentView.addSubview(self)
+        makeConstraints(to: parentView)
         self.startAnimation()
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
