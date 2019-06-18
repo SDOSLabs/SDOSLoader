@@ -23,7 +23,7 @@ SDOSLoader ofrece una forma sencilla de crear loaders más visuales y más perso
 Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
 
 ```ruby
-pod 'SDOSLoader', '~>3.0.1' 
+pod 'SDOSLoader', '~>3.0.2' 
 ```
 
 ## Cómo se usa
