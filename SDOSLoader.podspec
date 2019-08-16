@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.name         = 'SDOSLoader'
   spec.authors      = 'SDOS'
   spec.version      = @version
-  spec.license      = { :type => 'SDOS License' }
+  spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://svrgitpub.sdos.es/iOS/SDOSLoader'
   spec.summary      = 'Librería para la creación y manejo de vistas tipo loader'
   spec.source       = { :git => "https://svrgitpub.sdos.es/iOS/SDOSLoader.git", :tag => "v#{spec.version}" }
