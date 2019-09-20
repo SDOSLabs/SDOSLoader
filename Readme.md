@@ -1,16 +1,16 @@
 - [SDOSLoader](#sdosloader)
-  - [Introducción](#introducci%C3%B3n)
-  - [Instalación](#instalaci%C3%B3n)
+  - [Introducción](#introducci%c3%b3n)
+  - [Instalación](#instalaci%c3%b3n)
     - [Cocoapods](#cocoapods)
-  - [Cómo se usa](#c%C3%B3mo-se-usa)
-    - [Implementación](#implementaci%C3%B3n)
+  - [Cómo se usa](#c%c3%b3mo-se-usa)
+    - [Implementación](#implementaci%c3%b3n)
   - [Dependencias](#dependencias)
   - [Referencias](#referencias)
 
 # SDOSLoader
 
 - Enlace confluence: https://kc.sdos.es/x/pQXLAQ
-- Changelog: https://svrgitpub.sdos.es/iOS/SDOSLoader/blob/master/CHANGELOG.md
+- Changelog: https://github.com/SDOSLabs/SDOSLoader/blob/master/CHANGELOG.md
 
 ## Introducción
 
@@ -154,8 +154,8 @@ loaderObject.hideViews = [tableView]
 * [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - 1.1.0 o superior
 * [M13ProgressSuite](https://github.com/Marxon13/M13ProgressSuite) - 1.2.9 o superior
 * [DGActivityIndicatorView](https://github.com/gontovnik/DGActivityIndicatorView) - 2.1.1 o superior
-* [SDOSCustomLoader](https://svrgitpub.sdos.es/iOS/SDOSCustomLoader) - 1.0.0 o superior
-* [SDOSSwiftExtension](https://svrgitpub.sdos.es/iOS/SDOSSwiftExtension) - 1.0.2 o superior
+* [SDOSCustomLoader](https://github.com/SDOSLabs/SDOSCustomLoader) - 1.0.0 o superior
+* [SDOSSwiftExtension](https://github.com/SDOSLabs/SDOSSwiftExtension) - 1.0.2 o superior
 
 ## Referencias
-* https://svrgitpub.sdos.es/iOS/SDOSLoader
+* https://github.com/SDOSLabs/SDOSLoader
