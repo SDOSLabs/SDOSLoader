@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DGActivityIndicatorView",
+        "repositoryURL": "https://github.com/SDOSLabs/DGActivityIndicatorView.git",
+        "state": {
+          "branch": "feature/spm",
+          "revision": "8678176dc96c7823e76644240f37ec42ce4261e0",
+          "version": null
+        }
+      },
+      {
+        "package": "MBProgressHUD",
+        "repositoryURL": "https://github.com/jdg/MBProgressHUD.git",
+        "state": {
+          "branch": null,
+          "revision": "bca42b801100b2b3a4eda0ba8dd33d858c780b0d",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "SDOSCustomLoader",
+        "repositoryURL": "https://github.com/SDOSLabs/SDOSCustomLoader.git",
+        "state": {
+          "branch": "feature/spm",
+          "revision": "7d93bb680b83b8817cc85cda34b0ba0781419398",
+          "version": null
+        }
+      },
+      {
+        "package": "SDOSSwiftExtension",
+        "repositoryURL": "https://github.com/SDOSLabs/SDOSSwiftExtension.git",
+        "state": {
+          "branch": "feature/spm",
+          "revision": "c53d88c58cdba9d6fc1d3ba343b1d3b3fd003cf4",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
