@@ -15,8 +15,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/SDOSLabs/SDOSCustomLoader.git", .branch("feature/spm")),
         .package(url: "https://github.com/SDOSLabs/DGActivityIndicatorView.git", .branch("feature/spm")),
-//        .package(url: "https://github.com/SDOSLabs/M13ProgressSuite.git", .branch("feature/spm")),
-        .package(path: "../M13ProgressSuite"),
+        .package(url: "https://github.com/SDOSLabs/M13ProgressSuite.git", .branch("feature/spm")),
         .package(url: "https://github.com/jdg/MBProgressHUD.git", .upToNextMajor(from: "1.2.0")),
         .package(url: "https://github.com/SDOSLabs/SDOSSwiftExtension.git", .branch("feature/spm")),
     ],

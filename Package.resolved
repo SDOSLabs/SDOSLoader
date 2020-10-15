@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "M13ProgressSuite",
+        "repositoryURL": "https://github.com/SDOSLabs/M13ProgressSuite.git",
+        "state": {
+          "branch": "feature/spm",
+          "revision": "1541da0aa367f98967576bfc1df6bba41cfa3871",
+          "version": null
+        }
+      },
+      {
         "package": "MBProgressHUD",
         "repositoryURL": "https://github.com/jdg/MBProgressHUD.git",
         "state": {
