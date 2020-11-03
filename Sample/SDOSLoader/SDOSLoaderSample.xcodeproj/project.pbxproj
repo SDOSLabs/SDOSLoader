@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -41,8 +41,32 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		29D5DDAB25516E6300E15D3F /* SDOSLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 29D5DDAA25516E6300E15D3F /* SDOSLoader */; };
 		29F1EFF32272FE9500C09581 /* ProjectLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */; };
 		29F1EFF52273149800C09581 /* LoaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF42273149800C09581 /* LoaderStyle.swift */; };
+		29F9CB5E2538447300015B54 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
+		29F9CB5F2538447300015B54 /* ChooseLoaderTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E91DCB35C600F05FD9 /* ChooseLoaderTypeTableViewCell.m */; };
+		29F9CB602538447300015B54 /* LoaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF42273149800C09581 /* LoaderStyle.swift */; };
+		29F9CB612538447300015B54 /* ChooseSliderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1EC1DCB3AFC00F05FD9 /* ChooseSliderTableViewCell.m */; };
+		29F9CB622538447300015B54 /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
+		29F9CB632538447300015B54 /* ExampleLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E41DCB23A300F05FD9 /* ExampleLoaderViewController.m */; };
+		29F9CB642538447300015B54 /* ProjectLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */; };
+		29F9CB652538447300015B54 /* ChooseLoaderStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */; };
+		29F9CB662538447300015B54 /* StoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD62C1C0701E500BA707E /* StoryboardConstants.m */; };
+		29F9CB672538447300015B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A4903E20C13BB30061EF56 /* AppDelegate.swift */; };
+		29F9CB682538447300015B54 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		29F9CB692538447300015B54 /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
+		29F9CB6D2538447300015B54 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
+		29F9CB6E2538447300015B54 /* ExampleLoader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */; };
+		29F9CB6F2538447300015B54 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5B71C0701E500BA707E /* AppIcon.xcassets */; };
+		29F9CB702538447300015B54 /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
+		29F9CB712538447300015B54 /* Launcher.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BA1C0701E500BA707E /* Launcher.xcassets */; };
+		29F9CB722538447300015B54 /* App.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5BD1C0701E500BA707E /* App.debug.xcconfig */; };
+		29F9CB732538447300015B54 /* ChooseLoaderStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */; };
+		29F9CB742538447300015B54 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 298FD5C01C0701E500BA707E /* Shared.xcconfig */; };
+		29F9CB752538447300015B54 /* ChooseLoaderTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E61DCB348300F05FD9 /* ChooseLoaderTypeTableViewCell.xib */; };
+		29F9CB762538447300015B54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 298FD6341C0701E500BA707E /* Localizable.strings */; };
+		29F9CB772538447300015B54 /* ChooseSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1EE1DCB500700F05FD9 /* ChooseSliderTableViewCell.xib */; };
 		5C1BC5C51DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */; };
 		5C1BC5C81DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */; };
 		5C4AD1E21DCB228900F05FD9 /* ExampleLoader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1E11DCB228900F05FD9 /* ExampleLoader.storyboard */; };
@@ -54,13 +78,12 @@
 		5C4AD1F11DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F01DCB6B8700F05FD9 /* ChooseTextForLoaderTableViewCell.xib */; };
 		5C4AD1F41DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
 		5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */; };
-		95F9E4CAA4470BFB5A87A72C /* Pods_SDOSLoaderSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */; };
+		923223FC3A2B51F103805446 /* Pods_SDOSLoaderSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A8AFDEEFB09515DA7CD149 /* Pods_SDOSLoaderSample.framework */; };
 		B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A4903E20C13BB30061EF56 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17EFE1856AE679994C7C312D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24FDF53F1A77D8940FD11781 /* Pods-SDOSLoaderSample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.preproduction.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.preproduction.xcconfig"; sourceTree = "<group>"; };
 		2970AD751BFA153F007CFBD9 /* SDOSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDOSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD5B71C0701E500BA707E /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
 		298FD5B81C0701E500BA707E /* SDOSLoaderSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDOSLoaderSample-Prefix.pch"; sourceTree = "<group>"; };
@@ -90,7 +113,9 @@
 		29F1EFF8227330E100C09581 /* SDOSLoader.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SDOSLoader.podspec; path = ../../SDOSLoader.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		29F1EFF9227330E100C09581 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../../CHANGELOG.md; sourceTree = "<group>"; };
 		29F1EFFA227330E100C09581 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Readme.md; path = ../../Readme.md; sourceTree = "<group>"; };
-		512FC38978F72CA2A1FA0083 /* Pods-SDOSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
+		29F9CB7E2538447300015B54 /* SDOSLoaderSample-SPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDOSLoaderSample-SPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA6E5A1A8BF3AD2A48B8455 /* Pods-SDOSLoaderSample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.production.xcconfig"; path = "Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.production.xcconfig"; sourceTree = "<group>"; };
+		53101D6E6CC67F5D317DFF50 /* Pods-SDOSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.debug.xcconfig"; path = "Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1BC5C41DD1D5140055E205 /* ChooseLoaderStyleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLoaderStyleTableViewCell.xib; sourceTree = "<group>"; };
 		5C1BC5C61DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLoaderStyleTableViewCell.h; sourceTree = "<group>"; };
 		5C1BC5C71DD1D57E0055E205 /* ChooseLoaderStyleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLoaderStyleTableViewCell.m; sourceTree = "<group>"; };
@@ -109,10 +134,10 @@
 		5CB30D1F1DCA26EF0055BC7F /* DocumentationLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentationLoaderViewController.h; sourceTree = "<group>"; };
 		5CB30D201DCA26EF0055BC7F /* DocumentationLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentationLoaderViewController.m; sourceTree = "<group>"; };
 		5CD740261DD0AF3500D43DB7 /* ConstantsLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsLoader.h; sourceTree = "<group>"; };
-		AE590B665EEFEB5F0DF967C4 /* Pods-SDOSLoaderSample.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.production.xcconfig"; path = "Pods/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.production.xcconfig"; sourceTree = "<group>"; };
+		795C7B23D98EA0AFF50FDB34 /* Pods-SDOSLoaderSample.preproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDOSLoaderSample.preproduction.xcconfig"; path = "Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample.preproduction.xcconfig"; sourceTree = "<group>"; };
+		83A8AFDEEFB09515DA7CD149 /* Pods_SDOSLoaderSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoaderSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A4903D20C13BB30061EF56 /* SDOSLoader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDOSLoader-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1A4903E20C13BB30061EF56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDOSLoaderSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +145,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F9E4CAA4470BFB5A87A72C /* Pods_SDOSLoaderSample.framework in Frameworks */,
+				923223FC3A2B51F103805446 /* Pods_SDOSLoaderSample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F9CB6A2538447300015B54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D5DDAB25516E6300E15D3F /* SDOSLoader in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				17EFE1856AE679994C7C312D /* Pods.framework */,
-				CDA57968A859CBD150DF6FDF /* Pods_SDOSLoaderSample.framework */,
+				83A8AFDEEFB09515DA7CD149 /* Pods_SDOSLoaderSample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,7 +192,7 @@
 				290A16A21BFB3146002361EF /* App */,
 				2970AD761BFA153F007CFBD9 /* Products */,
 				1A3F2B7365F64DEDC650C528 /* Frameworks */,
-				DCEDBEC983ACD480E11680B4 /* Pods */,
+				98D85311921435572585C61B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				2970AD751BFA153F007CFBD9 /* SDOSLoaderSample.app */,
+				29F9CB7E2538447300015B54 /* SDOSLoaderSample-SPM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,21 +468,21 @@
 			path = DatabaseScheme;
 			sourceTree = "<group>";
 		};
+		98D85311921435572585C61B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53101D6E6CC67F5D317DFF50 /* Pods-SDOSLoaderSample.debug.xcconfig */,
+				795C7B23D98EA0AFF50FDB34 /* Pods-SDOSLoaderSample.preproduction.xcconfig */,
+				3EA6E5A1A8BF3AD2A48B8455 /* Pods-SDOSLoaderSample.production.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B12F4C381DBB89BB0061E9F1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		DCEDBEC983ACD480E11680B4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				512FC38978F72CA2A1FA0083 /* Pods-SDOSLoaderSample.debug.xcconfig */,
-				24FDF53F1A77D8940FD11781 /* Pods-SDOSLoaderSample.preproduction.xcconfig */,
-				AE590B665EEFEB5F0DF967C4 /* Pods-SDOSLoaderSample.production.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,13 +492,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2970AD8F1BFA153F007CFBD9 /* Build configuration list for PBXNativeTarget "SDOSLoaderSample" */;
 			buildPhases = (
-				E7C1859B210D39BC4CDF5C8A /* [CP] Check Pods Manifest.lock */,
+				5BD3613DCD9979167CE9886A /* [CP] Check Pods Manifest.lock */,
 				29EAAF6022770A210082E3B7 /* XcodeVersion */,
 				2970AD711BFA153F007CFBD9 /* Sources */,
 				2970AD721BFA153F007CFBD9 /* Frameworks */,
 				2970AD731BFA153F007CFBD9 /* Resources */,
 				29AFB21D1C04C7CB004AB1B6 /* Warnings */,
-				C6AE4A6FF0436145230C9CC8 /* [CP] Embed Pods Frameworks */,
+				0D126B97F9E024F2B992C87B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -473,6 +507,28 @@
 			name = SDOSLoaderSample;
 			productName = BaseProject;
 			productReference = 2970AD751BFA153F007CFBD9 /* SDOSLoaderSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29F9CB5A2538447300015B54 /* SDOSLoaderSample-SPM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29F9CB7A2538447300015B54 /* Build configuration list for PBXNativeTarget "SDOSLoaderSample-SPM" */;
+			buildPhases = (
+				29F9CB5C2538447300015B54 /* XcodeVersion */,
+				29F9CB5D2538447300015B54 /* Sources */,
+				29F9CB6A2538447300015B54 /* Frameworks */,
+				29F9CB6C2538447300015B54 /* Resources */,
+				29F9CB782538447300015B54 /* Warnings */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SDOSLoaderSample-SPM";
+			packageProductDependencies = (
+				29D5DDAA25516E6300E15D3F /* SDOSLoader */,
+			);
+			productName = BaseProject;
+			productReference = 29F9CB7E2538447300015B54 /* SDOSLoaderSample-SPM.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -500,6 +556,9 @@
 					29AFB2171C04C3C4004AB1B6 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
+					29F9CB5A2538447300015B54 = {
+						DevelopmentTeam = FR53QH8ZBJ;
+					};
 				};
 			};
 			buildConfigurationList = 2970AD701BFA153F007CFBD9 /* Build configuration list for PBXProject "SDOSLoaderSample" */;
@@ -520,6 +579,7 @@
 				2970AD741BFA153F007CFBD9 /* SDOSLoaderSample */,
 				29AFB1FF1C04BFE7004AB1B6 /* Mogenerator */,
 				29AFB2171C04C3C4004AB1B6 /* AutoGenerate */,
+				29F9CB5A2538447300015B54 /* SDOSLoaderSample-SPM */,
 			);
 		};
 /* End PBXProject section */
@@ -543,9 +603,57 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		29F9CB6C2538447300015B54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29F9CB6D2538447300015B54 /* ChooseTextForLoaderTableViewCell.xib in Resources */,
+				29F9CB6E2538447300015B54 /* ExampleLoader.storyboard in Resources */,
+				29F9CB6F2538447300015B54 /* AppIcon.xcassets in Resources */,
+				29F9CB702538447300015B54 /* default.bundle in Resources */,
+				29F9CB712538447300015B54 /* Launcher.xcassets in Resources */,
+				29F9CB722538447300015B54 /* App.debug.xcconfig in Resources */,
+				29F9CB732538447300015B54 /* ChooseLoaderStyleTableViewCell.xib in Resources */,
+				29F9CB742538447300015B54 /* Shared.xcconfig in Resources */,
+				29F9CB752538447300015B54 /* ChooseLoaderTypeTableViewCell.xib in Resources */,
+				29F9CB762538447300015B54 /* Localizable.strings in Resources */,
+				29F9CB772538447300015B54 /* ChooseSliderTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D126B97F9E024F2B992C87B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/M13ProgressSuite/M13ProgressSuite.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSCustomLoader/SDOSCustomLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSLoader/SDOSLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSSwiftExtension/SDOSSwiftExtension.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13ProgressSuite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSCustomLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSSwiftExtension.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		29AFB2041C04BFEE004AB1B6 /* Mogenerator */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,46 +714,52 @@
 			shellPath = /bin/sh;
 			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif ([ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ] || [ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ])\nthen\necho \"error: [SDOS error] - The required version of Xcode to run this project is ${XCODE_VERSION_MINOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MINOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: [SDOS warning] - XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi\n";
 		};
-		C6AE4A6FF0436145230C9CC8 /* [CP] Embed Pods Frameworks */ = {
+		29F9CB5C2538447300015B54 /* XcodeVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = XcodeVersion;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "file=\"$SRCROOT/XcodeVersion.properties\"\n\n# create file if it does not exist\ntouch \"${file}\"\n\n\n# if file does not exist or it is not readable -> error\nif [ ! -r \"${file}\" ]\nthen\necho \"error: Could not create file: ${file} (see the Xcode Version script in Build Phases)\"\nerror -1\nfi\n# read the keys and values in the file\nwhile IFS='=' read -r key value\ndo\neval \"${key}='${value}'\"\ndone < \"${file}\"\n\n# if not defined the keys: XCODE_VERSION_MAJOR_REQUIRED, XCODE_VERSION_MINOR_REQUIRED, XCODE_VERSION_ACTUAL_REQUIRED\nif ([ -z ${XCODE_VERSION_MAJOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_MINOR_REQUIRED:+\"1\"} ] || [ -z ${XCODE_VERSION_ACTUAL_REQUIRED:+\"1\"} ])\nthen\necho \"XCODE_VERSION_MAJOR_REQUIRED=${XCODE_VERSION_MAJOR}\" > \"${file}\"\necho \"XCODE_VERSION_MINOR_REQUIRED=${XCODE_VERSION_MINOR}\" >> \"${file}\"\necho \"XCODE_VERSION_ACTUAL_REQUIRED=${XCODE_VERSION_ACTUAL}\" >> \"${file}\"\n\necho \"warning: Required Xcode version set to ${XCODE_VERSION_ACTUAL} in this project. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nelif ([ ${XCODE_VERSION_MAJOR_REQUIRED} != ${XCODE_VERSION_MAJOR} ] || [ ${XCODE_VERSION_MINOR_REQUIRED} != ${XCODE_VERSION_MINOR} ])\nthen\necho \"error: [SDOS error] - The required version of Xcode to run this project is ${XCODE_VERSION_MINOR_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_MINOR}. If you want to build this project with a different version of Xcode, please remove XcodeVersion.properties file\"\nerror 0\nelif ([ ${XCODE_VERSION_ACTUAL_REQUIRED} != ${XCODE_VERSION_ACTUAL} ])\nthen\necho \"warning: [SDOS warning] - XCODE VERSION CONFLICT: The required version of Xcode to run this project is ${XCODE_VERSION_ACTUAL_REQUIRED} and the current version of Xcode is ${XCODE_VERSION_ACTUAL}. This might cause some problems at runtime.\"\nfi\n";
+		};
+		29F9CB782538447300015B54 /* Warnings */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/M13ProgressSuite/M13ProgressSuite.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SDOSCustomLoader/SDOSCustomLoader.framework",
-				"${BUILT_PRODUCTS_DIR}/SDOSLoader/SDOSLoader.framework",
-				"${BUILT_PRODUCTS_DIR}/SDOSSwiftExtension/SDOSSwiftExtension.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = Warnings;
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13ProgressSuite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSCustomLoader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSLoader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSSwiftExtension.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "KEYWORDS=\"TODO:|FIXME:|\\?\\?\\?:|\\!\\!\\!:\"\nfind \"${SRCROOT}/App\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"\n";
 		};
-		E7C1859B210D39BC4CDF5C8A /* [CP] Check Pods Manifest.lock */ = {
+		5BD3613DCD9979167CE9886A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SDOSLoaderSample-checkManifestLockResult.txt",
 			);
@@ -673,6 +787,25 @@
 				B1A4903F20C13BB30061EF56 /* AppDelegate.swift in Sources */,
 				298FD6741C0701E500BA707E /* Util.m in Sources */,
 				5CB30D211DCA26EF0055BC7F /* DocumentationLoaderViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29F9CB5D2538447300015B54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29F9CB5E2538447300015B54 /* ChooseTextForLoaderTableViewCell.m in Sources */,
+				29F9CB5F2538447300015B54 /* ChooseLoaderTypeTableViewCell.m in Sources */,
+				29F9CB602538447300015B54 /* LoaderStyle.swift in Sources */,
+				29F9CB612538447300015B54 /* ChooseSliderTableViewCell.m in Sources */,
+				29F9CB622538447300015B54 /* Design+Extensions.m in Sources */,
+				29F9CB632538447300015B54 /* ExampleLoaderViewController.m in Sources */,
+				29F9CB642538447300015B54 /* ProjectLoaderManager.swift in Sources */,
+				29F9CB652538447300015B54 /* ChooseLoaderStyleTableViewCell.m in Sources */,
+				29F9CB662538447300015B54 /* StoryboardConstants.m in Sources */,
+				29F9CB672538447300015B54 /* AppDelegate.swift in Sources */,
+				29F9CB682538447300015B54 /* Util.m in Sources */,
+				29F9CB692538447300015B54 /* DocumentationLoaderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,7 +918,7 @@
 		};
 		2970AD901BFA153F007CFBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 512FC38978F72CA2A1FA0083 /* Pods-SDOSLoaderSample.debug.xcconfig */;
+			baseConfigurationReference = 53101D6E6CC67F5D317DFF50 /* Pods-SDOSLoaderSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -795,7 +928,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoaderSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
@@ -805,7 +941,7 @@
 		};
 		2970AD911BFA153F007CFBD9 /* Preproduction */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24FDF53F1A77D8940FD11781 /* Pods-SDOSLoaderSample.preproduction.xcconfig */;
+			baseConfigurationReference = 795C7B23D98EA0AFF50FDB34 /* Pods-SDOSLoaderSample.preproduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -815,7 +951,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoaderSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
@@ -870,7 +1009,7 @@
 		};
 		29AFB1E71C04A0F8004AB1B6 /* Production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE590B665EEFEB5F0DF967C4 /* Pods-SDOSLoaderSample.production.xcconfig */;
+			baseConfigurationReference = 3EA6E5A1A8BF3AD2A48B8455 /* Pods-SDOSLoaderSample.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
@@ -880,7 +1019,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoaderSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
@@ -929,6 +1071,73 @@
 			};
 			name = Production;
 		};
+		29F9CB7B2538447300015B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
+				INFOPLIST_FILE = App/Configuration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SDOSLoaderSample-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29F9CB7C2538447300015B54 /* Preproduction */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
+				INFOPLIST_FILE = App/Configuration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SDOSLoaderSample-Swift.h";
+			};
+			name = Preproduction;
+		};
+		29F9CB7D2538447300015B54 /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_ASSETS)";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "$(LAUNCHER_ASSETS)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FR53QH8ZBJ;
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
+				INFOPLIST_FILE = App/Configuration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SDOSLoaderSample-Swift.h";
+			};
+			name = Production;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -972,7 +1181,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Preproduction;
 		};
+		29F9CB7A2538447300015B54 /* Build configuration list for PBXNativeTarget "SDOSLoaderSample-SPM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29F9CB7B2538447300015B54 /* Debug */,
+				29F9CB7C2538447300015B54 /* Preproduction */,
+				29F9CB7D2538447300015B54 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Preproduction;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29D5DDAA25516E6300E15D3F /* SDOSLoader */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDOSLoader;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2970AD6D1BFA153F007CFBD9 /* Project object */;
 }

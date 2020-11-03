@@ -12,7 +12,7 @@
 #import "ChooseSliderTableViewCell.h"
 #import "ChooseTextForLoaderTableViewCell.h"
 #import "ChooseLoaderStyleTableViewCell.h"
-#import <DGActivityIndicatorView/DGActivityIndicatorView.h>
+@import DGActivityIndicatorView;
 #import "SDOSLoaderSample-Swift.h"
 
 #define SECTION_CHOOSE_LOADER_TYPE 0

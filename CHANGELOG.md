@@ -1,3 +1,7 @@
+## [HEAD]
+
+-  Add support for Swift Package Manager
+
 ## [3.0.2 Refactor](https://github.com/SDOSLabs/SDOSLoader/tree/v3.0.2)
 
 - Modificado el LoaderObject para que el objeto parentView sea weak

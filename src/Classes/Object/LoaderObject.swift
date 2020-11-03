@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import UIKit
 import SDOSSwiftExtension
 
 /// Objeto que contiene toda la información referente a un loader
