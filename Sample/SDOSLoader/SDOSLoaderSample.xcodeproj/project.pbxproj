@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -41,6 +41,7 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
+		29D5DDAB25516E6300E15D3F /* SDOSLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 29D5DDAA25516E6300E15D3F /* SDOSLoader */; };
 		29F1EFF32272FE9500C09581 /* ProjectLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */; };
 		29F1EFF52273149800C09581 /* LoaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF42273149800C09581 /* LoaderStyle.swift */; };
 		29F9CB5E2538447300015B54 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
@@ -152,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29D5DDAB25516E6300E15D3F /* SDOSLoader in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +524,9 @@
 			dependencies = (
 			);
 			name = "SDOSLoaderSample-SPM";
+			packageProductDependencies = (
+				29D5DDAA25516E6300E15D3F /* SDOSLoader */,
+			);
 			productName = BaseProject;
 			productReference = 29F9CB7E2538447300015B54 /* SDOSLoaderSample-SPM.app */;
 			productType = "com.apple.product-type.application";
@@ -923,7 +928,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoaderSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
@@ -943,7 +951,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoaderSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
@@ -1008,7 +1019,10 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = SDOSLoaderSample;
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
@@ -1068,10 +1082,14 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SDOSLoaderSample-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1087,10 +1105,14 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SDOSLoaderSample-Swift.h";
 			};
 			name = Preproduction;
 		};
@@ -1105,10 +1127,14 @@
 				GCC_PREFIX_HEADER = "App/Configuration/SDOSLoaderSample-Prefix.pch";
 				INFOPLIST_FILE = App/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_PACKAGE_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "App/SDOSLoader-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "SDOSLoaderSample-Swift.h";
 			};
 			name = Production;
 		};
@@ -1166,6 +1192,13 @@
 			defaultConfigurationName = Preproduction;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29D5DDAA25516E6300E15D3F /* SDOSLoader */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SDOSLoader;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2970AD6D1BFA153F007CFBD9 /* Project object */;
 }

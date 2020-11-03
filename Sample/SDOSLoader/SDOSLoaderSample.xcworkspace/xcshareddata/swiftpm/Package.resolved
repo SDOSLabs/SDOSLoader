@@ -5,18 +5,18 @@
         "package": "DGActivityIndicatorView",
         "repositoryURL": "https://github.com/SDOSLabs/DGActivityIndicatorView.git",
         "state": {
-          "branch": "feature/spm",
-          "revision": "8678176dc96c7823e76644240f37ec42ce4261e0",
-          "version": null
+          "branch": null,
+          "revision": "3398b19d6d44f8b3f9253f31fa48c29f76af8803",
+          "version": "2.2.0"
         }
       },
       {
         "package": "M13ProgressSuite",
         "repositoryURL": "https://github.com/SDOSLabs/M13ProgressSuite.git",
         "state": {
-          "branch": "feature/spm",
-          "revision": "1541da0aa367f98967576bfc1df6bba41cfa3871",
-          "version": null
+          "branch": null,
+          "revision": "1dc0cb7b98f575744af705caeabc47380d2345aa",
+          "version": "1.3.0"
         }
       },
       {
