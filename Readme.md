@@ -25,9 +25,10 @@ SDOSLoader ofrece una forma sencilla de crear loaders más visuales y más perso
 
 Usaremos [CocoaPods](https://cocoapods.org). 
 
-Añadir el "source" al `Podfile`:
+Añadir el "source" privado de SDOSLabs al `Podfile`. Añadir también el source público de cocoapods para poder seguir instalando dependencias desde éste:
 ```ruby
-source 'https://github.com/SDOSLabs/cocoapods-specs.git'
+source 'https://github.com/SDOSLabs/cocoapods-specs.git' #SDOSLabs source
+source 'https://github.com/CocoaPods/Specs.git' #Cocoapods source
 ```
 
 Añadir la dependencia al `Podfile`:
