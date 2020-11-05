@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 S·dos. All rights reserved.
 //
 
-#import "SDOSLoaderProgress.h"
+@import UIKit;
+@import SDOSLoader;
 
 #pragma mark - UIButton
 

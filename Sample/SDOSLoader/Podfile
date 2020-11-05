@@ -1,4 +1,4 @@
-source 'https://svrgitpub.sdos.es/ios/cocoapods-specs.git'
+source 'https://github.com/SDOSLabs/cocoapods-specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '10.0'
@@ -7,7 +7,8 @@ inhibit_all_warnings!
 
 def shared_pods
 	pod 'SDOSLoader', :path => '../../', :inhibit_warnings => false
-  pod 'SDOSCustomLoader'
+	pod 'M13ProgressSuite', :git => 'https://github.com/SDOSLabs/M13ProgressSuite.git', :tag => '1.3.0'
+	pod 'DGActivityIndicatorView', :git => 'https://github.com/SDOSLabs/DGActivityIndicatorView.git', :tag => '2.2.0'
 	pod 'IQKeyboardManager'
     
 end

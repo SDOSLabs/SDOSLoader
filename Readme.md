@@ -1,16 +1,19 @@
 - [SDOSLoader](#sdosloader)
-  - [Introducción](#introducci%C3%B3n)
-  - [Instalación](#instalaci%C3%B3n)
+  - [Introducción](#introducción)
+  - [Instalación](#instalación)
     - [Cocoapods](#cocoapods)
-  - [Cómo se usa](#c%C3%B3mo-se-usa)
-    - [Implementación](#implementaci%C3%B3n)
+    - [Swift Package Manager](#swift-package-manager)
+      - [**En el "Project"**](#en-el-project)
+      - [**En un Package.swift**](#en-un-packageswift)
+  - [Cómo se usa](#cómo-se-usa)
+    - [Implementación](#implementación)
   - [Dependencias](#dependencias)
   - [Referencias](#referencias)
 
 # SDOSLoader
 
 - Enlace confluence: https://kc.sdos.es/x/pQXLAQ
-- Changelog: https://svrgitpub.sdos.es/iOS/SDOSLoader/blob/master/CHANGELOG.md
+- Changelog: https://github.com/SDOSLabs/SDOSLoader/blob/master/CHANGELOG.md
 
 ## Introducción
 
@@ -20,10 +23,56 @@ SDOSLoader ofrece una forma sencilla de crear loaders más visuales y más perso
 
 ### Cocoapods
 
-Usaremos [CocoaPods](https://cocoapods.org). Hay que añadir la dependencia al `Podfile`:
+Usaremos [CocoaPods](https://cocoapods.org). 
 
+Añadir el "source" privado de SDOSLabs al `Podfile`. Añadir también el source público de cocoapods para poder seguir instalando dependencias desde éste:
 ```ruby
-pod 'SDOSLoader', '~>3.0.2' 
+source 'https://github.com/SDOSLabs/cocoapods-specs.git' #SDOSLabs source
+source 'https://github.com/CocoaPods/Specs.git' #Cocoapods source
+```
+
+Añadir la dependencia al `Podfile`:
+```ruby
+pod 'SDOSLoader', '~>3.1.0' 
+pod 'M13ProgressSuite', :git => 'https://github.com/SDOSLabs/M13ProgressSuite.git', :tag => '1.3.0'
+pod 'DGActivityIndicatorView', :git => 'https://github.com/SDOSLabs/DGActivityIndicatorView.git', :tag => '2.2.0'
+```
+
+### Swift Package Manager
+
+A partir de Xcode 12 podemos incluir esta librería a través de Swift package Manager. Existen 2 formas de añadirla a un proyecto:
+
+#### **En el "Project"**
+
+Debemos abrir nuestro proyecto en Xcode y seleccionar el proyecto para abrir su configuración. Una vez aquí seleccionar la pestaña "Swift Packages" y añadir el siguiente repositorio
+
+```
+https://github.com/SDOSLabs/SDOSLoader.git
+```
+
+En el siguiente paso deberemos seleccionar la versión que queremos instalar. Recomentamos indicar "Up to Next Major" 3.1.0.
+
+Por último deberemos indicar el o los targets donde se deberá incluir la librería
+
+#### **En un Package.swift**
+
+Incluir la dependencia en el bloque `dependencies`:
+
+``` swift
+dependencies: [
+    .package(url: "https://github.com/SDOSLabs/SDOSLoader.git", .upToNextMajor(from: "3.1.0"))
+]
+```
+
+Incluir la librería en el o los targets desados:
+
+```js
+.target(
+    name: "YourDependency",
+    dependencies: [
+        "SDOSLoader"
+    ]
+)
 ```
 
 ## Cómo se usa
@@ -151,11 +200,11 @@ loaderObject.hideViews = [tableView]
 ```
 
 ## Dependencias
-* [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - 1.1.0 o superior
-* [M13ProgressSuite](https://github.com/Marxon13/M13ProgressSuite) - 1.2.9 o superior
-* [DGActivityIndicatorView](https://github.com/gontovnik/DGActivityIndicatorView) - 2.1.1 o superior
-* [SDOSCustomLoader](https://svrgitpub.sdos.es/iOS/SDOSCustomLoader) - 1.0.0 o superior
-* [SDOSSwiftExtension](https://svrgitpub.sdos.es/iOS/SDOSSwiftExtension) - 1.0.2 o superior
+* [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - ~> 1.2
+* [M13ProgressSuite](https://github.com/SDOSLabs/M13ProgressSuite.git) - 1.3.0
+* [DGActivityIndicatorView](https://github.com/SDOSLabs/DGActivityIndicatorView.git) - 2.2.0
+* [SDOSCustomLoader](https://github.com/SDOSLabs/SDOSCustomLoader) - ~> 1.1
+* [SDOSSwiftExtension](https://github.com/SDOSLabs/SDOSSwiftExtension) - ~> 1.1
 
 ## Referencias
-* https://svrgitpub.sdos.es/iOS/SDOSLoader
+* https://github.com/SDOSLabs/SDOSLoader
