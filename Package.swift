@@ -13,8 +13,8 @@ let package = Package(
             targets: ["SDOSLoader"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SDOSLabs/SDOSCustomLoader.git", .branch("feature/spm")),
-        .package(url: "https://github.com/SDOSLabs/SDOSSwiftExtension.git", .branch("feature/spm")),
+        .package(url: "https://github.com/SDOSLabs/SDOSCustomLoader.git", .upToNextMajor(from: "1.1.0")),
+        .package(url: "https://github.com/SDOSLabs/SDOSSwiftExtension.git", .upToNextMajor(from: "1.1.0")),
         
         .package(url: "https://github.com/SDOSLabs/DGActivityIndicatorView.git", .upToNextMajor(from: "2.2.0")),
         .package(url: "https://github.com/SDOSLabs/M13ProgressSuite.git", .upToNextMajor(from: "1.3.0")),

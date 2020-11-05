@@ -200,11 +200,11 @@ loaderObject.hideViews = [tableView]
 ```
 
 ## Dependencias
-* [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - 1.1.0 o superior
-* [M13ProgressSuite](https://github.com/Marxon13/M13ProgressSuite) - 1.2.9 o superior
-* [DGActivityIndicatorView](https://github.com/gontovnik/DGActivityIndicatorView) - 2.1.1 o superior
-* [SDOSCustomLoader](https://github.com/SDOSLabs/SDOSCustomLoader) - 1.0.0 o superior
-* [SDOSSwiftExtension](https://github.com/SDOSLabs/SDOSSwiftExtension) - 1.0.2 o superior
+* [MBProgressHUD](https://github.com/jdg/MBProgressHUD) - ~> 1.2
+* [M13ProgressSuite](https://github.com/SDOSLabs/M13ProgressSuite.git) - 1.3.0
+* [DGActivityIndicatorView](https://github.com/SDOSLabs/DGActivityIndicatorView.git) - 2.2.0
+* [SDOSCustomLoader](https://github.com/SDOSLabs/SDOSCustomLoader) - ~> 1.1
+* [SDOSSwiftExtension](https://github.com/SDOSLabs/SDOSSwiftExtension) - ~> 1.1
 
 ## Referencias
 * https://github.com/SDOSLabs/SDOSLoader

@@ -1,27 +1,27 @@
 PODS:
-  - DGActivityIndicatorView (2.1)
+  - DGActivityIndicatorView (2.2.0)
   - IQKeyboardManager (6.5.6)
-  - M13ProgressSuite (1.2.9)
+  - M13ProgressSuite (1.3.0)
   - MBProgressHUD (1.2.0)
-  - SDOSCustomLoader (1.0.1):
-    - SDOSCustomLoader/CustomLoader (= 1.0.1)
-  - SDOSCustomLoader/CustomLoader (1.0.1)
+  - SDOSCustomLoader (1.1.0):
+    - SDOSCustomLoader/CustomLoader (= 1.1.0)
+  - SDOSCustomLoader/CustomLoader (1.1.0)
   - SDOSLoader (3.0.2):
     - DGActivityIndicatorView
     - M13ProgressSuite
-    - MBProgressHUD (~> 1.1)
-    - SDOSCustomLoader
+    - MBProgressHUD (~> 1.2)
+    - SDOSCustomLoader (~> 1.1)
     - SDOSLoader/Loader (= 3.0.2)
-    - SDOSSwiftExtension
+    - SDOSSwiftExtension (~> 1.1)
   - SDOSLoader/Loader (3.0.2):
     - DGActivityIndicatorView
     - M13ProgressSuite
-    - MBProgressHUD (~> 1.1)
-    - SDOSCustomLoader
-    - SDOSSwiftExtension
-  - SDOSSwiftExtension (1.0.2):
-    - SDOSSwiftExtension/SwiftExtension (= 1.0.2)
-  - SDOSSwiftExtension/SwiftExtension (1.0.2)
+    - MBProgressHUD (~> 1.2)
+    - SDOSCustomLoader (~> 1.1)
+    - SDOSSwiftExtension (~> 1.1)
+  - SDOSSwiftExtension (1.1.0):
+    - SDOSSwiftExtension/SwiftExtension (= 1.1.0)
+  - SDOSSwiftExtension/SwiftExtension (1.1.0)
 
 DEPENDENCIES:
   - DGActivityIndicatorView (from `https://github.com/SDOSLabs/DGActivityIndicatorView.git`, tag `2.2.0`)
@@ -56,13 +56,13 @@ CHECKOUT OPTIONS:
     :tag: 1.3.0
 
 SPEC CHECKSUMS:
-  DGActivityIndicatorView: 1942ae657a8d247c035f229422b2d15a8adbe5b6
+  DGActivityIndicatorView: 2d15bf84eee494702de1360b3353e24e0d912e54
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  M13ProgressSuite: ea9f7263e73e9215e6849dfa54e29ee0ad6a145c
+  M13ProgressSuite: 1a7f6f307309cfe4d4e601e15cf7ef14430c954e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  SDOSCustomLoader: 299ba8e5b06479f6dd562560ae4e359f115c5f0c
-  SDOSLoader: 76a567ff4e850951f9bf36f49f9b8554e925452a
-  SDOSSwiftExtension: 6f9bd03dd6c1a6a70b5f60cd7cc470790aee3625
+  SDOSCustomLoader: ea7e55514b70c318d73f604c54cc75681d155178
+  SDOSLoader: 366e94843913dc3764c4428cd9a0e9680e53d7ac
+  SDOSSwiftExtension: dd7d060622abea7d2f4de4bf5be4099596a29193
 
 PODFILE CHECKSUM: 2d689654ea8dbdb7fc626faf879d6bdc5d15b33a
 
