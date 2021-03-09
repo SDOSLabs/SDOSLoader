@@ -90,7 +90,11 @@ public class LoaderManager: NSObject {
     public class func showLoader(_ loaderObject: LoaderObject?, delay: TimeInterval = 0) {
         if let loaderObject = loaderObject {
             hideLoader(loaderObject)
-            self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
+            if delay > 0 {
+                self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
+            } else {
+                self._showLoader(loaderObject)
+            }
         }
     }
     
