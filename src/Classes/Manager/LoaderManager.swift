@@ -175,8 +175,8 @@ public class LoaderManager: NSObject {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(_showLoader(_:)), object: loaderObject)
             
             DispatchQueue.main.async {
+                loaderObject.lastHideDate = Date()
                 if shared.activeLoaders.keys.contains(loaderObject.uuid) {
-                    loaderObject.lastHideDate = Date()
                     loaderObject._view.hide(loaderObject: loaderObject)
                     
                     let timeAnimation = loaderObject.finishTimeAnimation ?? loaderObject.timeAnimation

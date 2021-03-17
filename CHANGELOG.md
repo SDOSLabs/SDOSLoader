@@ -1,5 +1,12 @@
 ## Head
 
+### New
+
+- Add news variables `startTimeAnimation` and `finishTimeAnimation` for modify time animation of hide or show views
+- Improvements animation between show and hide loader when time between methods is short
+
+### Fix
+
 - Fix a bug where the loader is not being hidden when calling hideLoader inmediately after showLoader with a zero delay [#1](https://github.com/SDOSLabs/SDOSLoader/issues/1)
 
 ## [3.1.0 Support Swift Package Manager](https://github.com/SDOSLabs/SDOSLoader/tree/3.1.0)
