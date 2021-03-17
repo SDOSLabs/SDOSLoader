@@ -178,17 +178,15 @@ public class LoaderManager: NSObject {
                 loaderObject.lastHideDate = Date()
                 if shared.activeLoaders.keys.contains(loaderObject.uuid) {
                     loaderObject._view.hide(loaderObject: loaderObject)
-                    
-                    let timeAnimation = loaderObject.finishTimeAnimation ?? loaderObject.timeAnimation
-                    if timeAnimation <= 0 {
-                        self.hideControls(loaderObject)
-                    } else {
-                        UIView.animate(withDuration: timeAnimation) {
-                            self.hideControls(loaderObject)
-                        }
-                    }
-                    
                     shared.activeLoaders.removeValue(forKey: loaderObject.uuid)
+                }
+                let timeAnimation = loaderObject.finishTimeAnimation ?? loaderObject.timeAnimation
+                if timeAnimation <= 0 {
+                    self.hideControls(loaderObject)
+                } else {
+                    UIView.animate(withDuration: timeAnimation) {
+                        self.hideControls(loaderObject)
+                    }
                 }
             }
         }

@@ -11,15 +11,6 @@ import SDOSSwiftExtension
 /// Objeto que contiene toda la información referente a un loader
 @objc public class LoaderObject: NSObject {
     
-    enum State {
-        case willShow
-        case didShow
-        case willHide
-        case didHide
-    }
-    
-    var lasState: State = .didHide
-    
     var needShowDate: Date?
     var lastShowDate: Date?
     var lastHideDate: Date?
