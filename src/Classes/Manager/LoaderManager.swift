@@ -16,6 +16,7 @@ public class LoaderManager: NSObject {
     
     private static let shared = LoaderManager()
     private var activeLoaders = [String: LoaderObject]()
+    private var queueLoaders = [String: LoaderObject]()
     
     private override init() { }
     
@@ -90,6 +91,7 @@ public class LoaderManager: NSObject {
     public class func showLoader(_ loaderObject: LoaderObject?, delay: TimeInterval = 0) {
         if let loaderObject = loaderObject {
             loaderObject.needShowDate = Date()
+            shared.queueLoaders[loaderObject.uuid] = loaderObject
             if delay > 0 {
                 self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
             } else {
@@ -107,6 +109,9 @@ public class LoaderManager: NSObject {
                 loaderObject.lastShowDate = Date()
                 loaderObject._view.show(loaderObject: loaderObject)
                 shared.activeLoaders[loaderObject.uuid] = loaderObject
+                if shared.queueLoaders.keys.contains(loaderObject.uuid) {
+                    shared.queueLoaders.removeValue(forKey: loaderObject.uuid)
+                }
                 
                 let timeAnimation = loaderObject.startTimeAnimation ?? loaderObject.timeAnimation
                 if timeAnimation <= 0 {
@@ -207,6 +212,12 @@ public class LoaderManager: NSObject {
                 hideLoader(loaderObject)
             }
         }
+        
+        for loaderObject in shared.queueLoaders.values {
+            if view === loaderObject.parentView {
+                hideLoader(loaderObject)
+            }
+        }
     }
     
     /// Devuelve todos los loaders de la vista indicada
@@ -220,12 +231,20 @@ public class LoaderManager: NSObject {
                 result.append(loaderObject)
             }
         }
+        for loaderObject in shared.queueLoaders.values {
+            if view === loaderObject.parentView {
+                result.append(loaderObject)
+            }
+        }
         return result
     }
     
     /// Oculta todos los loaders mostrados con el LoaderManager
     public static func hideAllLoaders() {
         for loaderObject in shared.activeLoaders.values {
+            hideLoader(loaderObject)
+        }
+        for loaderObject in shared.queueLoaders.values {
             hideLoader(loaderObject)
         }
     }
