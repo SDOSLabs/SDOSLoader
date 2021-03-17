@@ -89,7 +89,6 @@ public class LoaderManager: NSObject {
     ///   - delay: Tiempo de retraso que tardará el loader en mostrarse. Esto es útil para no mostrar el loader en llamadas a servicios muy cortas.
     public class func showLoader(_ loaderObject: LoaderObject?, delay: TimeInterval = 0) {
         if let loaderObject = loaderObject {
-            hideLoader(loaderObject)
             loaderObject.needShowDate = Date()
             if delay > 0 {
                 self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
@@ -101,6 +100,7 @@ public class LoaderManager: NSObject {
     
     @objc private class func _showLoader(_ loaderObject: LoaderObject) {
         DispatchQueue.main.async {
+            guard !shared.activeLoaders.keys.contains(loaderObject.uuid) else { return }
             let needShowDateTime = loaderObject.needShowDate?.timeIntervalSince1970 ?? 0
             let lastHideDateTime = loaderObject.lastHideDate?.timeIntervalSince1970 ?? -1
             if needShowDateTime > lastHideDateTime {
