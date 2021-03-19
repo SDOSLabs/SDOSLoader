@@ -6,14 +6,14 @@ PODS:
   - SDOSCustomLoader (1.1.0):
     - SDOSCustomLoader/CustomLoader (= 1.1.0)
   - SDOSCustomLoader/CustomLoader (1.1.0)
-  - SDOSLoader (3.0.2):
+  - SDOSLoader (3.1.0):
     - DGActivityIndicatorView
     - M13ProgressSuite
     - MBProgressHUD (~> 1.2)
     - SDOSCustomLoader (~> 1.1)
-    - SDOSLoader/Loader (= 3.0.2)
+    - SDOSLoader/Loader (= 3.1.0)
     - SDOSSwiftExtension (~> 1.1)
-  - SDOSLoader/Loader (3.0.2):
+  - SDOSLoader/Loader (3.1.0):
     - DGActivityIndicatorView
     - M13ProgressSuite
     - MBProgressHUD (~> 1.2)
@@ -61,9 +61,9 @@ SPEC CHECKSUMS:
   M13ProgressSuite: 1a7f6f307309cfe4d4e601e15cf7ef14430c954e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDOSCustomLoader: ea7e55514b70c318d73f604c54cc75681d155178
-  SDOSLoader: 366e94843913dc3764c4428cd9a0e9680e53d7ac
+  SDOSLoader: 924d187675d7049a8b36b25f0fe4cb9fc8adcac0
   SDOSSwiftExtension: dd7d060622abea7d2f4de4bf5be4099596a29193
 
 PODFILE CHECKSUM: 2d689654ea8dbdb7fc626faf879d6bdc5d15b33a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
