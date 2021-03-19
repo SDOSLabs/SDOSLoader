@@ -1,4 +1,4 @@
-## Head
+## [3.2.0 Improvement in loader animations](https://github.com/SDOSLabs/SDOSLoader/tree/3.2.0)
 
 ### New
 
