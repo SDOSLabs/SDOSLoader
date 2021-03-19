@@ -41,7 +41,7 @@
 		298FD6721C0701E500BA707E /* Design+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6391C0701E500BA707E /* Design+Extensions.m */; };
 		298FD6731C0701E500BA707E /* default.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 298FD63C1C0701E500BA707E /* default.bundle */; };
 		298FD6741C0701E500BA707E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 298FD6401C0701E500BA707E /* Util.m */; };
-		29D5DDAB25516E6300E15D3F /* SDOSLoader in Frameworks */ = {isa = PBXBuildFile; productRef = 29D5DDAA25516E6300E15D3F /* SDOSLoader */; };
+		29D5DDAB25516E6300E15D3F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 29D5DDAA25516E6300E15D3F /* SwiftPackageProductDependency */; };
 		29F1EFF32272FE9500C09581 /* ProjectLoaderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF22272FE9500C09581 /* ProjectLoaderManager.swift */; };
 		29F1EFF52273149800C09581 /* LoaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1EFF42273149800C09581 /* LoaderStyle.swift */; };
 		29F9CB5E2538447300015B54 /* ChooseTextForLoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AD1F31DCB6BF200F05FD9 /* ChooseTextForLoaderTableViewCell.m */; };
@@ -153,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29D5DDAB25516E6300E15D3F /* SDOSLoader in Frameworks */,
+				29D5DDAB25516E6300E15D3F /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +525,7 @@
 			);
 			name = "SDOSLoaderSample-SPM";
 			packageProductDependencies = (
-				29D5DDAA25516E6300E15D3F /* SDOSLoader */,
+				29D5DDAA25516E6300E15D3F /* SwiftPackageProductDependency */,
 			);
 			productName = BaseProject;
 			productReference = 29F9CB7E2538447300015B54 /* SDOSLoaderSample-SPM.app */;
@@ -629,12 +629,25 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DGActivityIndicatorView/DGActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/M13ProgressSuite/M13ProgressSuite.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSCustomLoader/SDOSCustomLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSLoader/SDOSLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/SDOSSwiftExtension/SDOSSwiftExtension.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SDOSLoaderSample/Pods-SDOSLoaderSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DGActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13ProgressSuite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSCustomLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDOSSwiftExtension.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1187,7 +1200,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		29D5DDAA25516E6300E15D3F /* SDOSLoader */ = {
+		29D5DDAA25516E6300E15D3F /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SDOSLoader;
 		};

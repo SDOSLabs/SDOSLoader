@@ -5,17 +5,18 @@
 //
 
 import Foundation
+import UIKit
 import SDOSSwiftExtension
 import SDOSCustomLoader
 import MBProgressHUD
 import M13ProgressSuite
 import DGActivityIndicatorView
 
-
 public class LoaderManager: NSObject {
     
     private static let shared = LoaderManager()
     private var activeLoaders = [String: LoaderObject]()
+    private var queueLoaders = [String: LoaderObject]()
     
     private override init() { }
     
@@ -89,23 +90,48 @@ public class LoaderManager: NSObject {
     ///   - delay: Tiempo de retraso que tardará el loader en mostrarse. Esto es útil para no mostrar el loader en llamadas a servicios muy cortas.
     public class func showLoader(_ loaderObject: LoaderObject?, delay: TimeInterval = 0) {
         if let loaderObject = loaderObject {
-            hideLoader(loaderObject)
-            self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
+            loaderObject.needShowDate = Date()
+            shared.queueLoaders[loaderObject.uuid] = loaderObject
+            if delay > 0 {
+                self.perform(#selector(_showLoader(_:)), with: loaderObject, afterDelay: delay)
+            } else {
+                self._showLoader(loaderObject)
+            }
         }
     }
     
     @objc private class func _showLoader(_ loaderObject: LoaderObject) {
         DispatchQueue.main.async {
-            loaderObject._view.show(loaderObject: loaderObject)
-            shared.activeLoaders[loaderObject.uuid] = loaderObject
-            
-            UIView.animate(withDuration: loaderObject.timeAnimation) {
-                loaderObject.disableControls?.forEach { $0.isEnabled = false }
-                loaderObject.hideViews?.forEach { $0.alpha = 0 }
-                loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = false }
-
+            guard !shared.activeLoaders.keys.contains(loaderObject.uuid) else { return }
+            let needShowDateTime = loaderObject.needShowDate?.timeIntervalSince1970 ?? 0
+            let lastHideDateTime = loaderObject.lastHideDate?.timeIntervalSince1970 ?? -1
+            if needShowDateTime > lastHideDateTime {
+                loaderObject.lastShowDate = Date()
+                loaderObject._view.show(loaderObject: loaderObject)
+                shared.activeLoaders[loaderObject.uuid] = loaderObject
+                if shared.queueLoaders.keys.contains(loaderObject.uuid) {
+                    shared.queueLoaders.removeValue(forKey: loaderObject.uuid)
+                }
+                
+                let timeAnimation = loaderObject.startTimeAnimation ?? loaderObject.timeAnimation
+                if timeAnimation <= 0 {
+                    self.showControls(loaderObject)
+                    loaderObject.needShowDate = nil
+                } else {
+                    UIView.animate(withDuration: timeAnimation) {
+                        self.showControls(loaderObject)
+                    } completion: { _ in
+                        loaderObject.needShowDate = nil
+                    }
+                }
             }
         }
+    }
+    
+    private class func showControls(_ loaderObject: LoaderObject) {
+        loaderObject.disableControls?.forEach { $0.isEnabled = false }
+        loaderObject.hideViews?.forEach { $0.alpha = 0 }
+        loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = false }
     }
     
     /// Cambia el progreso del loader
@@ -134,27 +160,47 @@ public class LoaderManager: NSObject {
         }
     }
     
+    public class func hideLoader(_ loaderObject: LoaderObject?) {
+        if let loaderObject = loaderObject {
+            let needShowDateTime = loaderObject.needShowDate?.timeIntervalSince1970 ?? 0
+            let animation = needShowDateTime + loaderObject.timeAnimation - Date().timeIntervalSince1970
+            if animation > 0 {
+                self.perform(#selector(_hideLoader(_:)), with: loaderObject, afterDelay: animation)
+            } else {
+                self._hideLoader(loaderObject)
+            }
+        }
+    }
+    
     /// Oculta el loader. Para ocultar el loader deberá haber sido mostrado previamente con el método showLoader del LoaderManager
     ///
     /// - Parameter loaderObject: Loader a ocultar
-    public class func hideLoader(_ loaderObject: LoaderObject?) {
+    @objc private class func _hideLoader(_ loaderObject: LoaderObject?) {
         if let loaderObject = loaderObject {
             NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(_showLoader(_:)), object: loaderObject)
             
             DispatchQueue.main.async {
+                loaderObject.lastHideDate = Date()
                 if shared.activeLoaders.keys.contains(loaderObject.uuid) {
                     loaderObject._view.hide(loaderObject: loaderObject)
-                    
-                    UIView.animate(withDuration: loaderObject.timeAnimation) {
-                        loaderObject.disableControls?.forEach { $0.isEnabled = true }
-                        loaderObject.hideViews?.forEach { $0.alpha = 1 }
-                        loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = true }
-                    }
-                    
                     shared.activeLoaders.removeValue(forKey: loaderObject.uuid)
+                }
+                let timeAnimation = loaderObject.finishTimeAnimation ?? loaderObject.timeAnimation
+                if timeAnimation <= 0 {
+                    self.hideControls(loaderObject)
+                } else {
+                    UIView.animate(withDuration: timeAnimation) {
+                        self.hideControls(loaderObject)
+                    }
                 }
             }
         }
+    }
+    
+    private class func hideControls(_ loaderObject: LoaderObject) {
+        loaderObject.disableControls?.forEach { $0.isEnabled = true }
+        loaderObject.hideViews?.forEach { $0.alpha = 1 }
+        loaderObject.disableUserInteractionViews?.forEach { $0.isUserInteractionEnabled = true }
     }
     
     /// Oculta todos los loader de la vista indicada
@@ -162,6 +208,12 @@ public class LoaderManager: NSObject {
     /// - Parameter view: Vista de la que se deberán ocultar los loaders
     public class func hideLoaderOfView(_ view: UIView) {
         for loaderObject in shared.activeLoaders.values {
+            if view === loaderObject.parentView {
+                hideLoader(loaderObject)
+            }
+        }
+        
+        for loaderObject in shared.queueLoaders.values {
             if view === loaderObject.parentView {
                 hideLoader(loaderObject)
             }
@@ -179,12 +231,20 @@ public class LoaderManager: NSObject {
                 result.append(loaderObject)
             }
         }
+        for loaderObject in shared.queueLoaders.values {
+            if view === loaderObject.parentView {
+                result.append(loaderObject)
+            }
+        }
         return result
     }
     
     /// Oculta todos los loaders mostrados con el LoaderManager
     public static func hideAllLoaders() {
         for loaderObject in shared.activeLoaders.values {
+            hideLoader(loaderObject)
+        }
+        for loaderObject in shared.queueLoaders.values {
             hideLoader(loaderObject)
         }
     }
