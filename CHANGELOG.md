@@ -2,8 +2,8 @@
 
 ### New
 
-- Add news variables `startTimeAnimation` and `finishTimeAnimation` for modify time animation of hide or show views
-- Improvements animation between show and hide loader when time between methods is short
+- Add news variables `startTimeAnimation` and `finishTimeAnimation` in `LoaderObject` to customize time animation when hide or show views
+- Improve animation between show and hide loader when time between methods is short
 
 ### Fix
 
