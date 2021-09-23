@@ -33,9 +33,13 @@ source 'https://github.com/CocoaPods/Specs.git' #Cocoapods source
 
 Añadir la dependencia al `Podfile`:
 ```ruby
-pod 'SDOSLoader', '~>3.1.0' 
-pod 'M13ProgressSuite', :git => 'https://github.com/SDOSLabs/M13ProgressSuite.git', :tag => '1.3.0'
-pod 'DGActivityIndicatorView', :git => 'https://github.com/SDOSLabs/DGActivityIndicatorView.git', :tag => '2.2.0'
+pod 'SDOSLoader', '~>3.1.0'
+```
+
+De forma opcional podéis añadir estas dependencias si os encontráis con algún problema de resolución
+```ruby
+pod 'M13ProgressSuite', :git => 'https://github.com/SDOSLabs/M13ProgressSuite.git', :tag => '1.3.1'
+pod 'DGActivityIndicatorView', :git => 'https://github.com/SDOSLabs/DGActivityIndicatorView.git', :tag => '2.2.1'
 ```
 
 ### Swift Package Manager
@@ -50,7 +54,7 @@ Debemos abrir nuestro proyecto en Xcode y seleccionar el proyecto para abrir su 
 https://github.com/SDOSLabs/SDOSLoader.git
 ```
 
-En el siguiente paso deberemos seleccionar la versión que queremos instalar. Recomentamos indicar "Up to Next Major" 3.1.0.
+En el siguiente paso deberemos seleccionar la versión que queremos instalar. Recomentamos indicar "Up to Next Major" 3.2.1.
 
 Por último deberemos indicar el o los targets donde se deberá incluir la librería
 
@@ -60,7 +64,7 @@ Incluir la dependencia en el bloque `dependencies`:
 
 ``` swift
 dependencies: [
-    .package(url: "https://github.com/SDOSLabs/SDOSLoader.git", .upToNextMajor(from: "3.1.0"))
+    .package(url: "https://github.com/SDOSLabs/SDOSLoader.git", .upToNextMajor(from: "3.2.1"))
 ]
 ```
 
