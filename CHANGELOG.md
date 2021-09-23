@@ -1,3 +1,9 @@
+## [3.2.1 Fix Xcode 13](https://github.com/SDOSLabs/SDOSLoader/tree/3.2.1)
+
+### Fix
+
+- Fix Xcode 13 error
+
 ## [3.2.0 Improvement in loader animations](https://github.com/SDOSLabs/SDOSLoader/tree/3.2.0)
 
 ### New
