@@ -1,21 +1,21 @@
 PODS:
-  - DGActivityIndicatorView (2.2.0)
+  - DGActivityIndicatorView (2.2.1)
   - IQKeyboardManager (6.5.6)
-  - M13ProgressSuite (1.3.0)
+  - M13ProgressSuite (1.3.1)
   - MBProgressHUD (1.2.0)
   - SDOSCustomLoader (1.1.0):
     - SDOSCustomLoader/CustomLoader (= 1.1.0)
   - SDOSCustomLoader/CustomLoader (1.1.0)
-  - SDOSLoader (3.1.0):
-    - DGActivityIndicatorView
-    - M13ProgressSuite
+  - SDOSLoader (3.2.0):
+    - DGActivityIndicatorView (>= 2.2.1)
+    - M13ProgressSuite (>= 1.3.1)
     - MBProgressHUD (~> 1.2)
     - SDOSCustomLoader (~> 1.1)
-    - SDOSLoader/Loader (= 3.1.0)
+    - SDOSLoader/Loader (= 3.2.0)
     - SDOSSwiftExtension (~> 1.1)
-  - SDOSLoader/Loader (3.1.0):
-    - DGActivityIndicatorView
-    - M13ProgressSuite
+  - SDOSLoader/Loader (3.2.0):
+    - DGActivityIndicatorView (>= 2.2.1)
+    - M13ProgressSuite (>= 1.3.1)
     - MBProgressHUD (~> 1.2)
     - SDOSCustomLoader (~> 1.1)
     - SDOSSwiftExtension (~> 1.1)
@@ -24,9 +24,7 @@ PODS:
   - SDOSSwiftExtension/SwiftExtension (1.1.0)
 
 DEPENDENCIES:
-  - DGActivityIndicatorView (from `https://github.com/SDOSLabs/DGActivityIndicatorView.git`, tag `2.2.0`)
   - IQKeyboardManager
-  - M13ProgressSuite (from `https://github.com/SDOSLabs/M13ProgressSuite.git`, tag `1.3.0`)
   - SDOSLoader (from `../../`)
 
 SPEC REPOS:
@@ -34,36 +32,24 @@ SPEC REPOS:
     - IQKeyboardManager
     - MBProgressHUD
   https://github.com/SDOSLabs/cocoapods-specs.git:
+    - DGActivityIndicatorView
+    - M13ProgressSuite
     - SDOSCustomLoader
     - SDOSSwiftExtension
 
 EXTERNAL SOURCES:
-  DGActivityIndicatorView:
-    :git: https://github.com/SDOSLabs/DGActivityIndicatorView.git
-    :tag: 2.2.0
-  M13ProgressSuite:
-    :git: https://github.com/SDOSLabs/M13ProgressSuite.git
-    :tag: 1.3.0
   SDOSLoader:
     :path: "../../"
 
-CHECKOUT OPTIONS:
-  DGActivityIndicatorView:
-    :git: https://github.com/SDOSLabs/DGActivityIndicatorView.git
-    :tag: 2.2.0
-  M13ProgressSuite:
-    :git: https://github.com/SDOSLabs/M13ProgressSuite.git
-    :tag: 1.3.0
-
 SPEC CHECKSUMS:
-  DGActivityIndicatorView: 2d15bf84eee494702de1360b3353e24e0d912e54
+  DGActivityIndicatorView: 764b5bc85387d4204f96bac01a646db120ca96d4
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  M13ProgressSuite: 1a7f6f307309cfe4d4e601e15cf7ef14430c954e
+  M13ProgressSuite: 1849e830584fe325e6bed6fd65b01061101e1eb3
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDOSCustomLoader: ea7e55514b70c318d73f604c54cc75681d155178
-  SDOSLoader: 924d187675d7049a8b36b25f0fe4cb9fc8adcac0
+  SDOSLoader: 376aa4362c132848d65d8f3dcb88b1e26d2872cc
   SDOSSwiftExtension: dd7d060622abea7d2f4de4bf5be4099596a29193
 
-PODFILE CHECKSUM: 2d689654ea8dbdb7fc626faf879d6bdc5d15b33a
+PODFILE CHECKSUM: d9b3467b547f967009a944bd830bf7b17ed87402
 
 COCOAPODS: 1.10.1

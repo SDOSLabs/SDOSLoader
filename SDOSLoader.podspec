@@ -1,4 +1,4 @@
-@version = "3.2.0"
+@version = "3.2.1"
 Pod::Spec.new do |spec|
   spec.platform     = :ios, '9.0'
   spec.name         = 'SDOSLoader'
@@ -17,8 +17,8 @@ Pod::Spec.new do |spec|
   end
 
   spec.dependency 'MBProgressHUD', '~> 1.2'
-  spec.dependency 'M13ProgressSuite'#, '~> 1.3'
-  spec.dependency 'DGActivityIndicatorView'#, '~> 2.2'
+  spec.dependency 'M13ProgressSuite', '>= 1.3.1'
+  spec.dependency 'DGActivityIndicatorView', '>= 2.2.1'
   spec.dependency 'SDOSCustomLoader', '~> 1.1'
   spec.dependency 'SDOSSwiftExtension', '~> 1.1'
 
